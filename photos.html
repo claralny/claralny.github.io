@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PORTFOLIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style/reset.css">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+
+  <!--LOGO ET MENU FIXE-->
+  <header>
+    <div id="logo">
+      <a href="index.html">Clara Launay</a>
+    </div>
+    <nav>
+      <ul> 
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="menu.html">Projets</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li id="theme"><button onclick="myFunction()">☼</button></li> 
+
+        <!--utiliser un if pour changer le soleil-->
+      </ul>
+    </nav>
+  </header>
+
+
+  <!--PAGE PRINCIPALE-->
+
+  <main class="conteneur">
+
+
+    <section id="projet">
+      <div id="fleche">
+            <a href="tshirt.html"><p id="precedent"> ⟵ <br> projet précédent </p></a>
+            <a href="carnet.html"><p id="suivant"> ⟶ <br> projet suivant </p> </a>
+      </div>
+
+      <section id="carnetxt">
+        <h2>
+         Photos
+      </h2>
+        <aside id="pcarnet1">
+          <img src="import/pcarnet.png">
+        </aside>
+
+        <article id="textec1">
+          <p>Ces séries photographiques ont été réalisées en première année de DN MADE.<br>
+          Elles contiennent chacune 3 thèmes différents : la photo d'objet, de portraits ou encore de paysage.</p>
+        </article>
+      </section>
+
+
+      <section id="carnetxt2">
+        <article id="pcarnet2">
+          <p>Il a été réalisé par mes soins du début à la fin, que ce soit au niveau de la mise en page, de l’assemblage et de la couture.</p>
+        </article>
+
+        <aside id="textec2">
+          <img src="import/carnet22.png">
+        </aside>
+      </section>
+    </section>
+
+
+     
+    
+
+    </section>
+
+  </main>
+</body>
+<script>
+      function myFunction() {
+      var element = document.body;
+      element.classList.toggle("nuit");
+    }
+  </script>
+</html>
