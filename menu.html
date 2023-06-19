@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MENU</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style/reset.css">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+
+  <!--LOGO ET MENU FIXE-->
+  <header>
+    <div id="logo">
+        <a href="index.html">Clara Launay</a>
+      </div>
+    <nav>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="menu.html">Projets</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li id="theme"><button onclick="myFunction()">☼</button></li> 
+      </ul>
+    </nav>
+  </header>
+
+
+  <main class="conteneur">
+    <h2>
+    Projets
+  </h2>
+ 
+  <section class="menu">
+            <div class="menu__item">
+                <a class="menu__item-link" href="carnet.html">Catalogue d'artiste</a>
+                <img class="menu__item-img" src="import/ca1.png"/>
+                <div class="marquee">
+                    <div class="marquee__inner">
+                        <span>Catalogue d'artiste</span>
+                        <span>Catalogue d'artiste</span>
+                        <span>Catalogue d'artiste</span>
+                        <span>Catalogue d'artiste</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__item">
+                <a class="menu__item-link" href="croquis.html">Carnet de croquis</a>
+                <img class="menu__item-img" src="import/cr1.jpg"/>
+                <div class="marquee">
+                    <div class="marquee__inner">
+                        <span>Carnet de croquis</span>
+                        <span>Carnet de croquis</span>
+                        <span>Carnet de croquis</span>
+                        <span>Carnet de croquis</span>
+                        <span>Carnet de croquis</span>
+                        <span>Carnet de croquis</span>
+                        <span>Carnet de croquis</span>
+                        <span>Carnet de croquis</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__item">
+                <a class="menu__item-link">Affiche humain(s)</a>
+                <img class="menu__item-img" src="import/afficheto.png"/>
+                <div class="marquee">
+                    <div class="marquee__inner">
+                        <span>Affiche humain(s)</span>
+                        <span>Affiche humain(s)</span>
+                        <span>Affiche humain(s)</span>
+                        <span>Affiche humain(s)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__item">
+                <a class="menu__item-link" href="tshirt.html">Custom</a>
+                <img class="menu__item-img" src="import/tshirt1.png"/>
+                <div class="marquee">
+                    <div class="marquee__inner">
+                        <span>Custom</span>
+                        <span>Custom</span>
+                        <span>Custom</span>
+                        <span>Custom</span>
+                        <span>Custom</span>
+                        <span>Custom</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu__item">
+                <a class="menu__item-link">Photos</a>
+                <img class="menu__item-img" src="import/photo1.jpg"/>
+                <div class="marquee">
+                    <div class="marquee__inner">
+                        <span>Photos</span>
+                        <span>Photos</span>
+                        <span>Photos</span>
+                        <span>Photos</span>
+                        <span>Photos</span>
+                        <span>Photos</span>           
+                  
+
+                    </div>
+                </div>
+            </div>
+        </section>
+      </main>
+        <script>
+      function myFunction() {
+      var element = document.body;
+      element.classList.toggle("nuit");
+    }
+  </script>
+</body>
+</html>

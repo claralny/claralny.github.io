@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PORTFOLIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style/reset.css">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+
+  <!--LOGO ET MENU FIXE-->
+  <header>
+    <div id="logo">
+      <a href="index.html">Clara Launay</a>
+    </div>
+    <nav>
+      <ul> 
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="menu.html">Projet</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li id="theme"><button onclick="myFunction()">☼</button></li> 
+
+        <!--utiliser un if pour changer le soleil-->
+      </ul>
+    </nav>
+  </header>
+
+
+  <!--PAGE PRINCIPALE-->
+  <main class="container">
+
+    <section class="music-container">
+
+      <h2>
+          About
+      </h2>
+
+      <div class="music">
+        <audio src="import/rundmc.mp3"  controls>yo</audio>
+      </div>
+
+      <div class="music">
+        <audio src="rundmc.mp3" ></audio>
+      </div>
+  </section>
+</main>
+
+</body>
+<script>
+      function myFunction() {
+      var element = document.body;
+      element.classList.toggle("nuit");
+    }
+  </script>
+</html>

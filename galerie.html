@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PORTFOLIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style/reset.css">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+
+  <!--LOGO ET MENU FIXE-->
+  <header>
+    <div id="logo">
+      <a href="index.html">Clara Launay</a>
+    </div>
+    <nav>
+      <ul> 
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="menu.html">Projet</a></li>
+        <li><a href="galerie.html">Galerie</a></li>
+        <li id="theme"><button onclick="myFunction()">☼</button></li> 
+
+        <!--utiliser un if pour changer le soleil-->
+      </ul>
+    </nav>
+  </header>
+
+  <!--PAGE PRINCIPALE-->
+  <main class="conteneur">
+
+    <section id="galerie">
+
+      <h2>
+        Galerie
+      </h2>
+
+      <div id="txtgal"> 
+        <p>Bienvenue dans ma galerie ! </br>
+          On y retrouve plusieurs projets personnels et scolaires </br>
+          reflétant mon univers visuel et les différents médiums que j’utilise. 
+        </p>
+      </div>
+
+      <div id="galpic">
+
+        <div id="col1">
+          <img class ="imgh" src="import/dream.png">
+          <img class ="imgh"src="import/punk.png">
+          <img class ="imgh"src="import/morph.png">
+          <img class ="imgh"src="import/cla.png">
+        </div>
+
+        <div id="col2">
+          <img class = "imgh"src="import/star.png">
+          <img class ="imgh"src="import/blur.png">
+          <img class ="imgh"src="import/guitar.png">
+          <img class ="imgh"src="import/circles.png">
+
+
+        </div>
+
+        <div id="col3">
+          <img class = "imgh"src="import/val.png">
+          <img class ="imgh"src="import/main.png">
+          <img class ="imgh"src="import/tattoo.png">
+          <img class ="imgh"src="import/playboi.png">
+        </div>
+
+      </div>
+
+
+
+      
+    </section>
+
+  </main>
+</body>
+
+<script>
+      function myFunction() {
+      var element = document.body;
+      element.classList.toggle("nuit");
+
+    }
+  </script>
+</html>
+
+
+ 

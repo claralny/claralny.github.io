@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PORTFOLIO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style/reset.css">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+
+  <!--LOGO ET MENU FIXE-->
+  <header>
+     <div id="logo">
+      
+    </div>
+    <nav>
+      <ul>
+        <li ><a href="about.html">About</a></li>
+        <li ><a href="contact.html">Contact</a></li>
+        <li ><a href="menu.html">Projet</a></li>
+        <li ><a href="galerie.html">Galerie</a></li>
+        <li id="theme"><button onclick="myFunction()">☼</button></li> 
+
+        <!--utiliser un if pour changer le soleil-->
+      </ul>
+    </nav>
+  </header>
+
+  <!--PAGE PRINCIPALE-->
+    <section id="accueil">
+
+      <h1>
+          Clara Launay
+      </h1>
+        
+        <div id="voyage">
+          <a href="voyage.html"><img src="import/voyage.png"></a>
+        <div>
+        
+        <div id="carnet">
+          <a href="carnet.html"><img src="import/carnetttt.png"></a>
+        <div>
+
+        <div id="affiche">
+          <a href="affiche.html"><img src="import/afficheto.png"></a>
+        <div>
+
+        <div id="tshirt">
+          <a href="tshirt.html"><img src="import/tshirt1.png"></a>
+        <div>
+
+      </div>
+
+    </section>
+
+ <script>
+      function myFunction() {
+      var element = document.body;
+      element.classList.toggle("nuit");
+      $("#theme").html("♥");
+    }
+
+    
+  </script> 
+
+</body>
+
+</html>
