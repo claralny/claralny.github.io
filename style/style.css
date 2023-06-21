@@ -246,14 +246,31 @@ footer{
   margin-top: 20vh;
   margin-left: 10vw;
   width: 40vw;
-  height: 30vh;
+  height: 90vh;
   margin-bottom: 10vh;
 }
 
+#slider11{
+  margin-top: 20vh;
+  margin-left: 20vw;
+  width: 40vw;
+  height: 90vh;
+  margin-bottom: 10vh;
+  scla
+}
+
+#textec11{
+  margin-left: -10vw;
+  margin-top: 21vh;
+  width: 30vw;
+  height: 20vh;
+  font-size: 1.5em;
+  color:black;
+}
 
 #textec1{
   margin-top: 21vh;
-  width: 20vw;
+  width: 30vw;
   height: 20vh;
   font-size: 1.5em;
   color:black;
@@ -263,7 +280,7 @@ footer{
   display: flex;
   width: 90vw;
   height: 40vh;
-  margin-top: 30vh;
+  margin-top: -20vh;
 }
 
 #textec2{
@@ -854,7 +871,7 @@ overflow: hidden;
 
 .slide-img{ 
   width: 100%; 
-  height: 300px;
+  height: 100%;
   object-fit: cover;
   object-position: center;
  }
