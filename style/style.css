@@ -218,27 +218,21 @@ button{
 
 
 
-#carnetxt{
+#projetxt{
   display: flex;
   width: 90vw;
   margin-top: 15vh;
 }
 
-#carnetxt2{
-  display: flex;
-  width: 90vw;
-  height: 40vh;
-  margin-top: 30vh;
-}
 
-#pcarnet1{
+
+#slider1{
   margin-top: 15vw;
   margin-left: 10vw;
   width: 40vw;
   height: 30vh;
   margin-bottom: 10vh;
 }
-
 
 
 #textec1{
@@ -249,15 +243,22 @@ button{
   color:black;
 }
 
-#pcarnet2{
+#projetxt2{
+  display: flex;
+  width: 90vw;
+  height: 40vh;
+  margin-top: 30vh;
+}
+
+#textec2{
   margin-left: 10vw;
-  width: 15vw;
+  width: 20vw;
   height: 30vh;
   font-size: 1.5em;
 }
 
-#textec2{
-  margin-left:20vw;
+#slider2{
+  margin-left:10vw;
   width: 20vw;
   height: 20vh;
   font-size: 1.5em;
@@ -310,19 +311,24 @@ button{
 }
 
 #txtgal{
-  width: 60vw;
+  width: 40vw;
   font-size: 1.5em;
   margin-left: 10vw;
   margin-top: 25vh;
-  font-family: 'Source Sans 3',sans-serif;
+  font-family: sans-serif;
   line-height: 1.2em;
   font-weight: 200;
+}
+
+a{
+  text-decoration: none;
+  color: black;
 }
 
 /*SECTION MUSIQUE*/
 
 .main{
-    margin-top: 60vh;
+    margin-top: 90vh;
     margin-left: -85vw;
     position: relative;
     overflow: hidden;
@@ -333,6 +339,7 @@ button{
     flex-direction: column;
     border-radius: 20px;
     background: transparent;
+    font-family: sans-serif;
 
   }
 
@@ -792,9 +799,10 @@ overflow: hidden;
 
 .custom-slider { display: none; }
 .slide-container {
-  max-width: 400px;
+  max-width: 550px;
   position: relative;
 }
+
 .prev, .next {
   cursor: pointer;
   position: absolute;        
@@ -806,16 +814,13 @@ overflow: hidden;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  color: white;
+  color: black;
   font-size: 30px;
   background-color: rgba(0,0,0,0);
   transition: background-color 0.6s ease;
 }
 .prev{ left: 15px; }
 .next { right: 15px; }
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.5);
-}
 .slide-text {
   position: absolute;
   color: #ffffff;
@@ -825,13 +830,11 @@ overflow: hidden;
   width: 100%;
   text-align: center;
 }
-.slide-index {
-  color: #ffffff;
-  font-size: 13px;
-  padding: 15px;
-  position: absolute;
-  top: 0;
+
+.nuit .prev .next{
+  color: white;
 }
+
 .slide-img{ 
   width: 100%; 
   height: 300px;

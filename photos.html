@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PORTFOLIO</title>
+  <title>MENU</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style/reset.css">
@@ -12,72 +12,85 @@
 
   <!--LOGO ET MENU FIXE-->
   <header>
+
     <div id="logo">
-      <a href="index.html">Clara Launay</a>
+        <a href="index.html">Clara Launay</a>
     </div>
+
     <nav>
-      <ul> 
+      <ul>
         <li><a href="about.html">About</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="menu.html">Projets</a></li>
         <li><a href="galerie.html">Galerie</a></li>
         <li id="theme"><button onclick="myFunction()">☼</button></li> 
-
-        <!--utiliser un if pour changer le soleil-->
       </ul>
     </nav>
+
   </header>
 
 
-  <!--PAGE PRINCIPALE-->
-
+  <!-- PAGE PRINCIPALE -->
   <main class="conteneur">
 
+    <h2>
+        Photos
+    </h2>
+ 
+      <!-- LISTE DES PROJETS PHOTOS --> 
+      <section class="menu">
+                <div class="menu__item">
+                    <a class="menu__item-link" href="voyage.html">Voyage au bout de la rue</a>
+                    <img class="menu__item-img" src="import/ca1.png" alt="image de carnet ouvert"/>
+                    <div class="marquee">
+                        <div class="marquee__inner">
+                            <span>Voyage au bout de la rue</span>
+                            <span>Voyage au bout de la rue</span>
+                            <span>Voyage au bout de la rue</span>
+                            <span>Voyage au bout de la rue</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu__item">
+                    <a class="menu__item-link" href="portraits.html">Portraits</a>
+                    <img class="menu__item-img" src="import/cr1.png" alt="image de carnet ouvert avec un personnage par page"/>
+                    <div class="marquee">
+                        <div class="marquee__inner">
+                            <span>Portraits</span>
+                            <span>Portraits</span>
+                            <span>Portraits</span>
+                            <span>Portraits</span>
+                            <span>Portraits</span>
+                            <span>Portraits</span>
+                            <span>Portraits</span>
+                            <span>Portraits</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu__item">
+                    <a class="menu__item-link" href="packshot.html">Packshot</a>
+                    <img class="menu__item-img" src="import/afficheto.png" alt="grande affiche jaune avec un personnage qui prend toute la longueur et du texte"/>
+                    <div class="marquee">
+                        <div class="marquee__inner">
+                            <span>Packshot</span>
+                            <span>Packshot</span>
+                            <span>Packshot</span>
+                            <span>Packshot</span>
+                        </div>
+                    </div>
+                </div>
+        </section>
 
-    <section id="projet">
-      <div id="fleche">
-            <a href="tshirt.html"><p id="precedent"> ⟵ <br> projet précédent </p></a>
-            <a href="carnet.html"><p id="suivant"> ⟶ <br> projet suivant </p> </a>
-      </div>
-
-      <section id="carnetxt">
-        <h2>
-         Photos
-      </h2>
-        <aside id="pcarnet1">
-          <img src="import/pcarnet.png">
-        </aside>
-
-        <article id="textec1">
-          <p>Ces séries photographiques ont été réalisées en première année de DN MADE.<br>
-          Elles contiennent chacune 3 thèmes différents : la photo d'objet, de portraits ou encore de paysage.</p>
-        </article>
-      </section>
+      </main>
 
 
-      <section id="carnetxt2">
-        <article id="pcarnet2">
-          <p>Il a été réalisé par mes soins du début à la fin, que ce soit au niveau de la mise en page, de l’assemblage et de la couture.</p>
-        </article>
+    <!--SCRIPT JS POUR ACTIVER LE MODE SOMBRE-->
+    <script>
+        function myFunction() {
+        var element = document.body;
+        element.classList.toggle("nuit");
+          }
+    </script>
 
-        <aside id="textec2">
-          <img src="import/carnet22.png">
-        </aside>
-      </section>
-    </section>
-
-
-     
-    
-
-    </section>
-
-  </main>
 </body>
-<script>
-      function myFunction() {
-      var element = document.body;
-      element.classList.toggle("nuit");
-    }
-  </script>
 </html>

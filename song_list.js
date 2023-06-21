@@ -1,5 +1,27 @@
 //song list
 let All_song = [
+
+  {
+    name: "Fire",
+    path: "import/fire.mp3",
+    img: "import/fire.jpg",
+    singer: "Kid Cudi"
+   },
+
+   {
+     name: "Ultraviolence",
+     path: "import/ultraviolence.mp3",
+     img: "import/ultraviolence.jpg",
+     singer: "Lana Del Rey"
+   },
+
+   {
+     name: "November Has Come",
+     path: "import/november.mp3",
+     img: "import/gorillaz.jpg",
+     singer: "Gorillaz"
+   },
+   
    {
      name: "Empathy",
      path: "import/empathy.mp3",
@@ -14,81 +36,71 @@ let All_song = [
    },
    {
      name: "Summertime",
-     path: "import/inamorata.mp3",
+     path: "import/summertime.mp3",
      img: "import/mareux.jpg",
      singer: "Mareux"
    },
    {
      name: "Self Care",
-     path: "music/4.mp3",
+     path: "import/selfcare.mp3",
      img: "import/macmiller.jpg",
      singer: "Mac Miller"
    },
-   {
-     name: "November Has Come",
-     path: "music/5.mp3",
-     img: "import/gorillaz.jpg",
-     singer: "Gorillaz"
-   },
+   
    {
      name: "Gangsta's Paradise",
-     path: "import/inamorata.mp3",
+     path: "import/gangsta.mp3",
      img: "import/coolio.jpg",
      singer: "Coolio"
    },
    {
      name: "bunnybunnybunny",
-     path: "import/inamorata.mp3",
+     path: "import/bunny.mp3",
      img: "import/bunny.jpg",
      singer: "Mietze Comte"
    },
    {
      name: "Motion Picture Soundtrack",
-     path: "import/inamorata.mp3",
+     path: "import/motion.mp3",
      img: "import/radiohead.jpg",
      singer: "Radiohead"
    },
    {
      name: "Brûlant",
-     path: "import/inamorata.mp3",
+     path: "import/brulant.mp3",
      img: "import/filmnoir.jpg",
      singer: "Film Noir"
    },
-   {
-     name: "Ultraviolence",
-     path: "import/inamorata.mp3",
-     img: "import/ultraviolence.jpg",
-     singer: "Lana Del Rey"
-   },
+   
    {
      name: "Docteur Lulu",
-     path: "import/inamorata.mp3",
+     path: "import/docteur.mp3",
      img: "import/zuukou.jpg",
      singer: "Zuukou Mayzie"
    },
    {
      name: "How",
-     path: "import/inamorata.mp3",
+     path: "import/ihow.mp3",
      img: "import/nbhd.jpg",
      singer: "The Neighbourhood"
    },
    {
     name: "Heaven",
-    path: "music/6.mp3",
+    path: "import/heaven.mp3",
     img: "import/imonster.jpg",
     singer: "I Monster"
    },
 
    {
     name: "18cigz",
-    path: "music/6.mp3",
+    path: "import/18cigz.mp3",
     img: "import/acr.jpg",
     singer: "Angsty Camboyz Revenge"
    },
 
    {
     name: "Romantika",
-    path: "music/6.mp3",
+    path: "import/romantika.mp3",
     img: "import/romantika.jpg",
     singer: "Brutalismus 3000"
    },
@@ -96,7 +108,7 @@ let All_song = [
 
    {
     name: "Heaven",
-    path: "music/6.mp3",
+    path: "import/heaven.mp3",
     img: "import/imonster.jpg",
     singer: "I Monster"
    }

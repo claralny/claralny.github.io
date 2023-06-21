@@ -34,34 +34,40 @@
 
 
       <!-- SECTION TITRE, TEXTE ET PHOTOS DU PROJET -->
-      <section id="carnetxt">
+      <section id="projetxt">
         <h2>
           Catalogue d'artiste
         </h2>
-        <aside id="pcarnet1">
+        <aside id="slider1">
 
           <div class="slide-container">
-      <div class="custom-slider fade">
-        <div class="slide-index">1 / 3</div>
-        <img class="slide-img" src="import/cat1.png">
-      </div>
-      <div class="custom-slider fade">
-        <div class="slide-index">2 / 3</div>
-        <img class="slide-img" src="import/cat2.png">
-      </div>
-      <div class="custom-slider fade">
-        <div class="slide-index">3 / 3</div>
-        <img class="slide-img" src="https://www.codeur.com/tuto/wp-content/uploads/2021/12/slide3.jpg">
-      </div>
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-    <div class="slide-dot">
-      <span class="dot" onclick="currentSlide(1)"></span> 
-      <span class="dot" onclick="currentSlide(2)"></span> 
-      <span class="dot" onclick="currentSlide(3)"></span> 
-    </div>
+            <div class="custom-slider fade">
+              <img class="slide-img" src="import/cat0.png">
+            </div>
+
+            <div class="custom-slider fade">
+              <img class="slide-img" src="import/cat1.png">
+            </div>
+
+            <div class="custom-slider fade">
+              <img class="slide-img" src="import/cat2.png">
+            </div>
+
+            <div class="custom-slider fade">
+              <img class="slide-img" src="import/cat3.png">
+            </div>
+
+
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div class="slide-dot">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)"></span> 
+            </div>
 
           </div>
         </aside>
@@ -73,12 +79,12 @@
       </section>
 
 
-      <section id="carnetxt2">
-        <article id="pcarnet2">
+      <section id="projetxt2">
+        <article id="textec2">
           <p>Il a été réalisé par mes soins du début à la fin, que ce soit au niveau de la mise en page, de l’assemblage et de la couture.</p>
         </article>
 
-        <aside id="textec2">
+        <aside id="slider2">
           <img src="import/cat1.png">
         </aside>
       </section>
@@ -115,5 +121,13 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
+
+<!-- SCRIPT JS POUR ACTIVER LE MODE SOMBRE-->
+  <script>
+      function myFunction() {
+      var element = document.body;
+      element.classList.toggle("nuit");
+    }
+  </script>
   </body>
 </html>
