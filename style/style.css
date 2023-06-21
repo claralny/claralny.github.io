@@ -5,7 +5,7 @@
   src: url("/fonts/lostgun.otf") format(otf);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200&display=swap');
+
 
 body {
   display: flex;
@@ -252,7 +252,7 @@ footer{
 
 
 #textec1{
-  margin-top: 25vh;
+  margin-top: 21vh;
   width: 20vw;
   height: 20vh;
   font-size: 1.5em;
@@ -791,9 +791,9 @@ overflow: hidden;
 .menu__item-link,
 .marquee span {
   white-space: nowrap;
-  font-size: 3.5vw;
+  font-size: 2em;
   padding: 0 1vw;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 .marquee span {
