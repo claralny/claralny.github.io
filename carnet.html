@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PORTFOLIO</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="style/reset.css">
-  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -22,30 +24,57 @@
         <li><a href="menu.html">Projets</a></li>
         <li><a href="galerie.html">Galerie</a></li>
         <li id="theme"><button onclick="myFunction()">☼</button></li> 
-
-        <!--utiliser un if pour changer le soleil-->
       </ul>
     </nav>
   </header>
 
 
   <!--PAGE PRINCIPALE-->
-
   <main class="conteneur">
 
-
+    <!-- SECTION QUI PERMET D'ACCÉDER AUX PROJETS ADJACENTS -->
     <section id="projet">
       <div id="fleche">
             <a href="photos.html"><p id="precedent"> ⟵ <br> projet précédent </p></a>
             <a href="croquis.html"><p id="suivant"> ⟶ <br> projet suivant </p> </a>
       </div>
 
+
+      <!-- SECTION TITRE, TEXTE ET PHOTOS DU PROJET -->
       <section id="carnetxt">
         <h2>
-         Catalogue d'artiste
-      </h2>
-        <aside id="pcarnet1">
-          <img src="import/pcarnet.png">
+          Catalogue d'artiste
+        </h2>
+
+        <aside id="slider1">
+
+          <div class="slider">
+            <span id="item-1"></span>
+            <span id="item-2"></span>
+            <span id="item-3"></span>
+
+            <span id="item-4"></span>
+            <div class="carousel-item item-1">
+              <a href="#item-4" class="arrow-prev arrow"></a>
+              <a href="#item-2" class="arrow-next arrow"></a>
+            </div>
+
+            <div class="carousel-item item-2">
+              <a href="#item-1" class="arrow-prev arrow"></a>
+              <a href="#item-3" class="arrow-next arrow"></a>
+            </div>
+
+            <div class="carousel-item item-3">
+              <a href="#item-2" class="arrow-prev arrow"></a>
+              <a href="#item-4" class="arrow-next arrow"></a>
+            </div>
+
+            <div class="carousel-item item-4">
+              <a href="#item-3" class="arrow-prev arrow"></a>
+              <a href="#item-1" class="arrow-next arrow"></a>
+            </div>
+
+          </div>
         </aside>
 
         <article id="textec1">
@@ -61,23 +90,21 @@
         </article>
 
         <aside id="textec2">
-          <img src="import/carnet22.png">
+          <img src="import/cat1.png">
         </aside>
       </section>
-    </section>
-
-
-     
-    
 
     </section>
 
   </main>
-</body>
-<script>
+
+  <script>
       function myFunction() {
       var element = document.body;
       element.classList.toggle("nuit");
-    }
+      }
   </script>
+
+</body>
+
 </html>

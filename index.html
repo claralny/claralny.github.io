@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PORTFOLIO</title>
+  <title>Clara Launay</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style/reset.css">
@@ -12,9 +12,10 @@
 
   <!--LOGO ET MENU FIXE-->
   <header>
-     <div id="logo">
-      
-    </div>
+
+     <div id="logo">       
+     </div>
+
     <nav>
       <ul>
         <li ><a href="about.html">About</a></li>
@@ -22,11 +23,11 @@
         <li ><a href="menu.html">Projets</a></li>
         <li ><a href="galerie.html">Galerie</a></li>
         <li id="theme"><button onclick="myFunction()">☼</button></li> 
-
-        <!--utiliser un if pour changer le soleil-->
       </ul>
     </nav>
+
   </header>
+
 
   <!--PAGE PRINCIPALE-->
     <section id="accueil">
@@ -34,35 +35,53 @@
       <h1>
           Clara Launay
       </h1>
-        
-        <div id="voyage">
-          <a href="voyage.html"><img src="import/voyage.png"></a>
-        <div>
-        
-        <div id="carnet">
-          <a href="carnet.html"><img src="import/carnetttt.png"></a>
-        <div>
 
-        <div id="affiche">
-          <a href="affiche.html"><img src="import/afficheto.png"></a>
-        <div>
+      <div id="acpic">
 
-        <div id="tshirt">
-          <a href="tshirt.html"><img src="import/tshirt1.png"></a>
-        <div>
+        <div id="col1">
+            <a href="photos.html"><img src="import/manon2.png" alt="image de paysage en noir et blanc"></a>
+            <a href="carnet.html"><img src="import/voyage.png" alt="image de carnet ouvert"></a>
+            
+        </div>
 
+        <div id="col2">
+             <a href="affiche.html"><img src="import/ds3.png" alt="image de grande affiche jaune verticale avec un personnage qui occupe toute la longueur et du texte"></a>
+             
+        </div>
+
+        <div id="col2">
+             <a href="photos.html"><img src="import/carnetttt.png" alt="image de grande affiche jaune verticale avec un personnage qui occupe toute la longueur et du texte"></a>
+             <a href="tshirt.html"><img src="import/afficheto.png" alt="image de tshirt qui transmet le message fuck society's idea of beauty"></a>
+        </div>
+          
+        <div id="col2">
+             <a href="photos.html"><img class="imga" src="import/tshirt.png" alt="image de grande affiche jaune verticale avec un personnage qui occupe toute la longueur et du texte"></a>
+             <a href="photos.html"><img class="imga" src="import/croquis1.png" alt="image de grande affiche jaune verticale avec un personnage qui occupe toute la longueur et du texte"></a>
+         
+        </div>
+
+        <div id="col2">
+             <a href="photos.html"><img id="faiza"
+              src="import/faiza3.png" alt="photo d'une jeune femme aux cheveux bruns"></a>
+             <a href="photos.html"><img 
+              src="import/c1.png" alt="image de grande affiche jaune verticale avec un personnage qui occupe toute la longueur et du texte"></a>
+             
+         
+        </div>
       </div>
+
 
     </section>
 
- <script>
-      function myFunction() {
-      var element = document.body;
-      element.classList.toggle("nuit");
-      $("#theme").html("♥");
-    }
 
-    
+   <!-- SCRIPT JS POUR ACTIVER LE MODE SOMBRE -->
+   <script>
+        function myFunction() {
+        var element = document.body;
+        element.classList.toggle("nuit");
+        $("#theme").html("♥");
+      }
+
   </script> 
 
 </body>

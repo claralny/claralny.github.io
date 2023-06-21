@@ -3,56 +3,102 @@ let All_song = [
    {
      name: "Empathy",
      path: "import/empathy.mp3",
-     img: "import/punk.png",
+     img: "import/crystal.jpg",
      singer: "Crystal Castles"
    },
    {
      name: "Igor's Theme",
      path: "import/igor.mp3",
-     img: "images/2.jpg",
+     img: "import/igor.jpg",
      singer: "Tyler the Creator"
    },
    {
-     name: "Inamorata",
+     name: "Summertime",
      path: "import/inamorata.mp3",
-     img: "images/3.jpg",
+     img: "import/mareux.jpg",
      singer: "Mareux"
    },
    {
-     name: "Shahed -Indian Fusion",
+     name: "Self Care",
      path: "music/4.mp3",
-     img: "images/4.jpg",
-     singer: "imshahed"
+     img: "import/macmiller.jpg",
+     singer: "Mac Miller"
    },
    {
-     name: "Syn Cole - Feel Good",
+     name: "November Has Come",
      path: "music/5.mp3",
-     img: "images/5.jpg",
-     singer: "NoCopyrightSounds"
+     img: "import/gorillaz.jpg",
+     singer: "Gorillaz"
    },
    {
-     name: "Inamorata",
+     name: "Gangsta's Paradise",
      path: "import/inamorata.mp3",
-     img: "images/3.jpg",
-     singer: "Mareux"
+     img: "import/coolio.jpg",
+     singer: "Coolio"
    },
    {
-     name: "Inamorata",
+     name: "bunnybunnybunny",
      path: "import/inamorata.mp3",
-     img: "images/3.jpg",
-     singer: "Mareux"
+     img: "import/bunny.jpg",
+     singer: "Mietze Comte"
    },
    {
-     name: "Inamorata",
+     name: "Motion Picture Soundtrack",
      path: "import/inamorata.mp3",
-     img: "images/3.jpg",
-     singer: "Mareux"
+     img: "import/radiohead.jpg",
+     singer: "Radiohead"
    },
    {
-    name: "Yusuf Alev - Yoros",
+     name: "Brûlant",
+     path: "import/inamorata.mp3",
+     img: "import/filmnoir.jpg",
+     singer: "Film Noir"
+   },
+   {
+     name: "Ultraviolence",
+     path: "import/inamorata.mp3",
+     img: "import/ultraviolence.jpg",
+     singer: "Lana Del Rey"
+   },
+   {
+     name: "Docteur Lulu",
+     path: "import/inamorata.mp3",
+     img: "import/zuukou.jpg",
+     singer: "Zuukou Mayzie"
+   },
+   {
+     name: "How",
+     path: "import/inamorata.mp3",
+     img: "import/nbhd.jpg",
+     singer: "The Neighbourhood"
+   },
+   {
+    name: "Heaven",
     path: "music/6.mp3",
-    img: "images/1.jpg",
-    singer: "Magic Free Release"
+    img: "import/imonster.jpg",
+    singer: "I Monster"
+   },
+
+   {
+    name: "18cigz",
+    path: "music/6.mp3",
+    img: "import/acr.jpg",
+    singer: "Angsty Camboyz Revenge"
+   },
+
+   {
+    name: "Romantika",
+    path: "music/6.mp3",
+    img: "import/romantika.jpg",
+    singer: "Brutalismus 3000"
+   },
+
+
+   {
+    name: "Heaven",
+    path: "music/6.mp3",
+    img: "import/imonster.jpg",
+    singer: "I Monster"
    }
 ];
 /*you can add more song & images from you computer*/

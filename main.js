@@ -47,11 +47,11 @@ btn.forEach((btn,index) => {
 
     song[index].currentTime = 0;
 
-  	if (song_status == false) {
+    if (song_status == false) {
       play_song();
-  	}else{
-      pause_song();	 
-  	}
+    }else{
+      pause_song();  
+    }
 
   });
 });
@@ -70,13 +70,13 @@ function pause_song(){
 /*This function will update every 1s*/
  function update_second(){
 
-	  let position = 0;
+    let position = 0;
 
     // update slider position
-		if(!isNaN(song[index_no].duration)){
-		   position = song[index_no].currentTime * (100 / song[index_no].duration);
-		   slider.value =  position;
-	      }
+    if(!isNaN(song[index_no].duration)){
+       position = song[index_no].currentTime * (100 / song[index_no].duration);
+       slider.value =  position;
+        }
 
     let durationMinutes = Math.floor(song[index_no].duration / 60);
     let durationSeconds = Math.floor(song[index_no].duration - durationMinutes * 60);
@@ -95,9 +95,9 @@ function pause_song(){
 
        
 // function will run when the song is over
-	if (song[index_no].ended) {
+  if (song[index_no].ended) {
       clearInterval(update_second);
-  	  wave_animation.style.opacity = '0';
+      wave_animation.style.opacity = '0';
       play_pause_btn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
     }
  }
@@ -118,23 +118,23 @@ down_player.addEventListener('click', function(){
 /*play pause btn inside the popup Music player*/
 play_pause_btn.addEventListener('click', function(){
     if (song_status == false) {
-  		song[index_no].play();
+      song[index_no].play();
       song_status = true;
       wave_animation.style.opacity = '1';
-  		this.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
-  	}else{
-  		song[index_no].pause();
+      this.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+    }else{
+      song[index_no].pause();
       song_status = false;
       wave_animation.style.opacity = '0';
       this.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
-  	}
+    }
 });
 
 
 // change slider position 
 function change_duration(){
-	slider_position = song[index_no].duration * (slider.value / 100);
-	song[index_no].currentTime = slider_position;
+  slider_position = song[index_no].duration * (slider.value / 100);
+  song[index_no].currentTime = slider_position;
 }
 
 

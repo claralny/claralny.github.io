@@ -1,10 +1,9 @@
 
 /**STYLE GENERAL**/
 @font-face{
-	font-family: "lostgun";
-	src: url("/fonts/lostgun.otf") format(otf);
+  font-family: "lostgun";
+  src: url("/fonts/lostgun.otf") format(otf);
 }
-
 
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200&display=swap');
 
@@ -30,19 +29,6 @@ header {
   /*border: 1px solid purple;*/
 }
 
-
-
-#logo{
-  font-family: lostgun;
-  margin-left: 2vw;
-  font-size: 2em;
-
-}
-
-a{
-  text-decoration: none;
-}
-
 header nav{
   margin-right: 2vw;
 }
@@ -54,11 +40,6 @@ nav ul {
   align-items: center;  
   /*border: 1px solid red;*/
   width: 500px;
-
-}
-
-.nuit p {
-  color: white;
 }
 
 nav li {
@@ -68,25 +49,6 @@ nav li {
   padding: 1vw;
   border-radius: 2vw;
   border: 2px black solid;
-}
-
-
-.nuit nav li{
-   border: 2px white solid;
-   color: white; 
-}
-h1{
-  text-align: center;
-  align-items: center;
-  font-family: "lostgun";
-}
-
-#accueil img{
-  filter: grayscale(1);
-}
-
-#accueil img:hover{
-  filter: grayscale(0);
 }
 
 nav a {
@@ -100,8 +62,55 @@ nav li:hover{
   border-color: grey;
 }
 
+#logo{
+  font-family: lostgun;
+  margin-left: 2vw;
+  font-size: 2em;
+
+}
+
+#theme{
+  border-style: none;
+  background-color: none;
+
+}
+
+#theme:hover{
+  background-color: transparent;
+}
+
+
+
+
+/** LIENS **/
+a{
+  text-decoration: none;
+}
+
 a:visited{
   color: black;
+}
+
+
+
+
+
+/*NUIT et tous les effets qui vont avec*/
+.nuit {
+  background-color: black;
+  color: white;
+  border-color: white;
+  transition: background-color 0.5s ease-out;
+  transition: color 0.5 ease-out;
+}
+
+.nuit p {
+  color: white;
+}
+
+.nuit nav li{
+   border: 2px white solid;
+   color: white; 
 }
 
 .nuit a:visited{
@@ -111,14 +120,86 @@ a:visited{
 .nuit a{
   color: white;
 }
+
+.nuit button {
+  color: white;
+}
+
+.nuit button i{
+  color: white;
+}
+
+
+
+/* TITRAGE et boutons généraux */
+h1{
+  text-align: center;
+  align-items: center;
+  font-family: "lostgun";
+  position: absolute;
+  margin-left: 30vw;
+  margin-top: 15vw;
+  align-items: center;
+  font-size: 8vw;
+  z-index: 3;
+}
+
+h2{
+  position: absolute;
+  margin-left:10vw;
+  font-size: 8vw;
+  font-family: lostgun;
+  z-index: 3;
+}
+
+p{
+  font-family: "Source Sans 3",sans-serif;
+}
+
+button{
+  border-style: none;
+  background-color: transparent;
+}
+
+
+
+
+/* ACCUEIL **/
+
+#accueil img{
+  filter: grayscale(1);
+}
+
+#accueil img:hover{
+  filter: grayscale(0);
+}
+
+#acpic {
+  display: flex;
+  margin-left: -4vw;
+  margin-top: 10vh;
+  margin-right: 10vw;
+  width: 65vw;
+  /* border: 1px solid blue;*/
+  height: 100vh;
+  justify-content: space-between;
+}
+
+
+
+
 /*CONTENEUR*/
 
 .conteneur{
   display: flex;
-	margin-top: 20vh;
-	width: 95vw;
-	height: 90vh;
+  margin-top: 20vh;
+  width: 95vw;
+  height: 90vh;
 }
+
+
+
+/* PAGE PROJET */
 
 #fleche{
   margin-top: 2vw;
@@ -134,78 +215,8 @@ a:visited{
     right: -1vw;
 }
 
-h1{
-  position: absolute;
-	margin-left: 30vw;
-	margin-top: 15vw;
-	align-items: center;
-	font-size: 8vw;
-  z-index: 3;
-}
 
 
-h2{
-  position: absolute;
-  margin-left:10vw;
-  font-size: 8vw;
-  font-family: lostgun;
-  z-index: 3;
-}
-
-
-
-
-.nuit {
-  background-color: black;
-  color: white;
-  border-color: white;
-  transition: background-color 0.5s ease-out;
-  transition: color 0.5 ease-out;
-}
-
-
-
-
-#carnet{
-  margin-top: -10vh;
-  margin-left: 40vw;
-}
-
-#voyage{
-  margin-top: -30vh;
-  margin-left: 10vw;
-}
-
-#affiche{
-  margin-top: -60vh;
-  margin-left: 30vw;
-}
-
-#tshirt{
-  margin-top: -50vh;
-  margin-left: -90vw;
-}
-
-
-
-.nuit button {
-  color: white;
-}
-
-#theme{
-  border-style: none;
-  background-color: none;
-
-}
-
-button{
-  border-style: none;
-  background-color: transparent;
-}
-
-#theme:hover{
-  background-color: transparent;
-}
 
 #carnetxt{
   display: flex;
@@ -217,14 +228,15 @@ button{
   display: flex;
   width: 90vw;
   height: 40vh;
-  margin-top: 5vh;
+  margin-top: 30vh;
 }
 
 #pcarnet1{
-  margin-top: 20vw;
+  margin-top: 15vw;
   margin-left: 10vw;
-  width: 30vw;
+  width: 40vw;
   height: 30vh;
+  margin-bottom: 10vh;
 }
 
 
@@ -233,27 +245,24 @@ button{
   margin-top: 20vw;
   width: 20vw;
   height: 20vh;
-  font-size: 1.5vw;
+  font-size: 1.5em;
   color:black;
 }
 
 #pcarnet2{
-  margin-top: 6vw;
   margin-left: 10vw;
   width: 15vw;
   height: 30vh;
+  font-size: 1.5em;
 }
 
 #textec2{
-  margin-top: 6vw;
+  margin-left:20vw;
   width: 20vw;
   height: 20vh;
-  font-size: 1.5vw;
+  font-size: 1.5em;
 }
 
-p{
-  font-family: "Source Sans 3",sans-serif;
-}
 
 #galpic {
   display: flex;
@@ -274,29 +283,26 @@ p{
 #col2 {
   width : 20vw;
   height: 20vh ;
+  margin-left: 60px;
   /*border: 1px solid red*/
 }
-#col3 {
-  width : 20vw;
-  height: 20vh ;
-  /*border: 1px solid red;*/
-}
 
-
-/*.container .music-container{
-  display: flex;
-  align-items: center;
-  flex-flow: columns;
-}
-
-.container .music-container .music{
-  display: flex;
-
-}*/
 
 .imgh{
   margin-bottom: 4vh;
 }
+
+.imga{
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#faiza{
+  margin-left: 40px;
+  margin-top: 200px;
+  margin-bottom: 120px;
+}
+
 
 
 #galpic img:hover{
@@ -314,11 +320,6 @@ p{
 }
 
 /*SECTION MUSIQUE*/
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 .main{
     margin-top: 60vh;
@@ -328,10 +329,10 @@ p{
     height: 60vh;
     width: 40vw;
     display: flex;
-    align-items: center;
+    color: black;
     flex-direction: column;
     border-radius: 20px;
-    /*background: linear-gradient85o bottom right,grey,white);*/
+    background: transparent;
 
   }
 
@@ -344,6 +345,9 @@ p{
   font-size: 1.5em;
 }
 
+.nuit h3{
+  color: white;
+}
 
 /*tracks part*/
 .tracks{
@@ -379,7 +383,7 @@ p{
 .tracks .song .song_info p:nth-child(2){
   font-size: 0.8em;
   margin-top: 10px;
-  color: rgba(255,255,255,0.5);
+  color: grey;
 }
 .tracks .song  #play_btn{
   height: 50px;
@@ -392,7 +396,7 @@ p{
   border-radius: 50%;
   cursor: pointer;
   background: none;
-  color: #fff;
+  color: black;
   
 }
 .tracks .song button i{
@@ -402,8 +406,8 @@ p{
       margin-top: 15px;
 }
 .tracks .song .img{
-  height: 70px;
-  width: 80px;
+  height: 120px;
+  width: 170px;
   overflow: hidden;
   border-radius: 15px;
 }
@@ -413,7 +417,9 @@ p{
   object-fit: cover;
 }
 
-
+.nuit button i{
+  color: white;
+}
 
 /*controlls part*/
 .controlls{
@@ -456,7 +462,7 @@ p{
   margin: 0 0.5em;
   transition: 0.5s;
   border-radius: 50%;
-  background: grey;
+  background: transparent;
 }
 .controlls_btns button:hover{ 
   /*box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
@@ -545,8 +551,8 @@ background: rgba(255,255,255,0.1);
 }
 .popup_music_player .song_img{
 margin-top: 2em;
-height: 200px;
-width: 200px;
+height: 180px;
+width: 120px;
 border-radius: 50%;
 overflow: hidden;
 /*box-shadow: inset 5px 5px 5px rgba(0,0,0,0.2),
@@ -780,3 +786,75 @@ overflow: hidden;
     transform: translate3d(var(--move-final), 0, 0);
   }
 }
+
+
+/* PAGES PROJETS SLIDER */
+
+.carousel-wrapper {
+  height: 400px;
+  position: relative;
+  width: 600px;
+  display: block;
+  margin: 50px auto ;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 50px;
+  opacity: 0;
+  scale: 0.5;
+  transition: all 0.5s ease-in-out;
+}
+.arrow{
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 12px;
+}
+.arrow-prev {
+  left: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+
+}
+.arrow-next {
+  right: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+[id^= "item"] {
+  display: none;
+}
+.item-1 {
+  z-index: 2;
+  opacity: 1;
+  background: url('import/cat1.png');
+  background-size: cover;
+}
+.item-2 {
+  background: url('import/cat2.png');
+  background-size: cover;
+}
+.item-3 {
+  background: url('img3.jpg');
+  background-size: cover;
+}
+
+*:target ~ .item-1{
+  opacity: 0;
+}
+#item-1:target ~ .item-1 {
+  opacity: 1;
+
+}
+#item-2:target ~ .item-2, #item-3:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+} 
