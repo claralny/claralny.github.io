@@ -197,8 +197,20 @@ button{
   justify-content: space-between;
 }
 
+#galerie2{
+  display: flex;
+}
 
+#txtgal1{
+  width: 40vw;
+  font-size: 1.5em;
+  margin-left: -10vw;
+  margin-top: 25vh;
+  font-family: sans-serif;
+  line-height: 1.2em;
+  font-weight: 200;
 
+}
 
 /*CONTENEUR*/
 
@@ -209,6 +221,10 @@ button{
   height: 90vh;
 }
 
+#pdp{
+  margin-left: 5vw;
+  margin-top: 10vh;
+}
 
 
 /* PAGE PROJET */
