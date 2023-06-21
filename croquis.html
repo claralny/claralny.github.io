@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Custom Slider</title>
+    <title>CARNET DE CROQUIS</title>
     <link rel="stylesheet" type="text/css" href="style/reset.css">
     <link rel="stylesheet" href="style/style.css">
     <link rel="shortcut icon" href="import/pdp1.png"/>
@@ -44,19 +44,19 @@
 
           <div class="slide-container">
             <div class="custom-slider fade">
-              <img class="slide-img" src="import/croquis1.png">
+              <img class="slide-img" src="import/cro1.png">
             </div>
 
             <div class="custom-slider fade">
-              <img class="slide-img" src="import/croquis2.png">
+              <img class="slide-img" src="import/cro2.png">
             </div>
 
             <div class="custom-slider fade">
-              <img class="slide-img" src="https://www.codeur.com/tuto/wp-content/uploads/2021/12/slide3.jpg">
+              <img class="slide-img" src="import/cro3.png">
             </div>
 
             <div class="custom-slider fade">
-              <img class="slide-img" src="https://www.codeur.com/tuto/wp-content/uploads/2021/12/slide3.jpg">
+              <img class="slide-img" src="import/cro4.png">
             </div>
 
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -87,7 +87,7 @@
         </article>
 
         <aside id="slider2">
-          <img src="import/cat1.png">
+          <img src="import/croquis3.png">
         </aside>
       </section>
 
@@ -123,6 +123,14 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 </script>
+
+<!-- SCRIPT JS POUR ACTIVER LE MODE SOMBRE-->
+  <script>
+      function myFunction() {
+      var element = document.body;
+      element.classList.toggle("nuit");
+    }
+  </script>
   </body>
 </html>
 
