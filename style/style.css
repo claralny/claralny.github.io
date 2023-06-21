@@ -144,6 +144,18 @@ h1{
   z-index: 3;
 }
 
+#projetxt h2{
+  position: absolute;
+  margin-left:10vw;
+  font-size: 8vw;
+  font-family: lostgun;
+  z-index: 3;
+  margin-top: -10vh;
+}
+
+
+
+
 h2{
   position: absolute;
   margin-left:10vw;
@@ -192,7 +204,7 @@ button{
 
 .conteneur{
   display: flex;
-  margin-top: 20vh;
+  margin-top: 15vh;
   width: 95vw;
   height: 90vh;
 }
@@ -201,8 +213,10 @@ button{
 
 /* PAGE PROJET */
 
+
 #fleche{
-  margin-top: 2vw;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
   left: 4vw;
   width: 90vw;
   height: auto;
@@ -224,10 +238,12 @@ button{
   margin-top: 15vh;
 }
 
-
+footer{
+  height: 25vh;
+}
 
 #slider1{
-  margin-top: 15vw;
+  margin-top: 20vh;
   margin-left: 10vw;
   width: 40vw;
   height: 30vh;
@@ -236,7 +252,7 @@ button{
 
 
 #textec1{
-  margin-top: 20vw;
+  margin-top: 25vh;
   width: 20vw;
   height: 20vh;
   font-size: 1.5em;

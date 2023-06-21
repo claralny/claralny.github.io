@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>PORTFOLIO</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="style/reset.css">
-  <link rel="stylesheet" type="text/css" href="style/style.css">
-</head>
-<body>
+  <head>
+    <title>CUSTOM</title>
+    <link rel="stylesheet" type="text/css" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+  </head>
+  <body>
 
-
-  <!--LOGO ET MENU FIXE-->
+     <!--LOGO ET MENU FIXE-->
   <header>
     <div id="logo">
       <a href="index.html">Clara Launay</a>
@@ -22,62 +19,115 @@
         <li><a href="menu.html">Projets</a></li>
         <li><a href="galerie.html">Galerie</a></li>
         <li id="theme"><button onclick="myFunction()">☼</button></li> 
-
-        <!--utiliser un if pour changer le soleil-->
       </ul>
     </nav>
   </header>
-
-
-  <!--PAGE PRINCIPALE-->
-
+    <!--PAGE PRINCIPALE-->
   <main class="conteneur">
 
-
+    <!-- SECTION QUI PERMET D'ACCÉDER AUX PROJETS ADJACENTS -->
     <section id="projet">
       <div id="fleche">
             <a href="affiche.html"><p id="precedent"> ⟵ <br> projet précédent </p></a>
-            <a href="photos.html"><p id="suivant"> ⟶ <br> projet suivant </p> </a>
+            <a href="voyage.html"><p id="suivant"> ⟶ <br> projet suivant </p> </a>
       </div>
 
-      <section id="carnetxt">
+
+      <!-- SECTION TITRE, TEXTE ET PHOTOS DU PROJET -->
+      <section id="projetxt">
         <h2>
-         Custom
-      </h2>
-        <aside id="pcarnet1">
-          <img src="import/tshirt1.png">
+          Custom
+        </h2>
+        <aside id="slider1">
+
+          <div class="slide-container">
+            <div class="custom-slider fade">
+              <img class="slide-img" src="import/tshirt.png">
+            </div>
+
+            <div class="custom-slider fade">
+              <img class="slide-img" src="import/cat1.png">
+            </div>
+
+            <div class="custom-slider fade">
+              <img class="slide-img" src="import/cat2.png">
+            </div>
+
+            <div class="custom-slider fade">
+              <img class="slide-img" src="import/cat3.png">
+            </div>
+
+
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div class="slide-dot">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+              <span class="dot" onclick="currentSlide(4)"></span> 
+            </div>
+
+          </div>
         </aside>
 
-        <article id="textec1">
+    <article id="textec1">
           <p> Ce projet entre dans une pratique personnelle.<br>
           Il consiste à customiser des tshirts vierges afin de créer une "collection" à mon image.</p>
         </article>
       </section>
 
 
-      <section id="carnetxt2">
-        <article id="pcarnet2">
+      <section id="projetxt2">
+        <article id="textec2">
           <p>Chacun des vêtements présentés ont été personnalisés à la main, grâce à l'utilisation de peinture textile sous forme de pot ou de bombe.</p>
         </article>
 
-        <aside id="textec2">
-          <img src="import/carnet22.png">
+        <aside id="slider2">
+          <img src="import/cat1.png">
         </aside>
       </section>
-    </section>
-
-
-     
-    
 
     </section>
 
   </main>
-</body>
-<script>
+
+    <script>
+      var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("custom-slider");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<!-- SCRIPT JS POUR ACTIVER LE MODE SOMBRE-->
+  <script>
       function myFunction() {
       var element = document.body;
       element.classList.toggle("nuit");
     }
   </script>
+  </body>
 </html>
