@@ -1,90 +1,277 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Clara Launay</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="style/reset.css">
-  <link rel="stylesheet" type="text/css" href="style/style.css">
-  <link rel="shortcut icon" href="import/pdp1.png"/>
-</head>
-<body>
+<html lang="fr">
+
+	<head>
+
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	  <title>PORTFOLIO2CLARA</title>
+
+	  <link href="style/reset.css" rel="stylesheet">
+	  <link href="style/style.css" rel="stylesheet">
+
+	  <script src="script.js"></script>  <script src="main.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+
+	</head>
+
+	<body>
+	
+
+	<!--HEADER - NAV - LOGO -->
+
+	  <header class="menu">
+
+		  <div class="menu--button container button">
+		  	<a href="index.html"><img src="import/logo.png"></a>
+		    <img src="import/plus.svg">
+		  </div>
+
+		  <!-- MENU -->
+		  <nav class="menu--nav">
+		      <div class="nav--item container" data-dest="projects" style="transition: all 0.5s 0s;">
+		       	<span>PROJETS</span>
+		      </div>
+
+		      
+	        <a class="nav--item container" href="galerie.html">
+	          <span>GALERIE</span>
+	        </a>
+
+	        <a class="nav--item container" href="apropos.html">
+	          <span>A PROPOS</span>
+	        </a>
+		  </nav>
+
+		</header>
 
 
-  <!--LOGO ET MENU FIXE-->
-  <header>
 
-     <div id="logo">       
-     </div>
+		<!--SECTION ACCUEIL-->
+	  <div class="scroll--wrapper"> <!--class pour scroller sur le côté-->
 
-    <nav>
-      <ul>
-        <li ><a href="about.html">About</a></li>
-        <li ><a href="contact.html">Contact</a></li>
-        <li ><a href="menu.html">Projets</a></li>
-        <li ><a href="galerie.html">Galerie</a></li>
-        <li id="theme"><button onclick="myFunction()">☼</button></li> 
-      </ul>
-    </nav>
+	    <div class="wrapper">
 
-  </header>
+	    	<section class="home">
 
+					<div class="container">
 
-  <!--PAGE PRINCIPALE-->
-    <section id="accueil">
+						<!-- MESSAGE DE BIENVENUE -->
+						<div class="welcometxt">
+							<h1>CLARA LAUNAY - PORTFOLIO</h1>
+							<p class="instruction">(clique sur les projets pour les faire disparaitre)</p>
+						</div>
 
-      <h1>
-          Clara Launay
-      </h1>
+							<!-- MULTITUDE D'IMAGES QUI DONNENT UN AVANT GOUT DE MES PROJETS-->
+								<div class="gallery">
 
-      <div id="acpic">
+									<div class="block block-1"><img src="import/cla.png" alt="peinture de jeune fille de profil avec un tatouage de dragon sur sa main"></div>
+									<div class="block block-2"><img src="import/ds2.png" alt="photo de la console nintendo ds"></div>
+									<div class="block block-11"><img src="import/circles.png" alt="dessin vectoriel avec plusieurs lignes en forme de O dans des couleurs roses, violettes et bleues" ></div>
+									<div class="block block-3"><img src="import/graf1.png" alt="graffi typographique noir et dessin à l'aquarelle d'un punk bleu qui fume de profil"></div>
+									<div class="block block-4"><img src="import/star.png" alt="dessin multi-techniques de la chaussure 'superstar' d'adidas"></div>
+									<div class="block block-5"><img src="import/blur.png" alt="dessin style fisheye du groupe de rock blur, tons bleutés et foncés"></div>
+									<div class="block block-6"><img src="import/manon.png" alt="photo de jeune fille aux cheveux bouclés et aux yeux bleus dans une ambiance bleutée"></div>
+									<div class="block block-10"><img src="import/riso2.png" alt="photo zoomée d'un petit manuel de risographie rose flashy et violet sur fond d'un poster de même couleur"></div>
+									<div class="block block-13"><img src="import/punk.png" alt="dessin à l'aquarelle d'un punk aux lunettes de soleil"></div>
+									
+								</div>
 
-        <div id="col1">
-            <a href="portraits.html"><img src="import/manon2.png" alt="image de paysage en noir et blanc"></a>
-            <a href="voyage.html"><img src="import/voyage.png" alt="image de carnet ouvert"></a>
-            
-        </div>
-
-        <div id="col2">
-             <a href="packshot.html"><img src="import/ds3.png" alt="image de grande affiche jaune verticale avec un personnage qui occupe toute la longueur et du texte"></a>
-             
-        </div>
-
-        <div id="col2">
-             <a href="carnet.html"><img src="import/carnetttt.png" alt="image de grande affiche jaune verticale avec un personnage qui occupe toute la longueur et du texte"></a>
-             <a href="affiche.html"><img src="import/afficheto.png" alt="grande affiche jaune verticale avec un personnage qui occupe toute la longueur et du texte"></a>
-        </div>
-          
-        <div id="col2">
-             <a href="tshirt.html"><img class="imga" src="import/tshirt.png" alt="image de tshirt qui transmet le message fuck society's idea of beauty"></a>
-             <a href="croquis.html"><img class="imga" src="import/croquis1.png" alt="image de carnet ouvert"></a>
-         
-        </div>
-
-        <div id="col2">
-             <a href="portraits.html"><img id="faiza"
-              src="import/faiza3.png" alt="photo d'une jeune femme aux cheveux bruns"></a>
-             <a href="carnet.html"><img 
-              src="import/c1.png" alt="image de grande affiche jaune verticale avec un personnage qui occupe toute la longueur et du texte"></a>
-             
-         
-        </div>
-      </div>
+				</section>
 
 
-    </section>
+
+			<!--SECTION PROJETS-->
+			<section class="projets">
+							
+							<!-- FICHE PROJET CATALOGUE D'ARTISTE -->
+							<a class="ficheprojet" href="catalogue.html" data-dest="projects">
+
+								<div class="projetinfo container">
+									<h2 >CATALOGUE D'ARTISTE</h2>
+									<h3 class="projetdomaine">édition</h3>
+								</div>
+
+								<div class="projetimage container">
+										<img src="import/artcat2.jpg" alt="image de catalogue ouvert avec le visage peint d'une femme, tatouage à la main, faisant face au visage au crayon de papier d'un homme">
+								</div>
+
+							</a>
+
+					
+							<!-- FICHE PROJET TIMBRE -->
+							<a class="ficheprojet" href="timbre.html">
+
+								<div class="projetinfo container">
+									<h2 class="preview--title">WHERE IF NOT ON EARTH</h2>
+									<h3 class="projetdomaine">animation et print</h3>
+								</div>
+
+								<div class="projetimage container">
+										<img src="import/timbre7.png" alt="image de planche avec plusieurs rectangles qui représentent une scène animée, ciel dégradé bleu noir">
+								</div>
+
+							</a>
+
+					
+							<!-- FICHE PROJET RISOGRAPHIE -->
+							<a class="ficheprojet" href="riso.html">
+								<div class="projetinfo container">
+									<h2 class="preview--title">LA RISO ???</h2>
+									<h3 class="projetdomaine">print</h3>
+								</div>
+								<div class="projetimage container">
+										<img src="import/riso.jpg" alt="zoom sur un poster rose flashy et violet imprimé en risographie">
+								</div>
+							</a>
 
 
-   <!-- SCRIPT JS POUR ACTIVER LE MODE SOMBRE -->
-   <script>
-        function myFunction() {
-        var element = document.body;
-        element.classList.toggle("nuit");
-        $("#theme").html("♥");
-      }
+					
+							<!-- FICHE PROJET GEOVELO -->
+							<a class="ficheprojet" href="geovelo.html">
 
-  </script> 
+								<div class="projetinfo container">
+									<h2 class="preview--title">GEOVELO</h2>
+									<h3 class="projetdomaine">ui-ux design</h3>
+								</div>
 
-</body>
+								<div class="projetimage container">
+										<img src="import/geovelo.jpg" alt="photo d'un téléphone sur l'interface d'une application de velo">
+								</div>
+
+							</a>
+
+					
+							<!-- FICHE PROJET VOYAGE AU BOUT DE LA RUE -->
+							<a class="ficheprojet" href="voyage.html">
+
+								<div class="projetinfo container">
+									<h2 class="preview--title">VOYAGE AU BOUT DE LA RUE</h2>
+									<h3 class="projetdomaine">photographie</h3>
+								</div>
+
+								<div class="projetimage container">
+									<img src="import/voyage1.png" alt="photo de l'axe majeur de cergy, tour belvedère">
+								</div>
+
+							</a>
+
+					
+							<!-- FICHE PROJET L'ENFANT ET LES SORTILEGES -->
+							<a class="ficheprojet" href="enfant.html">
+
+								<div class="projetinfo container">
+									<h2 class="preview--title">L'ENFANT ET LES SORTILEGES</h2>
+									<h3 class="projetdomaine">animation</h3>
+								</div>
+
+								<div class="projetimage container">
+										<img src="import/enfant.png"
+										alt="photo du spectacle l'enfant et les sortilèges du conservatoire à rayonnement régional de boulogne, dame en premier plan et écran et chaises en fond">
+								</div>
+
+							</a>
+
+					
+							<!-- PORTRAITS -->
+							<a class="ficheprojet" href="portraits">
+
+								<div class="projetinfo container">
+									<h2 class="preview--title">PORTRAITS</h2>
+									<h3 class="projetdomaine">photographie</h3>
+								</div>
+
+								<div class="projetimage container">
+										<img src="import/manon.png" alt="photo de jeune fille aux cheveux bouclés et aux yeux bleus dans une ambiance bleutée">
+								</div>
+
+							</a>
+
+
+							<!-- FICHE PROJET MATTHIEU 667 -->
+							<a class="ficheprojet" href="">
+
+								<div class="projetinfo container">
+									<h2 class="preview--title">MATTHIEU 667</h2>
+									<h3 class="projetdomaine">photographie</h3>
+								</div>
+
+								<div class="projetimage container">
+										<img src="import/667mat.jpg" alt="zoom sur les bras d'un jeune homme sur fond de bitume, de graffiti blanc et de skateboard">
+								</div>
+
+							</a>
+
+			</section>	
+		</div>
+
+
+	<!-- SCRIPT POUR EXPLOSER LES IMAGES -->
+		<script>
+
+			function onMouseMove(e){
+				gsap.to(cursor,0.0125, {
+					x: e.pageX - 5,
+					y: e.pageY - 5, 
+				});
+			} 
+
+			let blocks = document.querySelectorAll(".block");
+			let duration = 0.25;
+			let stagger = duration;
+			let repeatDelay = 0.075 * (blocks.length - 1);
+
+			gsap.from(".block", 5, {
+				scale: 0,
+				top: "50%",
+				left: "50%",
+				transform: "translateZ(-200px)",
+				stagger : {
+					each: duration,
+					repeat: -1,
+					repeatDelay: repeatDelay,
+				},
+			});
+
+			let previousGif = null;
+
+			blocks.forEach((block) => {
+				block.addEventListener("click", (event) => {
+
+					const x = event.clientX;
+					const y = event.clientY;
+
+					if(previousGif) {
+						previousGif.remove();
+					}
+
+					const gif = document.createElement("img");
+					gif.src = "import/explosion.gif";
+					gif.style.position = "absolute";
+					gif.style.left = `${x-10}px`;
+					gif.style.top = `${y - 10}px`;
+					gif.style.transform = `scale(2.5)`;
+					gif.style.pointerEvents = "none";
+
+					document.body.appendChild(gif);
+
+					setTimeout(() => {
+						gif.src = "";
+
+					},500);
+
+					previousGif = gif;
+
+					block.style.display = "none";
+					setTimeout(() => {
+						block.style.display = "block";
+					},5000);
+				});
+				
+			});
+
+		</script>
+
+	</body>
 
 </html>

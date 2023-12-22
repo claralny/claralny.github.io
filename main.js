@@ -1,198 +1,507 @@
+var mobile = false;
+var touch = false;
 
-let btn = document.querySelectorAll('.song #play_btn');
-let song = document.querySelectorAll('#music');
+var tilt = false;
+var tiltChecked = false;
+var tiltVal = -1;
 
-/*popup music player part*/
-let p_m_player = document.querySelector('.popup_music_player');
-let down_player = document.querySelector('#down_player');
-let current_track_name = document.querySelector('#current_track_name');
-let current_singer_name = document.querySelector('#current_singer_name');
-let song_img = document.querySelector('.song_img');
+// var root = "/beta/hervisions";
+var root = "";
 
-/*controlls part*/
-let play_pause_btn = document.querySelector('#play_pause_btn');
-let slider = document.querySelector('#slider');
-let forward_btn = document.querySelector('#forward_btn');
-let backward_btn = document.querySelector('#backward_btn');
+var current_page = "/";
+var about_open = false;
+var project_solo = false;
+var project_open = false;
+var project_quick = false;
+var menu_open = false;
+var shop_open = false;
+var home_pos = 0;
+var shop_pos = 0;
 
-/*songs duration*/
-let current_duration = document.querySelector('.controlls .progress_part #current_duration');
-let total_duration = document.querySelector('.controlls .progress_part #total_duration');
+var auto_open = false;
 
-/*small music player part*/
-let s_m_player = document.querySelector('.small_music_player');
-let playing_img = document.querySelector('.playing_img');
-let wave_animation = document.querySelector('.wave_animation');
-let up_player = document.querySelector('#up_player');
-let song_name = document.querySelector('#song_name');
-let artist_name = document.querySelector('#artist_name');
+$(document).ready(function () {
+  if ("ontouchstart" in document.documentElement) {
+    touch = true;
+    $("body").addClass("touch");
+  }
+  if (window.innerWidth < 800) {
+    mobile = true;
+  }
 
+  initListeners();
 
-/*default values*/
-let is_song_played = false;
-let song_status = false;
-let index_no = 0;
-
-
-btn.forEach((btn,index) => {
-  btn.addEventListener('click', function(){
-
-    s_m_player.style.transform = 'translateY(0px)';
-    
-    if (index != index_no) {
-      song_status = false;
-    }
-    
-    index_no = index;
-
-    song[index].currentTime = 0;
-
-    if (song_status == false) {
-      play_song();
-    }else{
-      pause_song();  
-    }
-
+  $(".marquee").marquee({
+    duration: 20000,
+    gap: 25,
+    delayBeforeStart: 0,
+    direction: "left",
+    duplicated: true,
+    startVisible: true,
   });
 });
 
+function initListeners() {
+  $("body").click(function () {
+    $(".logo")[0].play();
+  });
 
-/*pause song*/
-function pause_song(){
-  song[index_no].pause();
-  song_status = false;
-  clearInterval(update_second);
-  wave_animation.style.opacity = '0';
-  play_pause_btn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
-}
+  $(".tilt--prompt").click(function () {
+    testDeviceOrientation();
+  });
 
+  $(window).focus(function () {
+    $(".logo")[0].play();
+  });
 
-/*This function will update every 1s*/
- function update_second(){
+  $(window).on("resize", resizeHandler);
 
-    let position = 0;
+  if (!touch) {
+    $(".nav--info").hover(
+      function () {
+        $("canvas").addClass("blur");
+      },
+      function () {
+        $("canvas").removeClass("blur");
+      }
+    );
+  } else {
+    $(window).scroll(function () {});
+  }
 
-    // update slider position
-    if(!isNaN(song[index_no].duration)){
-       position = song[index_no].currentTime * (100 / song[index_no].duration);
-       slider.value =  position;
+  $(window).scroll(function () {
+    var s = $(window).scrollTop();
+    if (!about_open && !project_open && !shop_open) {
+      $(".scroll--wrapper").scrollLeft(s);
+      if (s > window.innerWidth - 200) {
+        window.history.pushState("", root + "/projects", root + "/projects");
+        $(".nav--item[data-dest='projects']").addClass("selected");
+        $("body").addClass("projects--open");
+      } else {
+        window.history.pushState("", root + "/", root + "/");
+        $(".nav--item[data-dest='projects']").removeClass("selected");
+        $("body").removeClass("projects--open");
+      }
+      $(".project--preview video").each(function (index) {
+        var l = $(this).offset().left;
+        if (l < window.innerWidth && l > -$(this).width()) {
+          if ($(this)[0].paused) {
+            $(this)[0].play();
+          }
+        } else {
+          if (!$(this)[0].paused) {
+            $(this)[0].pause();
+          }
         }
-
-    let durationMinutes = Math.floor(song[index_no].duration / 60);
-    let durationSeconds = Math.floor(song[index_no].duration - durationMinutes * 60);
-    total_duration.textContent = durationMinutes + ":" + durationSeconds;
-
-    // Calculate the time left and the total duration
-    let curr_minutes = Math.floor(song[index_no].currentTime / 60);
-    let curr_seconds = Math.floor(song[index_no].currentTime - curr_minutes * 60);
- 
-    // Add a zero to the single digit time values
-    if (curr_seconds < 10) { curr_seconds = "0" + curr_seconds; }
-    if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
- 
-    // Display the updated duration
-    current_duration.textContent = curr_minutes + ":" + curr_seconds;
-
-       
-// function will run when the song is over
-  if (song[index_no].ended) {
-      clearInterval(update_second);
-      wave_animation.style.opacity = '0';
-      play_pause_btn.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+      });
+    } else if (project_open) {
+      $(".project").scrollLeft(s);
+      $(".project video").each(function (index) {
+        var l = $(this).offset().left;
+        if (l < window.innerWidth && l > -$(this).width()) {
+          if ($(this)[0].paused) {
+            $(this)[0].play();
+          }
+        } else {
+          if (!$(this)[0].paused) {
+            $(this)[0].pause();
+          }
+        }
+      });
+    } else if (shop_open) {
+      $(".shop").scrollLeft(s);
     }
- }
- 
-
-/*show popup music player */
-up_player.addEventListener('click', function(){
-   p_m_player.style.transform = 'translateY(0%)';
-});
-
-
-/* Hide popup music player */
-down_player.addEventListener('click', function(){
-   p_m_player.style.transform = 'translateY(110%)';
-});
-
-
-/*play pause btn inside the popup Music player*/
-play_pause_btn.addEventListener('click', function(){
-    if (song_status == false) {
-      song[index_no].play();
-      song_status = true;
-      wave_animation.style.opacity = '1';
-      this.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
-    }else{
-      song[index_no].pause();
-      song_status = false;
-      wave_animation.style.opacity = '0';
-      this.innerHTML = '<i class="fa fa-play" aria-hidden="true"></i>';
+    if (s >= $("body")[0].scrollHeight - window.innerHeight && !mobile) {
+      auto_open = true;
+      openMenu();
+    } else if (auto_open) {
+      auto_open = false;
+      closeMenu();
     }
-});
+  });
 
+  $(".scroll--wrapper").scroll(function () {
+    if (touch) {
+      var s = $(this).scrollLeft();
+      if (s > window.innerWidth - 100) {
+        window.history.pushState("", root + "/projects", root + "/projects");
+        $(".nav--item[data-dest='projects']").addClass("selected");
+        $("body").addClass("projects--open");
+      } else {
+        window.history.pushState("", root + "/", root + "/");
+        $(".nav--item[data-dest='projects']").removeClass("selected");
+        $("body").removeClass("projects--open");
+      }
+      $(".project--preview video").each(function (index) {
+        var l = $(this).offset().left;
+        if (l < window.innerWidth && l > -$(this).width()) {
+          if ($(this)[0].paused) {
+            $(this)[0].play();
+          }
+        } else {
+          if (!$(this)[0].paused) {
+            $(this)[0].pause();
+          }
+        }
+      });
+      if (
+        s >=
+        $(".scroll--wrapper")[0].scrollWidth -
+          window.innerHeight +
+          $(".menu").width()
+      ) {
+        auto_open = true;
+        openMenu();
+      } else if (auto_open) {
+        auto_open = false;
+        closeMenu();
+      }
+    }
+  });
 
-// change slider position 
-function change_duration(){
-  slider_position = song[index_no].duration * (slider.value / 100);
-  song[index_no].currentTime = slider_position;
+  $(".project").scroll(function () {
+    if (touch) {
+      var s = $(this).scrollLeft();
+      $(".project video").each(function (index) {
+        var l = $(this).offset().left;
+        if (l < window.innerWidth && l > -$(this).width()) {
+          if ($(this)[0].paused) {
+            $(this)[0].play();
+          }
+        } else {
+          if (!$(this)[0].paused) {
+            $(this)[0].pause();
+          }
+        }
+      });
+      if (
+        s >=
+        $(".project")[0].scrollWidth - window.innerHeight + $(".menu").width()
+      ) {
+        auto_open = true;
+        openMenu();
+      } else if (auto_open) {
+        auto_open = false;
+        closeMenu();
+      }
+    }
+  });
+
+  $(".menu--button").mousedown(function () {
+    if ($("body").hasClass("menu--open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  $(".nav--item").mousedown(function () {
+    var dest = $(this).attr("data-dest");
+    $(".nav--item").removeClass("selected");
+    $(this).addClass("selected");
+    navHandler(dest);
+  });
+
+  document.body.addEventListener(
+    "load",
+    function (event) {
+      var elm = event.target;
+      if (project_open) {
+        scrollHeight($(".project--wrapper"));
+      } else if (shop_open) {
+        scrollHeight($(".shop--wrapper"));
+      } else {
+        scrollHeight($(".wrapper"));
+      }
+    },
+    true // Capture event
+  );
+  document.body.addEventListener(
+    "loadedmetadata",
+    function (event) {
+      var elm = event.target;
+      if (project_open) {
+        scrollHeight($(".project--wrapper"));
+      } else if (shop_open) {
+        scrollHeight($(".shop--wrapper"));
+      } else {
+        scrollHeight($(".wrapper"));
+      }
+    },
+    true // Capture event
+  );
+
+  // PROJECTS
+  $(".project--preview").click(function (e) {
+    e.preventDefault();
+    home_pos = $(".scroll--wrapper").scrollLeft();
+    shop_pos = $(".shop").scrollLeft();
+    var dest = $(this).attr("data-dest");
+    projectHandler(dest);
+  });
+  $(".back--button").mousedown(function () {
+    if ($("body").hasClass("shop--open")) {
+      $(".nav--item[data-dest=shop]").addClass("selected");
+      navHandler("shop");
+    } else {
+      navHandler("projects");
+    }
+  });
+
+  window.addEventListener("deviceorientation", function (event) {
+    if (touch) {
+      tilt = true;
+      tiltVal = event.gamma;
+      if (tiltVal < -30) {
+        tiltVal = -30;
+      }
+      if (tiltVal > 30) {
+        tiltVal = 30;
+      }
+      tiltVal = tiltVal / 30 + 1;
+    }
+  });
+
+  hashHandler();
+  testDeviceOrientation();
 }
 
-
-/*forward btn (next)*/
-forward_btn.addEventListener('click', function(){
-   
-   index_no = index_no + 1;
-    if (index_no == All_song.length) {
-      index_no = 0;
+function navHandler(dest) {
+  if (dest == "projects") {
+    if (!project_open && !about_open && !shop_open) {
+      if (!touch && !mobile) {
+        $("body, html").animate({ scrollTop: window.innerWidth - 25 }, 700);
+      } else {
+        $(".scroll--wrapper").animate(
+          { scrollLeft: window.innerWidth - 15 },
+          700
+        );
+      }
+    } else {
+      closeProject();
+      scrollHeight($(".wrapper"));
+      if (!touch && !mobile) {
+        $("body, html").scrollTop(home_pos);
+        $(".scroll--wrapper").scrollLeft(home_pos);
+      } else {
+        $("body, html").scrollTop(home_pos);
+        $(".scroll--wrapper").scrollLeft(home_pos);
+      }
     }
-  
-    song[index_no].currentTime = 0;
-      play_song();
-
-  
-});
-
-
-/*backward btn (previous)*/
-backward_btn.addEventListener('click', function(){
-    
-    if (index_no == 0) {
-      index_no = All_song.length-1;
-    }else{
-      index_no = index_no -1;
+    if (!mobile) {
+      setTimeout(function () {
+        closeMenu();
+      }, 500);
+    } else {
+      closeMenu();
     }
+  }
 
-    song[index_no].currentTime = 0;
+  if (dest == "about") {
+    openAbout();
+    scrollHeight($(".about"));
+  } else {
+    closeAbout();
+  }
 
-    play_song();
-});
+  if (dest == "shop") {
+    closeProject();
+    scrollHeight($(".shop--wrapper"));
+    $("body, html").scrollTop(shop_pos);
+    $(".shop").scrollLeft(shop_pos);
+    openShop();
+  } else {
+    closeShop();
+  }
 
+  var url = dest;
+  current_page = url;
+  window.history.pushState("", root + "/" + url, root + "/" + url);
+}
 
-/*play function*/
-function play_song(){
-  song[index_no].play();
-  
-  if (is_song_played == true) {
-      document.querySelector(".active_song").pause();
-      document.querySelector(".active_song").classList.remove("active_song");
-  }else{
-        is_song_played = true;
+function projectHandler(dest) {
+  $(".project--wrapper").load(
+    root + "/" + dest + ".json",
+    function (response, status, xhr) {
+      if (status != "error") {
+        loadInstaEmbed();
+        var url = dest;
+        current_page = url;
+
+        project_open = true;
+        $("body").addClass("project--open");
+        scrollHeight($(".project--wrapper"));
+        projectListeners();
+        $("body, html").scrollTop(0);
+        $(".project").scrollLeft(0);
+        $(".nav--item").removeClass("selected");
+        closeMenu();
+        window.history.pushState({}, root + "/" + url, root + "/" + url);
+      } else {
+        alert("error");
+      }
     }
-    
-  song[index_no].classList.add("active_song");
+  );
+}
 
-  song_status = true;
-  setInterval(update_second, 1000);
-  wave_animation.style.opacity = '1';
-  p_m_player.style.transform = 'translateY(0%)';
+function closeProject() {
+  project_open = false;
+  $("body").removeClass("project--open");
+}
 
-  song_img.innerHTML = `<img src="${All_song[index_no].img}" />`;
-  playing_img.innerHTML = `<img src="${All_song[index_no].img}" />`;
+function projectListeners() {
+  $(".project--desc a").each(function () {
+    $(this).attr("target", "_blank");
+  });
+}
 
-  song_name.innerHTML = All_song[index_no].name;
-  artist_name.innerHTML = All_song[index_no].singer;
+function openShop() {
+  shop_open = true;
+  $("body").removeClass("project--open");
+  $("body").addClass("shop--open");
+  if (mobile) {
+    closeMenu();
+  }
+}
+function closeShop() {
+  shop_open = false;
+  $("body").removeClass("shop--open");
+}
 
-  current_track_name.innerHTML = All_song[index_no].name;
-  current_singer_name.innerHTML = All_song[index_no].singer;
-  play_pause_btn.innerHTML = '<i class="fa fa-pause" aria-hidden="true"></i>';
+function openAbout() {
+  about_open = true;
+  $("body").removeClass("project--open");
+  $("body").addClass("about--open");
+  if (mobile) {
+    closeMenu();
+  }
+}
+function closeAbout() {
+  about_open = false;
+  $("body").removeClass("about--open");
+}
+
+function openMenu() {
+  $("body").addClass("menu--open");
+  menu_open = true;
+}
+function closeMenu() {
+  $("body").removeClass("menu--open");
+  menu_open = false;
+}
+
+function scrollHeight(el) {
+  var h =
+    el.outerWidth() -
+    window.innerWidth +
+    window.innerHeight +
+    $(".menu").innerWidth();
+  $("body").css({ height: h + "px" });
+  el.css({ "margin-right": $(".menu").innerWidth() - 25 + "px" });
+  if (h + ($(".menu").innerWidth() - 25) <= window.innerWidth) {
+    openMenu();
+  }
+}
+
+function hashHandler() {
+  var hash = location.hash;
+  var path = location.pathname;
+
+  if (path.includes("projects/")) {
+    project_solo = true;
+    $(".project--wrapper").append($(".project--solo").children());
+    $(".project--solo").remove();
+    $("body").addClass("project--open");
+    project_open = true;
+    scrollHeight($(".project--wrapper"));
+    projectListeners();
+    loadInstaEmbed();
+  } else if (path.includes("shop/")) {
+    project_solo = true;
+    shop_open = true;
+    $(".project--wrapper").append($(".project--solo").children());
+    $(".project--solo").remove();
+    $("body").addClass("project--open");
+    project_open = true;
+    scrollHeight($(".project--wrapper"));
+    projectListeners();
+    loadInstaEmbed();
+  } else if (path == "/shop") {
+    $(".nav--item[data-dest=shop]").addClass("selected");
+    navHandler("shop");
+  } else if (path == "/about") {
+    $(".nav--item[data-dest=about]").addClass("selected");
+    navHandler("about");
+  } else {
+    scrollHeight($(".wrapper"));
+  }
+}
+
+function loadInstaEmbed() {
+  // $(".insta--embed").each(function(){
+  // 	var that = $(this);
+  // 	var url = $(this).attr('data-url');
+  // 	$.get('https://api.instagram.com/oembed/?url=' + url + '&omitscript=true', function( data ) {
+  // 	  that.append(data.html);
+  // 	  instgrm.Embeds.process();
+  // 	});
+  // });
+  if (window.instgrm.Embeds) {
+    window.instgrm.Embeds.process();
+  }
+}
+
+function resizeHandler() {
+  if (window.innerWidth < 800) {
+    mobile = true;
+  } else {
+    mobile = false;
+  }
+  if (project_open) {
+    scrollHeight($(".project--wrapper"));
+  } else {
+    scrollHeight($(".wrapper"));
+  }
+}
+
+function testDeviceOrientation() {
+  if (typeof DeviceOrientationEvent !== "function") {
+    $("body").addClass("notilt");
+    return setResult("No tilt");
+  }
+  if (typeof DeviceOrientationEvent.requestPermission !== "function") {
+    $("body").addClass("notilt");
+    return setResult("DeviceOrientationEvent.requestPermission not detected");
+  } else {
+    $(".menu").addClass("tilt--open");
+  }
+  DeviceOrientationEvent.requestPermission().then(function (result) {
+    $(".menu").removeClass("tilt--open");
+    if (result == "granted") {
+      tilt = true;
+      window.addEventListener("deviceorientation", function (event) {
+        tiltVal = event.gamma;
+        if (tiltVal < -30) {
+          tiltVal = -30;
+        }
+        if (tiltVal > 30) {
+          tiltVal = 30;
+        }
+        tiltVal = tiltVal / 30 + 1;
+      });
+    } else {
+      $("body").addClass("notilt");
+    }
+    return setResult(result);
+  });
+}
+
+function setResult(result) {
+  console.log(result);
+}
+
+function pad(n, width, z) {
+  z = z || "0";
+  n = n + "";
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }

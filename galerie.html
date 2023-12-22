@@ -1,107 +1,161 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>PORTFOLIO</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="style/reset.css">
-  <link rel="stylesheet" type="text/css" href="style/style.css">
-  <link rel="shortcut icon" href="import/pdp1.png"/>
+<html lang="fr">
 
+  <head>
 
-</head>
-<body>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+    <title>GALERIE</title>
 
-  <!--LOGO ET MENU FIXE-->
-  <header>
-    <div id="logo">
-      <a href="index.html">Clara Launay</a>
-    </div>
-    <nav>
-      <ul> 
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="menu.html">Projets</a></li>
-        <li><a href="galerie.html">Galerie</a></li>
-        <li id="theme"><button onclick="myFunction()">☼</button></li> 
+    <link href="style/reset.css" rel="stylesheet">
+    <link href="style/style.css" rel="stylesheet">
 
-        <!--utiliser un if pour changer le soleil-->
-      </ul>
-    </nav>
-  </header>
-
-
-  <!--PAGE PRINCIPALE-->
-  <main class="conteneur">
-
-
-    <!-- TITRE ET DESCRIPTION --> 
-    <section id="galerie">
-
-      <h2>
-        Galerie
-      </h2>
-
-      <div id="txtgal"> 
-        <p>Bienvenue dans ma galerie ! </br>
-          On y retrouve plusieurs projets personnels et scolaires </br>
-          reflétant mon univers visuel et les différents médiums que j’utilise. 
-        </p>
-      </div>
-
-
-      <!-- SECTION QUI RASSEMBLE LES IMAGES DE LA GALERIE -->
-      <div id="galpic">
-
-
-        <div id="col1">
-          <img class ="imgh" src="import/dream.png" alt="montage dans les tons violets/roses avec une femme la bouche ouverte en noir et blanc en premier plan">
-          <img class ="imgh"src="import/punk.png" alt="dessin à l'aquarelle d'un punk aux lunettes de soleil">
-          <img class ="imgh"src="import/morph.png" alt="montage de jeune fille qui se dédouble en noir et blanc ">
-          <img class ="imgh"src="import/cla.png" alt="dessin à l'aquarelle d'une jeune fille de profil, main sur la joue avec un tatouage dragon">
-          <img class ="imgh"src="import/mat1.png" alt="photo en noir et blanc d'un jeune homme avec un skate et un tshirt tête de mort">
-          <img class ="imgh" src="import/graf1.png" alt="graffi typographique noir et dessin à l'aquarelle d'un punk bleu qui fume de profil">
-          <img class ="imgh" src="import/dream2.png" alt="montage dans les tons violets/roses avec une femme allongée aux longs cheveux noirs et aux yeux fermés">
-        </div>
-
-        <div id="col2">
-          <img class = "imgh"src="import/star.png" alt="dessin multi-techniques de la chaussure 'superstar' d'adidas">
-          <img class ="imgh"src="import/blur.png" alt="dessin au marqueur façon fish-eye du groupe de musique blur (4 membres), couleurs sombres">
-          <img class ="imgh"src="import/guitar.png" alt="photo zoomée sur des mains qui tiennent une guitare et une image d'enimem en arrière-plan">
-          <img class ="imgh"src="import/circles.png" alt="dessin vectoriel avec plusieurs lignes en forme de O dans des couleurs roses, violettes et bleues">
-          <img class ="imgh"src="import/mat2.png" alt="photo en noir et blanc d'un jeune homme avec un skate et un tshirt tête de mort">
-          <img class ="imgh" src="import/mac.png" alt="montage dans les tons violets/roses avec une femme la bouche ouverte en noir et blanc en premier plan">
-          <img class ="imgh" src="import/anarchy.png" alt="dessin au marqueur noir du A anarchiste assemblé avec des armes à feu">
-        </div>
-
-        <div id="col2">
-          <img class = "imgh"src="import/val.png" alt="photo de jeune homme qui joue de la guitare dans une ambiance violette">
-          <img class ="imgh"src="import/main.png" alt="photo d'une main avec un tatouage d'une main façon robot dessus, ambiance lumineuse">
-          <img class ="imgh"src="import/tattoo.png" alt="dessin d'un tatouage triangulaire néo tribal qui contient les chiffres 667">
-          <img class ="imgh"src="import/playboi.png" alt="dessin au crayon de papier du rappeur playboi carti de profil">
-          <img class ="imgh"src="import/mat3.png" alt="photo en noir et blanc d'un jeune homme avec un skate et un tshirt tête de mort">
-          <img class ="imgh" src="import/graf2.png" alt="graffiti du chanteur sid vicious en violet, avec un graffiti typographique noir ">
-        </div>
-
-      </div>
+    <script src="script.js"></script>  <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
       
-    </section>
 
-  </main>
+  </head>
+
+  <body>
+    
+    <!--HEADER  - NAV - LOGO-->
+
+    <header class="menu">
+
+        <div class="menu--button container button">
+          <a href="index.html"><img src="import/logo.png"></a>
+          <img src="import/plus.svg">
+        </div>
+
+        <nav class="menu--nav">
+            <a class="nav--item container" href="projets.html">
+              <span>PROJETS</span>
+            </a>
+
+            <a class="nav--item container" href="galerie.html">
+              <span>GALERIE</span>
+            </a>
+
+            <a class="nav--item container" href="apropos.html">
+              <span>A PROPOS</span>
+            </a>
+        </nav>
+
+    </header>
 
 
-  <!-- SCRIPT JS POUR ACTIVER LE MODE SOMBRE-->
-  <script>
-      function myFunction() {
-      var element = document.body;
-      element.classList.toggle("nuit");
-    }
-  </script>
+    <!--SECTION PROJET (contenu)-->
 
-</body>
+    <div class="scroll--wrapper">
+
+      <div class="projetcontainer">
+
+        <section class="home">
+
+          <div class="projetcontenu">
+
+              <div class="projetinfo container">
+                <h2 class="preview--title">GALERIE</h2>
+                <h3 class="projetdomaine">de tout et de rien</h3>
+              </div>
+
+              <div class="projetimage container"> <!--deux class lui sont attribuée-->
+
+                  <article class ="photogalerie">
+
+                    <div class="galerieligne">
+
+                      <div class="galeriecadre">
+                        <img src="import/dream.png" alt="montage dans les tons violets/roses avec une femme la bouche ouverte en noir et blanc en premier plan">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/tattoo.png" alt="dessin d'un tatouage triangulaire néo tribal qui contient les chiffres 667">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/val.png" alt="photo de jeune homme qui joue de la guitare dans une ambiance violette">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/star.png" alt="dessin multi-techniques de la chaussure 'superstar' d'adidas">
+                      </div>
+
+                    </div>
+
+                    <div class="galerieligne">
+
+                      <div class="galeriecadre">
+                        <img src="import/punk.png" alt="dessin à l'aquarelle d'un punk aux lunettes de soleil">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/blur.png" alt="dessin style fisheye du groupe de rock blur, tons bleutés et foncés">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/graf2.png" alt="image de catalogue ouvert aevc le visage peint d'une femme, tatouage à la main, faisant face au visage au crayon de papier d'un homme">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/circles.png" alt="dessin vectoriel avec plusieurs lignes en forme de O dans des couleurs roses, violettes et bleues">
+                      </div>
+
+                    </div>
+
+                    <div class="galerieligne">
+
+                      <div class="galeriecadre">
+                        <img src="import/mat1.png" alt="photo en noir et blanc d'un jeune homme avec un skate et un tshirt tête de mort">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/mat2.png" alt="photo en noir et blanc d'un jeune homme avec un skate et un tshirt tête de mort">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/mat.png" alt="photo en noir et blanc d'un jeune homme avec un skate et un tshirt tête de mort">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/tshirt.png" alt="tshirt noir et blanc avec les inscriptions 'smoking seriously harms you and the others around you'">
+                      </div>
+
+                    </div>
+
+                    <div class="galerieligne">
+
+                      <div class="galeriecadre">
+                        <img src="import/cla.png" alt="dessin à l'aquarelle d'une jeune fille de profil, main sur la joue avec un tatouage dragon">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/guitar.png" alt="photo zoomée sur des mains qui tiennent une guitare et une image d'enimem en arrière-plan">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/playboi.png" alt="dessin au crayon de papier du rappeur playboi carti de profi">
+                      </div>
+
+                      <div class="galeriecadre">
+                        <img src="import/graf1.png" alt="graffi typographique noir et dessin à l'aquarelle d'un punk bleu qui fume de profil">
+                      </div>
+
+                    </div>
+
+
+                 </article>
+
+              </div>
+
+          </div>
+
+        </section>
+                 
+      </div>
+        
+    </div>
+
+  </body>
 
 </html>
-
-
- 
