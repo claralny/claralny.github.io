@@ -159,6 +159,7 @@ section > .container{
 .nav--item:hover span{
   transform: skewX(-20deg);
 }
+
 .nav--item.selected{
   background: white;
   color: black;
@@ -167,15 +168,6 @@ section > .container{
   transform: translate3d(0, 0, 0);
   pointer-events: auto;
 }
-.back--button{
-  position: absolute;
-  width: calc(50% - 24px);
-  right: 25px;
-  margin-left: -1px;
-  margin-top: -50px !important;
-  transform: translate(calc(100% + 25px), 0);
-}
-
 
 
 
@@ -354,6 +346,7 @@ section > .container{
   width: 50vw;
   padding: 30px;
   border: 1px solid white;
+  overflow-y: scroll;
 }
 
 #photocontenu{
