@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="style/reset.css">
+		<link rel="stylesheet" type="text/css" href="style/style.css">
+		<title>clara et l'enfant et les sortilèges</title>
+		<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+		<link rel="stylesheet" media="screen and (max-width: 1024px)"href="style/moyenne_resolution.css" /><!-- Pour ceux qui ont une résolution inférieure à 1024px -->
+		<link rel="stylesheet" media="screen and (max-width: 768px)"href="style/petite_resolution.css" /><!-- Pour ceux qui ont une résolution inférieure à 1024px -->
+	</head>
+
+	<body>
+
+		<!-- PAGE DE LOADER -->
+
+		<div class="container">
+			<div class="pre-loader block">
+				<div class="loader-wrapper">
+					<div class="loader"></div>
+				</div>
+			</div>
+		</div>
+
+
+			<div class="clipper-left">
+				<div class="loader-text">
+					<p class="titre">
+						L'Enfant et les<br>Sortilèges
+					</p>
+				</div>
+			</div>
+
+			<div class="clipper-right">
+				<div class=loader-text>
+					<p class="titre">
+						Clara Launay
+					</p>
+				</div>
+			</div>
+
+
+		<!-- CONTENU DE LA PAGE -->
+
+		<div class="contenu">
+
+			<!-- PARTIE GAUCHE DE LA PAGE -->
+
+			<nav class="sidebar-nav">
+
+					<div class="logo"><a href="index.html">clara et l'enfant et les sortilèges</a></div>
+
+					<ul class="titres">
+						<li>découverte</li>
+						<li>échanges</li>
+						<li>émerveillement</li>
+						<li>panique</li>
+						<li>cauchemar</li>
+						<li>crash</li>
+						<li>comparaison</li>
+						<li>vaincue</li>
+						<li>confiance</li>
+						<li>fierté</li>
+					</ul>
+
+			</nav>
+
+
+			<!-- PARTIE DROITE DE LA PAGE -->
+
+			<div class="content">
+
+				<div class="imagetxt">
+
+					<div class="texte-prez">
+						<p>à l’occasion du partenariat avec le conservatoire à rayonnement régionnale
+						de Boulogne-Billancourt, il nous a été demander de réaliser des animations vidéos sur le thème de la fantaisie lyrique L’Enfant et les sortilèges, écrit par Colette et composée par Ravel entre 1919 et 1925.<br><br>
+
+						vous pouvez, à travers ce site, découvrir en images mon expérience personnelle sur ce projet.</p>
+					</div>
+
+					<div class="contenuimage">
+
+						<section class="narration"> <!--dom : document object model-->
+
+							<article>
+									
+									<figcaption>
+										découvertes
+									</figcaption>
+
+									<figure>
+										<img src="import/decouverte.png" alt="dessin de jeune fille en train de lire un livre"/>	
+									</figure>
+
+							</article>
+
+							<article>
+									<figcaption>
+										échanges
+									</figcaption>
+
+									<figure>
+										<img src="import/echanges.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+									</figure>
+							</article>
+
+							<article>
+									<figcaption>
+										émerveillement
+									</figcaption>
+
+									<figure>
+										<img src="import/emerveillement.png" alt="dessin de telephone (zoom), conversation avec photos et emojis coeurs">
+									</figure>
+							</article>
+
+							<article>
+									<figcaption>
+										panique
+									</figcaption>
+
+									<figure>
+										<img src="import/panique.png" alt="dessin d'interface after effects avec des annotations">
+									</figure>
+
+							</article>
+
+							<article>
+									<figcaption>
+										cauchemar
+									</figcaption>
+
+									<figure>
+										<img src="import/cauchemar.png" alt="dessin de jeune fille qui fait un cauchemar d'after effects, de fauteuils araignées et de vaisselle avec des pattes">
+									</figure>
+							</article>
+
+							<article>
+									<figcaption>
+										crash
+									</figcaption>
+
+									<figure>
+										<img src="import/crash.png" alt="dessin de jeune fille désespérée et assise avec la notification de crash d'after effects en arrière plan">
+									</figure>
+							</article>
+
+							<article>
+									<figcaption>
+										comparaison
+									</figcaption>
+
+									<figure>
+										<img src="import/comparaison.png" alt="dessin de jeune fille qui regarde les vidéos de deux autres jeunes filles et qui pense à sa vidéo à elle">
+									</figure>
+							</article>
+
+							<article>
+									<figcaption>
+										vaincue
+									</figcaption>
+
+									<figure>
+										<img src="import/vaincue.png" alt="dessin de jeune fille qui se fait piétiner par un homme en costard, tête à l'effigie de l'interface d'after effects"> 
+									</figure>
+							</article>
+
+							<article>
+									<figcaption>
+										confiance
+									</figcaption>
+
+									<figure>
+										<img src="import/confiance.png" alt="dessin de jeune fille qui montre sa vidéo à la télé, réactions encourageantes de la part de ses amis et sa famille">
+									</figure>
+							</article>
+
+							<article>
+									<figcaption>
+										fierté
+									</figcaption>
+
+									<figure>
+										<img src="import/fierte.png" alt="dessin de jeune fille contente sur fond de scène de spectacle avec des comédiens et sa vidéo en fond">
+									</figure>
+								
+							</article>
+						</section>
+					</div>
+				</div>
+
+		</div>
+
+
+	</body>
+
+	<!-- SCRIPT POUR LE LOADER ET LES EFFETS DE TRANSITION -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+	<script>
+
+		gsap.to(".clipper-left", 1, {
+			delay: 0.5,
+			clipPath: "inset(0 100% 0 0)",
+			ease: "power4.inOut",
+		});
+
+		gsap.to(".clipper-right", 1, {
+			delay: 0.5,
+			clipPath: "inset(0 0 0 100%)",
+			ease: "power4.inOut",
+		});
+
+		gsap.from(".loader-wrapper", 0.5, {
+			scale: 0.9,
+			ease: "power1.inOut",
+		});
+
+		gsap.from("loader", 0.5, {
+			top: "100%",
+			ease: "power3.inOut",
+		});
+
+		gsap.to(
+			".loader-wrapper, .pre-loader", 0.2,
+			{
+				opacity: 0,
+				display: "none",
+				ease: "power3.inOut",
+				delay: 0.5,
+			},
+			"-=1"
+
+		);
+
+		gsap.from(".play", 2, {
+			delay: 1,
+			scale: 0,
+			ease:"power4.inOut",
+		});
+
+		gsap.from(".sidebar-nav > * > *", 1, {
+			opacity: 0,
+			delay: 1,
+			x: 40,
+			ease: "power4.inOut",
+			stagger: {
+				amount:0.5,
+			},
+				
+		});
+
+		gsap.from("article> * > *", 1, {
+			opacity: 0,
+			delay: 1,
+			x: 40,
+			ease: "power4.inOut",
+			stagger: {
+				amount:0.5,
+			},
+				
+		});
+
+		gsap.from(".texte-prez", 1, {
+			opacity: 0,
+			delay: 1,
+			x: 40,
+			ease: "power4.inOut",
+			stagger: {
+				amount:0.5,
+			},
+				
+		});
+
+		gsap.from("figcaption", 1, {
+			opacity: 0,
+			delay: 1,
+			x: 40,
+			ease: "power4.inOut",
+			stagger: {
+				amount:0.5,
+			},
+				
+		});
+		
+	</script>
+
+</html>

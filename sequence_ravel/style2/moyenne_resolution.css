@@ -1,0 +1,22 @@
+article{
+	grid-column: span 6;
+}
+
+.texte-prez{
+	font-size: 1em;
+	width: 70vw;
+}
+
+.titre{
+	font-size: 3em;
+}
+
+.sidebar-nav{
+	display: none;
+}
+
+figcaption{
+	display: block;
+	margin-bottom: 2vw;
+}
+
