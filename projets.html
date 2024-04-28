@@ -1,175 +1,142 @@
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PROJETS</title>
+    <link rel="stylesheet" href="styles.css" />
 
-	<head>
+  </head>
+  <body>
 
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <div class="container0">
 
-	  <title>PROJETS</title>
-	  
-	  <link href="style/reset.css" rel="stylesheet">
-	  <link href="style.css" rel="stylesheet">
+     
+      <!-- NAVBAR MENU -->
+      <nav>
+        <div class="logo">PORTFOLIO</div>
+        <div class="menu-open-btn">MENU</div>
+      </nav>
 
-	  <script src="script.js"></script>  <script src="main.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
-
-	</head>
-
-	<body>
-	
-
-		<!--HEADER - NAV - LOGO -->
-
-	  <header class="menu">
-
-		  <div class="menu--button container button">
-		  	<a href="index.html"><img src="import/logo.png"></a>
-		    <img src="import/plus.svg">
-		  </div>
-
-		  <!-- MENU -->
-		  <nav class="menu--nav">
-		    <a class="nav--item container" href="projets.html">
-              <span>PROJETS</span>
-            </a>
-		      
-	        <a class="nav--item container" href="galerytest.html">
-	          <span>GALERIE</span>
-	        </a>
-
-	        <a class="nav--item container" href="apropos.html">
-	          <span>A PROPOS</span>
-	        </a>
-		  </nav>
-
-		</header>
-
-
-
-<!--SECTION PROJETS-->
-	<div class="scroll--wrapper"> <!--class pour scroller sur le côté-->
-
-	    <div class="wrapper">
-			<section class="projets">
-							
-							<!-- FICHE PROJET CATALOGUE D'ARTISTE -->
-							<a class="ficheprojet" href="catalogue.html" data-dest="projects">
-
-								<div class="projetinfo container">
-									<h2 >CATALOGUE D'ARTISTE</h2>
-									<h3 class="projetdomaine">édition</h3>
-								</div>
-
-								<div class="projetimage container">
-										<img src="import/artcat2.jpg" alt="image de catalogue ouvert avec le visage peint d'une femme, tatouage à la main, faisant face au visage au crayon de papier d'un homme">
-								</div>
-
-							</a>
-
-					
-							<!-- FICHE PROJET TIMBRE -->
-							<a class="ficheprojet" href="timbre.html">
-
-								<div class="projetinfo container">
-									<h2 class="preview--title">WHERE IF NOT ON EARTH</h2>
-									<h3 class="projetdomaine">animation et print</h3>
-								</div>
-
-								<div class="projetimage container">
-										<img src="import/timbre7.png" alt="image de planche avec plusieurs rectangles qui représentent une scène animée, ciel dégradé bleu noir">
-								</div>
-
-							</a>
-
-					
-							<!-- FICHE PROJET RISOGRAPHIE -->
-							<a class="ficheprojet" href="riso.html">
-								<div class="projetinfo container">
-									<h2 class="preview--title">LA RISO ???</h2>
-									<h3 class="projetdomaine">print</h3>
-								</div>
-								<div class="projetimage container">
-										<img src="import/riso.jpg" alt="zoom sur un poster rose flashy et violet imprimé en risographie">
-								</div>
-							</a>
+      <div class="menu-overlay">
+        <div class="menu-nav">
+          <div class="menu-logo">PORTFOLIO</div>
+          <div class="menu-close-btn">CLOSE</div>
+        </div>
+        <div class="menu-cols">
+          <div class="col">
+            <div class="video">
+              <div class="video-preview"></div>
+              <div class="video-details">
+                <p>
+                  <i class="ph-fill ph-play-circle"></i>
+                  Showreel
+                </p>
+                <p>-00:09</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="menu-link">
+              <a href="index.html">Home</a>
+            </div>
+            <div class="menu-link">
+              <a href="projets.html">Projets (10)</a>
+            </div>
+            <div class="menu-link">
+              <a href="galerie.html">Galerie</a>
+            </div>
+            <div class="menu-link">
+              <a href="apropos.html">À propos</a>
+            </div>
+            <div class="menu-link">
+              <a href="contact.html">Contact</a>
+            </div>
+            
+          </div>
+        </div>
+        <div class="menu-footer">
+          <div class="menu-divider"></div>
+          <div class="menu-footer-copy">
+            <div class="slogan"><p>DOCUMENTS PDF</p></div>
+            <div class="socials">
+              <a href="#">CV</a>
+              <a href="#">PORTFOLIO</a>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-					
-							<!-- FICHE PROJET GEOVELO -->
-							<a class="ficheprojet" href="geovelo.html">
+      <!-- PROJETS --> 
 
-								<div class="projetinfo container">
-									<h2 class="preview--title">GEOVELO</h2>
-									<h3 class="projetdomaine">ui-ux design</h3>
-								</div>
+      <div>
+        
 
-								<div class="projetimage container">
-										<img src="import/geovelo.jpg" alt="photo d'un téléphone sur l'interface d'une application de velo">
-								</div>
-
-							</a>
-
-					
-							<!-- FICHE PROJET VOYAGE AU BOUT DE LA RUE -->
-							<a class="ficheprojet" href="voyage.html">
-
-								<div class="projetinfo container">
-									<h2 class="preview--title">VOYAGE AU BOUT DE LA RUE</h2>
-									<h3 class="projetdomaine">photographie</h3>
-								</div>
-
-								<div class="projetimage container">
-									<img src="import/voyage1.png" alt="photo de l'axe majeur de cergy, tour belvedère">
-								</div>
-
-							</a>
-
-					
-							<!-- FICHE PROJET L'ENFANT ET LES SORTILEGES -->
-							<a class="ficheprojet" href="enfant.html">
-
-								<div class="projetinfo container">
-									<h2 class="preview--title">L'ENFANT ET LES SORTILEGES</h2>
-									<h3 class="projetdomaine">animation</h3>
-								</div>
-
-								<div class="projetimage container">
-										<img src="import/enfant.png"
-										alt="photo du spectacle l'enfant et les sortilèges du conservatoire à rayonnement régional de boulogne, dame en premier plan et écran et chaises en fond">
-								</div>
-
-							</a>
-
-					
-							<!-- PORTRAITS -->
-							<a class="ficheprojet" href="portraits.html">
-
-								<div class="projetinfo container">
-									<h2 class="preview--title">PORTRAITS</h2>
-									<h3 class="projetdomaine">photographie</h3>
-								</div>
-
-								<div class="projetimage container">
-										<img src="import/manon.png" alt="photo de jeune fille aux cheveux bouclés et aux yeux bleus dans une ambiance bleutée">
-								</div>
-
-							</a>
+      </div>
+      
+    </div>
 
 
-							<!-- FICHE PROJET MATTHIEU 667 -->
-							<a class="ficheprojet" href="matthieu667.html">
 
-								<div class="projetinfo container">
-									<h2 class="preview--title">MATTHIEU 667</h2>
-									<h3 class="projetdomaine">photographie</h3>
-								</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
-								<div class="projetimage container">
-										<img src="import/667mat.jpg" alt="zoom sur les bras d'un jeune homme sur fond de bitume, de graffiti blanc et de skateboard">
-								</div>
+  <script>
 
-							</a>
+    gsap.to(".clipper-left", 1, {
+      delay: 0.25,
+      clipPath: "inset(0 100% 0 0)",
+      ease: "power4.inOut",
+    });
 
-			</section>	
-		</div>
-	</div>
+    gsap.to(".clipper-right", 1, {
+      delay: 0.25,
+      clipPath: "inset(0 0 0 100%)",
+      ease: "power4.inOut",
+    });
+
+    gsap.from(".loader-wrapper", 0.5, {
+      scale: 0.9,
+      ease: "power1.inOut",
+    });
+
+    gsap.from("loader", 0.5, {
+      top: "100%",
+      ease: "power3.inOut",
+    });
+
+    gsap.to(
+      ".loader-wrapper, .pre-loader", 0.2,
+      {
+        opacity: 0,
+        display: "none",
+        ease: "power3.inOut",
+        delay: 0.5,
+      },
+      "-=1"
+
+    );
+
+    gsap.from(".play", 2, {
+      delay: 1,
+      scale: 0,
+      ease:"power4.inOut",
+    });
+
+    gsap.from(".sidebar-nav > *, .site-nav > *", 1, {
+      opacity: 0,
+      delay: 1,
+      x: 40,
+      ease: "power4.inOut",
+      stagger: {
+        amount:0.5,
+      },
+        
+    });
+
+    
+  </script>
+  </body>
+</html>

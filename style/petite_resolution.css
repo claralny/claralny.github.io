@@ -1,21 +1,41 @@
 article{
-	grid-column: span 12; 
+	grid-column: span 2; 
 }
 
-.texte-prez{
-	font-size: 1em;
-	width: 65vw;
+section{
+    width: 100vw;
+    display: grid;
+    margin-right: 4.5vw;
+    margin-left:5vw;
+    grid-template-columns: repeat(4,1fr);
+    /*grid-template-rows: repeat(12,1fr); met trop de rangs en +*/
+    grid-auto-flow: row;
+    grid-gap: 4em; /*gouttière*/
+
 }
 
-.titre{
-	font-size: 1em;
+#travaux{
+    font-size: 1.8em;
+    margin: 1vw auto;
+    width: 60vw;
 }
 
-.sidebar-nav{
-	display: none;
+#travaux p{
+    margin-bottom: -2vh;
+    margin-right: 4.5vw;
+    margin-left: 4.5vw;
 }
 
-figcaption{
-	display: block;
-	margin-bottom: 2vw;
+#travaux a{
+    color: black;
+    font-size: 0.4em;
+    margin-right: 4.5vw;
+    margin-left: 4.5vw;
+}
+
+#menuprojets{
+	font-size: 0.6em;
+    margin-top: 4vh;
+    margin-right: 4.5vw;
+    margin-left: 4.5vw;
 }
