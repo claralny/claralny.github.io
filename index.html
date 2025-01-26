@@ -37,7 +37,7 @@
 
       <!-- NAVBAR MENU -->
       <nav>
-        <a href=""><div class="logo">PORTFOLIO</div></a>
+        <a href=""><div  class="logo">PORTFOLIO</div></a>
         <div class="menu-open-btn">MENU</div>
       </nav>
 
@@ -94,7 +94,7 @@
 
       <!-- SHOWREEL --> 
 
-      <video autoplay loop muted src="import/showreel_portfolio.mp4"></video>
+      <video autoplay loop muted src="import/showreel_portfolio.mp4" ><a class="mix" href=""><div class="logo">PORTFOLIO</div></a></video>
 
 
       <!-- PROJETS --> 
@@ -173,13 +173,13 @@
   <script>
 
     gsap.to(".clipper-left", 1, {
-      delay: 0.25,
+      delay: 0.5,
       clipPath: "inset(0 100% 0 0)",
       ease: "power4.inOut",
     });
 
     gsap.to(".clipper-right", 1, {
-      delay: 0.25,
+      delay: 0.5,
       clipPath: "inset(0 0 0 100%)",
       ease: "power4.inOut",
     });
@@ -222,6 +222,7 @@
       },
         
     });
+
 
     
   </script>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>divergences</title>
+</head>
+<body>
+
+
+    <div class="navbar">
+        <h1 class="navbar-title">divergences</h1>
+    </div>    
+    
+
+    <div id="upload-placeholder" onclick="document.getElementById('upload').click()">
+        <p>click here to add an image</p>   
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="canvas" style="display: none;"></canvas>   
+    </div>
+
+    <div class="controls">
+        <input type="file" id="upload" accept="image/*" style="display: none;">
+        <label for="mode">mode intensity</label>
+        <input type="range" id="mode" min="0" max="100" value="50">
+        <span id="mode-value">50</span>
+        <button id="download">download image</button>
+        <button id="download-selection">download selection</button>
+        <button id="generate-swatches">generate chart</button>
+        <button id="download-swatches">download chart</button>
+        <div id="swatch-display"></div>
+        <button id="change-file">change file</button>
+    </div>
+
+    <div id="swatch-display"></div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const upload = document.getElementById('upload');
+        const changeFileButton = document.getElementById('change-file');
+        const modeSlider = document.getElementById('mode');
+        const modeValue = document.getElementById('mode-value');
+        const downloadButton = document.getElementById('download');
+        const generateSwatchesButton = document.getElementById('generate-swatches');
+        const downloadSwatchesButton = document.getElementById('download-swatches');
+        const downloadSelectionButton = document.getElementById('download-selection');
+        const swatchDisplay = document.getElementById('swatch-display');
+
+        let image = new Image();
+        let originalImageData = null;
+        let modifiedImageData = null;
+
+        const rangeInput = document.getElementById('mode');
+
+rangeInput.addEventListener('input', () => {
+    const value = rangeInput.value; // Récupère la valeur actuelle (0 à 100)
+    rangeInput.style.background = `linear-gradient(to right, #000 ${value}%, #ddd ${value}%)`;
+});
+
+        // Charge une nouvelle image
+        upload.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    image.src = e.target.result;
+                    document.getElementById('upload-placeholder').style.display = 'none';
+                    canvas.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Bouton Change File pour changer d'image
+        changeFileButton.addEventListener('click', () => {
+            upload.click();
+        });
+        
+        image.onload = () => {
+            const container = document.querySelector('.canvas-container');
+            const containerWidth = container.clientWidth;
+            const containerHeight = container.clientHeight;
+
+            let width = image.width;
+            let height = image.height;
+
+            // Ajuste les dimensions pour conserver les proportions
+            if (width > height) {
+                if (width > containerWidth) {
+                    height = (height * containerWidth) / width;
+                    width = containerWidth;
+                }
+            } else {
+                if (height > containerHeight) {
+                    width = (width * containerHeight) / height;
+                    height = containerHeight;
+                }
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(image, 0, 0, width, height);
+
+            originalImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            processImage();
+        };
+
+         function processImage() {
+            if (!originalImageData) return;
+
+            const intensity = parseInt(modeSlider.value);
+            modeValue.textContent = intensity;
+            const imageData = new ImageData(new Uint8ClampedArray(originalImageData.data), originalImageData.width, originalImageData.height);
+            const pixels = imageData.data;
+
+            function getBrightness(r, g, b) {
+                return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+            }
+
+            function shouldSort(index) {
+                const r = pixels[index];
+                const g = pixels[index + 1];
+                const b = pixels[index + 2];
+                const brightness = getBrightness(r, g, b);
+                const threshold = (intensity / 100) * 255;
+                return brightness > threshold;
+            }
+
+            function sortRow(y) {
+                let start = -1;
+                for (let x = 0; x < canvas.width; x++) {
+                    const index = (y * canvas.width + x) * 4;
+
+                    if (shouldSort(index)) {
+                        if (start === -1) start = x;
+                    } else {
+                        if (start !== -1) {
+                            sortPixelsInRange(start, x, y, false);
+                            start = -1;
+                        }
+                    }
+                }
+                if (start !== -1) {
+                    sortPixelsInRange(start, canvas.width, y, false);
+                }
+            }
+
+            function sortColumn(x) {
+                let start = -1;
+                for (let y = 0; y < canvas.height; y++) {
+                    const index = (y * canvas.width + x) * 4;
+
+                    if (shouldSort(index)) {
+                        if (start === -1) start = y;
+                    } else {
+                        if (start !== -1) {
+                            sortPixelsInRange(start, y, x, true);
+                            start = -1;
+                        }
+                    }
+                }
+                if (start !== -1) {
+                    sortPixelsInRange(start, canvas.height, x, true);
+                }
+            }
+
+            function sortPixelsInRange(start, end, fixed, isColumn) {
+                const length = end - start;
+                const segment = new Array(length);
+
+                for (let i = 0; i < length; i++) {
+                    const index = isColumn
+                        ? ((start + i) * canvas.width + fixed) * 4
+                        : (fixed * canvas.width + (start + i)) * 4;
+                    segment[i] = {
+                        r: pixels[index],
+                        g: pixels[index + 1],
+                        b: pixels[index + 2],
+                        a: pixels[index + 3]
+                    };
+                }
+
+                segment.sort((a, b) => a.r - b.r || a.g - b.g || a.b - b.b);
+
+                for (let i = 0; i < length; i++) {
+                    const index = isColumn
+                        ? ((start + i) * canvas.width + fixed) * 4
+                        : (fixed * canvas.width + (start + i)) * 4;
+                    pixels[index] = segment[i].r;
+                    pixels[index + 1] = segment[i].g;
+                    pixels[index + 2] = segment[i].b;
+                    pixels[index + 3] = segment[i].a;
+                }
+            }
+
+            for (let y = 0; y < canvas.height; y++) {
+                sortRow(y);
+            }
+
+            for (let x = 0; x < canvas.width; x++) {
+                sortColumn(x);
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+            modifiedImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        }
+
+        modeSlider.addEventListener('input', processImage);
+
+        canvas.addEventListener('mousedown', (event) => {
+            const rect = canvas.getBoundingClientRect();
+            startX = event.clientX - rect.left;
+            startY = event.clientY - rect.top;
+            isSelecting = true;
+        });
+
+        canvas.addEventListener('mousemove', (event) => {
+            if (!isSelecting) return;
+
+            const rect = canvas.getBoundingClientRect();
+            const currentX = event.clientX - rect.left;
+            const currentY = event.clientY - rect.top;
+
+            const size = Math.min(Math.abs(currentX - startX), Math.abs(currentY - startY));
+
+            ctx.putImageData(modifiedImageData, 0, 0);
+            ctx.beginPath();
+            ctx.rect(startX, startY, size, size);
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = '';
+            ctx.stroke();
+        });
+
+        canvas.addEventListener('mouseup', (event) => {
+            const rect = canvas.getBoundingClientRect();
+            const endX = event.clientX - rect.left;
+            const endY = event.clientY - rect.top;
+
+            const size = Math.min(Math.abs(endX - startX), Math.abs(endY - startY));
+            selection = {
+                x: startX,
+                y: startY,
+                size: size
+            };
+            isSelecting = false;
+        });
+
+        downloadSelectionButton.addEventListener('click', () => {
+            if (!selection) {
+                alert('Please make a selection first!');
+                return;
+            }
+
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+
+            tempCanvas.width = selection.size;
+            tempCanvas.height = selection.size;
+
+            tempCtx.putImageData(
+                modifiedImageData, // Utiliser uniquement les pixels modifiés sans cadre rouge
+                -selection.x, 
+                -selection.y
+            );
+
+            const link = document.createElement('a');
+            link.download = 'selection.png';
+            link.href = tempCanvas.toDataURL();
+            link.click();
+        });
+
+        downloadButton.addEventListener('click', () => {
+            const link = document.createElement('a');
+            link.download = 'processed-image.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        });
+
+        generateSwatchesButton.addEventListener('click', () => {
+    if (!modifiedImageData) return;
+
+    // Restaurer l'image modifiée sans le cadre de sélection
+    ctx.putImageData(modifiedImageData, 0, 0);
+
+    const swatchSize = 100; // Taille logique visible
+    const highResSize = 400; // Taille réelle (4x résolution pour haute qualité)
+    const numSwatches = 5; // Nombre de swatches à générer
+
+    swatchDisplay.innerHTML = ''; // Efface les anciens swatches
+
+    for (let i = 0; i < numSwatches; i++) {
+        const x = Math.floor(Math.random() * (canvas.width - swatchSize));
+        const y = Math.floor(Math.random() * (canvas.height - swatchSize));
+
+        // Crée un canevas pour le swatch haute résolution
+        const highResCanvas = document.createElement('canvas');
+        highResCanvas.width = highResSize;
+        highResCanvas.height = highResSize;
+        const highResCtx = highResCanvas.getContext('2d');
+
+        // Découpe directement les pixels source
+        const swatchData = ctx.getImageData(x, y, swatchSize, swatchSize);
+
+        // Dessine les pixels découpés sur le canevas haute résolution avec interpolation
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = swatchSize;
+        tempCanvas.height = swatchSize;
+        const tempCtx = tempCanvas.getContext('2d');
+        tempCtx.putImageData(swatchData, 0, 0);
+
+        // Redimensionne proprement avec interpolation
+        highResCtx.drawImage(
+            tempCanvas,
+            0, 0, swatchSize, swatchSize, // Source
+            0, 0, highResSize, highResSize // Destination
+        );
+
+        // Ajoute au DOM en réduisant visuellement à 100px tout en conservant la haute résolution
+        highResCanvas.style.width = `${swatchSize}px`; // Apparence dans le DOM
+        highResCanvas.style.height = `${swatchSize}px`;
+        swatchDisplay.appendChild(highResCanvas);
+    }
+});
+
+downloadSwatchesButton.addEventListener('click', () => {
+    const swatches = swatchDisplay.querySelectorAll('canvas');
+
+    if (swatches.length === 0) {
+        alert('No swatches to download!');
+        return;
+    }
+
+    const highResSize = swatches[0].width; // Taille réelle des swatches (haute résolution)
+    const gap = 10; // Espace entre les swatches
+    const combinedCanvas = document.createElement('canvas');
+    const ctx = combinedCanvas.getContext('2d');
+
+    // Calcul de la taille du canevas combiné
+    combinedCanvas.width = (highResSize + gap) * swatches.length - gap;
+    combinedCanvas.height = highResSize;
+
+    swatches.forEach((swatch, index) => {
+        ctx.drawImage(swatch, index * (highResSize + gap), 0);
+    });
+
+    // Téléchargement du canevas combiné en haute résolution
+    const link = document.createElement('a');
+    link.download = 'swatches-high-quality.png';
+    link.href = combinedCanvas.toDataURL('image/png');
+    link.click();
+});
+
+    </script>
+</body>
+</html>
