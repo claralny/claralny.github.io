@@ -1,25 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>educated winter</title>
+    <title>MAR</title>
+    <link rel="shortcut icon" href="import/button.png" type="image/x-icon">
     <style>
         body {
             margin: 0;
             background-color: #000;
             color: #fff;
-            font-family: Helvetica, Arial, sans-serif;
-            overflow: hidden; /* disable scrolling / rubberband effect on mobile */
-            height:100vh;
+            font-family: 'Baskerville', sans-serif;
+            overflow-x: hidden;
+            text-align: center;
         }
 
-        canvas {
-            display: block;
-            position: absolute;
-            outline:0;
+        @font-face {
+            font-family: 'Baskerville';
+            src: url('assets/baskerville.ttf') format('truetype');
         }
+
+        @font-face {
+            font-family: 'AdobeFont';
+            src: url('assets/adobe-font.woff2') format('woff2');
+        }
+
+        .container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .title {
+            font-family: 'AdobeFont', serif;
+            font-size: 2rem;
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .museum-title {
+            font-family: 'Baskerville', serif;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .arrow {
+            position: absolute;
+            bottom: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .circle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'AdobeFont', serif;
+            cursor: pointer;
+        }
+
+        .page {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #111;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+            color: white;
+        }
+
+        .sidebar.open {
+            right: 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        ::-webkit-scrollbar {
+  display: none;
+}
 
         * {
-            /* disable on touch highlights of html elements, especially on mobile! */
             -webkit-tap-highlight-color: transparent;
             -webkit-touch-callout: none;
             -webkit-user-select: none;
@@ -28,42 +118,49 @@
             user-select: none;
         }
 
+        .museum-title img {
+            width: 600px;
+        }
+        .arrow img{
+            width: 50px;
+        }
+
+        .title img{
+            width: 100px;
+        }
+        .circle img{
+            width: 50px;
+        }
+     
     </style>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
-    <meta itemprop="name" content="educated winter">
-    <meta itemprop="description" content="made with cables">
-    <meta itemprop="image" content="screenshot.png">
-    <meta name="description" content="made with cables"/>
-
 </head>
 <body>
-    <canvas id="glcanvas" width="100vw" height="100vh" tabindex="1"></canvas>
+    <div class="container">
+        <canvas id="glcanvas" width="100vw" height="100vh" tabindex="1"></canvas>
+        <div class="circle"><img src="assets/button.png"></div>
+    <div class="title"><img src="assets/mar.png"></div>
+    <div class="museum-title"><img src="assets/musee.png"></div>
+    <div class="arrow" onclick="scrollToPage()"><img src="assets/flech.png"></div>
+        
+    </div>
+    <div class="page">
+        <img src="assets/pitie3.png" alt="Full Page Image" style="width:100%; height:100vh; object-fit: cover;">
+    </div>
+   
 
-    
     <script type="text/javascript" src="js/patch.js" async></script>
-    
-
     <script type="text/javascript">
-
-        function showError(initiator,...args)
-        {
+        function showError(initiator,...args) {
             CABLES.logErrorConsole("[" + initiator + "]", ...args);
         }
 
-        function patchInitialized(patch)
-        {
-            // You can now access the patch object (patch), register variable watchers and so on
-        }
+        function patchInitialized(patch) {}
+        function patchFinishedLoading(patch) {}
 
-        function patchFinishedLoading(patch)
-        {
-            // The patch is ready now, all assets have been loaded
-        }
-
-        document.addEventListener("CABLES.jsLoaded", function (event)
-        {
+        document.addEventListener("CABLES.jsLoaded", function (event) {
             CABLES.patch = new CABLES.Patch({
                 patch: CABLES.exportedPatch,
                 "prefixAssetPath": "",
@@ -74,12 +171,20 @@
                 "onError": showError,
                 "onPatchLoaded": patchInitialized,
                 "onFinishedLoading": patchFinishedLoading,
-                "canvas": {"alpha":true, "premultipliedAlpha":true } // make canvas transparent
+                "canvas": {"alpha":true, "premultipliedAlpha":true }
             });
         });
 
-        // disable rubberband effect on mobile devices
-        document.getElementById('glcanvas').addEventListener('touchmove', (e)=>{ e.preventDefault(); }, false);
+        document.getElementById('glcanvas').addEventListener('touchmove', (e) => { e.preventDefault(); }, false);
+
+        function scrollToPage() {
+            document.querySelector('.page').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
     </script>
 </body>
 </html>
