@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="shortcut icon" href="import/logo2.ico" type="image/x-icon">
+    <title>portfolio2clara</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="title">PORTFOLIO</div>
+        <div class="navbar">
+            <a href="#">[about]</a>
+            <a href="works.html">[work]</a>
+            <a href="#">[mess]</a>
+        </div>
+        <div class="scrolling-text">
+            <ul id="scrollingTextList">
+
+                <a href="chamb.html"><li>chambre noire <span class="year">2025</span> </li> </a>
+                
+                <a href="vs.html"><li>visions sonores <span class="year">2025</span></li></a>
+
+                <a href="ultrav.html"><li>ultra violente romance <span class="year">2025</span></li></a>
+                
+                <li>au bord du gouffre <span class="year">2025</span></li>
+                <li>st louis <span class="year">2025</span></li>
+                <a href="vs.html"><li>digital emotions <span class="year">2024</span></li>
+                <li>ceheivi website <span class="year">2024</span></li>
+                <li>ibmh website <span class="year">2024</span></li>
+                <li>madfest <span class="year">2024</span></li>
+                <li>667mat <span class="year">2023</span></li>
+                <li>catalogue d'artiste <span class="year">2023</span></li>
+                
+            
+        
+
+            </ul>
+        </div>  
+        <div class="image-scroller" id="imageScroller">
+            <div class="image-track">
+                <div class="image-item" id="image1">
+                    <img src="import/chamberr.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+                    <div class="caption">ultra violente romance </div>
+                </div>
+                <div class="image-item" id="image1">
+                    <img src="import/vs1.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+                    <div class="caption">visions sonores </div>
+                </div>
+                <div class="image-item" id="image3">
+                    <img src="import/violent.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+                    <div class="caption">ultra violente romance </div>
+                </div>
+                <div class="image-item" id="image2">
+                    <img src="import/marww.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+                    <div class="caption">au bord du gouffre </div>
+                </div>
+                
+                <div class="image-item" id="image4">
+                    <img src="import/chamberr.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+                    <div class="caption">677mat </div>
+                </div>
+
+
+                <div class="image-item" id="image5">
+                    <img src="import/de4.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+                    <div class="caption">digital emotions 2024</div>
+                </div>
+                <div class="image-item" id="image6">
+                    <img src="import/667mat.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+                    <div class="caption">667mat</div>
+                </div>
+                <div class="image-item" id="image7">
+                    <img src="import/667mat.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+                    <div class="caption">digital emotions 2023</div>
+                </div>
+                <div class="image-item" id="image8">
+                    <img src="import/667mat.png" alt="dessin de 3 jeunes filles en train de parler d'horloges">
+                    <div class="caption">667mat</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const scrollingTextItems = document.querySelectorAll("#scrollingTextList li");
+            const imageItems = document.querySelectorAll(".image-item .caption");
+
+            // Fonction pour synchroniser le texte dans les captions des images avec celui dans la liste de scrolling-text
+            function updateImageCaptions() {
+                scrollingTextItems.forEach((item, index) => {
+                    const text = item.textContent.trim();
+                    if (imageItems[index]) {
+                        imageItems[index].textContent = text;
+                    }
+                });
+            }
+
+            // Initialiser les captions dès le chargement de la page
+            updateImageCaptions()
+
+            const imageScroller = document.getElementById("imageScroller");
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            imageScroller.addEventListener("mousedown", (e) => {
+                isDown = true;
+                imageScroller.classList.add("active");
+                startX = e.pageX - imageScroller.offsetLeft;
+                scrollLeft = imageScroller.scrollLeft;
+            });
+
+            imageScroller.addEventListener("mouseleave", () => {
+                isDown = false;
+                imageScroller.classList.remove("active");
+            });
+
+            imageScroller.addEventListener("mouseup", () => {
+                isDown = false;
+                imageScroller.classList.remove("active");
+            });
+
+            imageScroller.addEventListener("mousemove", (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - imageScroller.offsetLeft;
+                const walk = (x - startX) * 2;
+                imageScroller.scrollLeft = scrollLeft - walk;
+            });
+        });
+    </script>
+</body>
+</html>
