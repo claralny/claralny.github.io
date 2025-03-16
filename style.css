@@ -17,6 +17,7 @@ html, body{
     background: url(./assets/667mat3.png) no-repeat 50% 50%;
     background-size: cover;*/
     font-family: sans-serif;
+    overflow-y: auto; /* Permet le scroll vertical */
 }
 
 a {
@@ -295,4 +296,43 @@ body {
 
 p{
     font-size: 0.8em;
+}
+
+
+
+
+
+/* Mosaïque flexible qui garde le ratio des images */
+.mosaic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonnes dynamiques */
+    gap: 10px;
+    max-width: 1500px;
+    margin: auto;
+    padding: 10px;
+    grid-auto-flow: dense; /* Remplit bien les espaces */
+}
+
+.mosaic-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mosaic-item img {
+    width: 100%;
+    height: auto;  /* Garde le ratio original */
+    display: block;
+   }
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mosaic {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Cache la barre de scroll sur Chrome, Safari et Edge */
 }
