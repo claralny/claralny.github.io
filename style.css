@@ -306,7 +306,7 @@ p{
 .mosaic {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colonnes dynamiques */
-    gap: 10px;
+    gap: 8px;
     max-width: 1500px;
     margin: auto;
     padding: 10px;
