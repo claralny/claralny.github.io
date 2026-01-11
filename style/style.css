@@ -1,0 +1,294 @@
+@font-face {
+    font-family: "Tattegrain3";
+    src: url("../font/Tattegrain3.woff") format("woff"),
+         url("../font/Tattegrain3.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+:root {
+    --font-main: "Tattegrain3", sans-serif;
+
+    --color-menu-overlay: white;
+    --color-menu-text: #000;
+    --color-divider: #000000;
+}
+
+/* RESET GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: crosshair;
+}
+
+/* FONT GLOBALE */
+html, body {
+    font-family: var(--font-main);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+/* LIENS */
+a {
+    text-decoration: none;
+    color: var(--color-menu-text);
+}
+
+/* CANVAS */
+#mouseTrailCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* VIDEO */
+video {
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+i {
+    position: relative;
+    top: 1px;
+}
+
+/* CONTAINERS */
+.container0 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.image {
+    border: 1px solid black;
+}
+
+/* NAV / LOGO */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 3em;
+    color: #fff;
+    z-index: 10;
+}
+
+.logo {
+    top: -5vh;
+    z-index: 10000000;
+    mix-blend-mode: difference;
+}
+
+.site-logo-black,
+.menu-toggle-black {
+    color: black;
+}
+
+/* CLIPPERS */
+.clipper-left,
+.clipper-right {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 50vw;
+    background: white;
+    overflow: clip;
+    clip-path: inset(0 0 0 0);
+    display: flex;
+}
+
+.clipper-left {
+    justify-content: flex-end;
+}
+
+.clipper-right {
+    right: 0;
+    justify-content: flex-start;
+    z-index: 1;
+}
+
+.loader-text {
+    width: max-content;
+    height: 100%;
+    padding: 4em;
+    display: flex;
+    align-items: center;
+}
+
+/* TITRE */
+.title {
+    grid-column: 1 / span 2;
+    margin-top: -1.2vw;
+    margin-left: -0.8vw;
+    font-size: 5.5vw;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* NAVBAR */
+.navbar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: flex-end;
+    gap: 1vw;
+}
+
+.navbar a {
+    color: black;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* TEXT SCROLL */
+.scrolling-text {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    height: calc(100vh - 140px);
+    width: 200px;
+    overflow-y: auto;
+}
+
+.desc {
+    position: absolute;
+    top: 120px;
+    left: 20px;
+    height: calc(100vh - 140px);
+    width: 400px;
+    overflow: hidden;
+}
+
+.scrolling-text ul {
+    list-style: none;
+}
+
+.scrolling-text li {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    position: relative;
+}
+
+.scrolling-text .year {
+    font-style: italic;
+    color: gray;
+    position: absolute;
+    right: -150px;
+    white-space: nowrap;
+}
+
+/* IMAGE SCROLLER HORIZONTAL */
+.image-scroller {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.image-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.image-track {
+    display: flex;
+    gap: 20px;
+}
+
+.image-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-item img {
+    height: 222px;
+    object-fit: cover;
+    scroll-snap-align: start;
+}
+
+.image-item .caption {
+    font-size: 0.8rem;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* IMAGE SCROLLER VERTICAL */
+.image-scroller2 {
+    position: absolute;
+    top: 120px;
+    right: 20px;
+    height: 80vh;
+    width: 50vw;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    scrollbar-width: none;
+}
+
+.image-scroller2::-webkit-scrollbar {
+    display: none;
+}
+
+.image-track2 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.image-item2 img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.image-item2 .caption {
+    font-size: 0.8rem;
+}
+
+/* LAYOUT */
+.imageduo {
+    display: flex;
+    gap: 1em;
+}
+
+.left-content {
+    width: 50%;
+}
+
+.text-content {
+    margin-top: 20px;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 80%;
+}
+
+p {
+    font-size: 0.8em;
+}
+
+
+body {
+    font-family: "Tattegrain3" !important;
+}
