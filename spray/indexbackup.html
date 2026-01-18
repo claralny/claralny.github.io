@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ecoutemonspraystp</title>
+  <style>
+    body {
+  margin: 0;
+  background-color: #fff;
+  overflow: hidden; /* garde tout visible dans la fenêtre */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  font-family: sans-serif;
+}
+
+.sidebar {
+  width: 18%;
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.8;
+}
+
+.sidebar a {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar a:hover {
+  opacity: 0.6;
+}
+
+.collage {
+  position: relative;
+  width: 82%;
+  height: 100vh; /* fixe à la fenêtre */
+  overflow: hidden;
+}
+
+.item {
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+
+.item img, .item video {
+  width: 100%;
+  height: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 4px;
+}
+
+.item video {
+  display: none;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 1);
+  color: #000;
+  font-family: sans-serif;
+  font-size: 12px;
+  padding: 4px 10px;
+  border: 1px solid #000;
+  display: none;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.item:hover .overlay-text {
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <a data-video="romant.mp4">[01] romantika</a>
+    <a data-video="aliceglass.mp4">[02] alice glass</a>
+    <a data-video="flowerz.mp4">[03] flowerz</a>
+    <a data-video="violentdreams.mp4">[04] violent dreams</a>
+    <a data-video="coeurlourd.mp4">[05] coeur lourd</a>
+    <a data-video="fleur1.mp4">[06] mon amie la rose</a>
+    <a data-video="nemeparleplus.mp4">[07] ne me parle plus</a>
+    <a data-video="dopefein.mp4">[08] dopefein</a>
+  </div>
+
+  <div class="collage">
+    <div class="item">
+      <img src="spiderwebb.png" alt="">
+      <video src="romant.mp4" muted loop playsinline></video>
+      <div class="overlay-text">avec toi je me sens romantika, entre les fils, mon coeur il bat comme ça</div>
+    </div>
+
+    <div class="item">
+      <img src="text.png" alt="">
+      <video src="nemeparleplus.mp4" muted loop playsinline></video>
+      <div class="overlay-text">et la rose elle crie “ne me parle plus”</div>
+    </div>
+
+    <div class="item">
+      <img src="coeurlourd.png" alt="">
+      <video src="coeurlourd.mp4" muted loop playsinline></video>
+      <div class="overlay-text">quand tu disparais j’ai le coeur lourd</div>
+    </div>
+
+    <div class="item">
+      <img src="fleur13.png" alt="">
+      <video src="flowerz.mp4" muted loop playsinline></video>
+      <div class="overlay-text">j’explose surtout quand tu me donnes les flowerz</div>
+    </div>
+
+    <div class="item">
+      <img src="viciouss.png" alt="">
+      <video src="violentdreams.mp4" muted loop playsinline></video>
+      <div class="overlay-text">mais les flowerz elles sont là quand les violent dreams reviennent, et que toi tu disparais</div>
+    </div>
+
+    <div class="item">
+      <img src="textures.png" alt="">
+      <video src="dopefein.mp4" muted loop playsinline></video>
+      <div class="overlay-text">je te parle plus, et depuis je vois le monde comme un dopefein</div>
+    </div>
+
+    <div class="item">
+      <img src="spray.png" alt="">
+      <video src="aliceglass.mp4" muted loop playsinline></video>
+      <div class="overlay-text">il bat comme ça, carrément il crie comme alice glass, j’explose</div>
+    </div>
+
+    <div class="item">
+      <img src="fleur1.png" alt="">
+      <video src="fleur1.mp4" muted loop playsinline></video>
+      <div class="overlay-text">et je fane comme mon amie la rose</div>
+    </div>
+  </div>
+
+  <script>
+    console.log("Script chargé !");
+
+    function randomizePositions() {
+  const items = document.querySelectorAll('.item');
+  const collage = document.querySelector('.collage');
+  const collageWidth = collage.clientWidth;
+  const collageHeight = collage.clientHeight;
+  const positions = [];
+
+  items.forEach(item => {
+    const sizePercent = Math.random() * 10 + 12; // entre 18% et 28%
+    item.style.width = sizePercent + '%';
+    item.style.height = 'auto';
+
+    const img = item.querySelector('img');
+    img.onload = () => {
+      const itemWidth = item.offsetWidth;
+      const itemHeight = item.offsetHeight;
+
+      let left, top;
+      let overlap = true;
+      let tries = 0;
+      const maxTries = 100; // pour éviter les collisions
+
+      while (overlap && tries < maxTries) {
+        left = Math.random() * (collageWidth - itemWidth);
+        top = Math.random() * (collageHeight - itemHeight);
+        overlap = positions.some(pos => {
+          const noOverlapX = left + itemWidth < pos.left || pos.left + pos.width < left;
+          const noOverlapY = top + itemHeight < pos.top || pos.top + pos.height < top;
+          // on autorise un léger chevauchement de 5%
+          return !(noOverlapX || noOverlapY) && Math.random() > 0.05;
+        });
+        tries++;
+      }
+
+      positions.push({ left, top, width: itemWidth, height: itemHeight });
+      item.style.left = `${left}px`;
+      item.style.top = `${top}px`;
+      item.style.transform = 'none'; // pas de rotation
+      item.style.zIndex = Math.floor(Math.random() * 10) + 1;
+    };
+
+    if (img.complete) img.onload();
+  });
+}
+
+
+
+
+window.addEventListener('load', randomizePositions);
+
+
+    window.addEventListener('load', randomizePositions);
+
+    let soundEnabled = false;
+    document.addEventListener('click', () => soundEnabled = true, { once: true });
+
+    const links = document.querySelectorAll('.sidebar a');
+    const items = document.querySelectorAll('.item');
+    let activeVideo = null;
+
+    items.forEach(item => {
+  const video = item.querySelector('video');
+  const img = item.querySelector('img');
+
+  item.addEventListener('mouseenter', () => {
+    item.dataset.originalZ = item.style.zIndex;
+    item.style.zIndex = 9999;
+
+    img.style.display = 'none';
+    video.style.display = 'block';
+    video.currentTime = 0;
+
+    // ✅ activer le son si le user a cliqué une fois
+    video.muted = !soundEnabled;
+
+    video.play().catch(err => console.log('Autoplay bloqué:', err));
+  });
+
+  item.addEventListener('mouseleave', () => {
+    video.pause();
+    video.style.display = 'none';
+    img.style.display = 'block';
+    if (item !== activeVideo?.parentElement) {
+      item.style.zIndex = item.dataset.originalZ || 1;
+    }
+  });
+});
+
+
+    // 🔹 Sidebar → lecture avec son
+    links.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const videoSrc = link.getAttribute('data-video');
+        const item = Array.from(items).find(i =>
+          i.querySelector('video').getAttribute('src') === videoSrc
+        );
+        if (!item) return;
+
+        const video = item.querySelector('video');
+        const img = item.querySelector('img');
+        const text = item.querySelector('.overlay-text');
+
+        items.forEach(i => {
+          const v = i.querySelector('video');
+          const im = i.querySelector('img');
+          const t = i.querySelector('.overlay-text');
+          v.pause();
+          v.style.display = 'none';
+          im.style.display = 'block';
+          t.style.display = 'none';
+          i.style.zIndex = i.dataset.originalZ || 1;
+        });
+
+        img.style.display = 'none';
+        video.style.display = 'block';
+        text.style.display = 'block';
+        item.style.zIndex = 9999;
+        video.muted = !soundEnabled;
+        video.currentTime = 0;
+        video.play();
+        activeVideo = video;
+      });
+    });
+  </script>
+</body>
+</html>
