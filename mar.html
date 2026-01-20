@@ -11,10 +11,19 @@
     <div class="container">
         <div class="title">AU BORD DU GOUFFRE</div>
         <div class="navbar">
-            <!--<a href="about.html">[about]</a>-->
-            <a href="index.html">[work]</a>
-            <!--<a href="mess.html">[mess]</a>-->
-        </div>
+  <a href="#" id="contactToggle">[contact]</a>
+  <a href="index.html">[work]</a>
+</div>
+
+<div id="contactPanel" class="contact-panel">
+  <p>
+    french graphic designer based in Paris, currently studying in a master’s degree in digital design (4th year), after completing a DNMADE (National Diploma of Art and Design) in graphic design and digital studies.<br><br>
+    i’m into electronic music [✴︎], swords [🗡], adventures [.ೃ࿔ ✈︎ *], badly drawn illustrations [ᝰ], and mixed aesthetics somewhere between ‎⋆. 𐙚 ˚ coquette ‎⋆. 𐙚 ˚ and ⌐╦ᡁ᠊╾━ghetto.<br><br><br><br><br>
+    <strong><a href="mailto:claraa.launayy@gmail.com">clara[at]gmail[dot]com</a><br></strong>
+    <strong>+33 6 27 87 67 55</strong>
+
+  </p>
+</div>
 
         <div class="desc">
             <p>
@@ -50,5 +59,17 @@ collaboration: Serena Taleb<br>
             </div>
         </div>
     </div>
+    <script>
+const contactLink = document.getElementById("contactToggle");
+const contactPanel = document.getElementById("contactPanel");
+
+contactLink.addEventListener("click", e => {
+  e.preventDefault(); // empêche toute navigation
+
+  // toggle affichage
+  contactPanel.style.display =
+    contactPanel.style.display === "block" ? "none" : "block";
+});
+</script>
 </body>
 </html>

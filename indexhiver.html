@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<link rel="shortcut icon" href="import/logo2.ico">
+<title>portfolio2clara</title>
+</head>
+
+<body>
+
+<canvas id="mouseTrailCanvas"></canvas>
+
+<div class="container">
+
+<div class="navbar">
+  <a href="index.html">[contact]</a>
+  <a href="index.html">[work]</a>
+</div>
+
+<div class="scrolling-text">
+<ul id="scrollingTextList">
+
+<li data-project="unrepeated">un⟳repeated <span class="year">2026</span></li>
+
+<li data-project="angelcandles">angel༺☆༻candles <span class="year">2026</span></li>
+
+<li data-project="worldisastercompilation">✶⋆worldisastercompilation.˚ <span class="year">2025</span></li>
+
+<li data-project="berlin" class="b">berlin <span class="year">2025</span></li>
+
+<li data-project="howitsounded">how it sound℮d wh℮n it dri℮d ゛ ˎˊ˗ <span class="year">2025</span></li>
+
+<li data-project="datasynesthesia">▌│█║▌║▌║ data synesthesia <span class="year">2025</span></li>
+
+<li data-project="griefseed">grief۶ৎseed <span class="year">2025</span></li>
+
+<li data-project="chambrenoire">ılıılıılı darkroom ılıılıılı <span class="year">2025</span></li>
+
+<li data-project="vs">ᯓsonic visions♪ <span class="year">2025</span></li>
+
+<li data-project="ultrav">ultra︻芫═───violente romance <span class="year">2025</span></li>
+
+<li data-project="mar">༄.° au bord du gouffre <span class="year">2025</span></li>
+
+<li data-project="digitalemotions">
+d̵̨̪̉͝i̸̹̙̟̓̃g̸̥̰̅͂̒i̷̘̬͒͐͘ṱ̵͕͗̈́a̸̬͒͐͗l̵̥͕̊͆ emotions
+<span class="year">2024</span>
+</li>
+
+<li data-project="mad">𓀤𓀥 madfest 𓀤𓀥 <span class="year">2024</span></li>
+
+
+
+</ul>
+</div>
+
+<!-- TEXTE PROJET -->
+<div class="project-desc" id="projectDesc"></div>
+
+<!-- MEDIA DROITE -->
+<div class="project-media" id="projectMedia"></div>
+
+<!-- SCROLLER IMAGES -->
+<div class="image-scroller" id="imageScroller">
+<div class="image-track">
+
+ <div class="image-item" data-project="unrepeated">
+      <img src="import/unrepeated2.png" alt="">
+      <div class="image-caption">
+        <span class="title">un⟳repeated</span>
+        <span class="year">2026</span>
+      </div>
+    </div>
+
+<div class="image-item" data-project="angelcandles">
+  <img src="import/nb.png" alt="">
+  <div class="image-caption">
+    <span class="title">angel༺☆༻candles</span>
+    <span class="year">2026</span>
+  </div>
+</div>
+
+<div class="image-item" data-project="worldisastercompilation">
+      <img src="import/w.png" alt="">
+      <div class="image-caption">
+        <span class="title">✶⋆worldisastercompilation.˚</span>
+        <span class="year">2025</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="berlin">
+      <img src="import/berlin.png" alt="">
+      <div class="image-caption">
+        <span class="title">berlin</span>
+        <span class="year">2025</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="howitsounded">
+      <img src="import/clara_17.png" alt="">
+      <div class="image-caption">
+        <span class="title">how it sound℮d wh℮n it dri℮d</span>
+        <span class="year">2025</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="datasynesthesia">
+      <img src="import/d.png" alt="">
+      <div class="image-caption">
+        <span class="title">▌│█║▌║▌║ data synesthesia</span>
+        <span class="year">2025</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="griefseed">
+      <img src="import/gs3.png" alt="">
+      <div class="image-caption">
+        <span class="title">grief۶ৎseed</span>
+        <span class="year">2025</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="chambrenoire">
+      <img src="import/chamb.png" alt="">
+      <div class="image-caption">
+        <span class="title">ılıılıılı darkroom ılıılıılı</span>
+        <span class="year">2025</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="vs">
+      <img src="import/vs.png" alt="">
+      <div class="image-caption">
+        <span class="title">ᯓsonic visions♪</span>
+        <span class="year">2025</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="ultrav">
+      <img src="import/ultrav.png" alt="">
+      <div class="image-caption">
+        <span class="title">ultra︻芫═───violente romance</span>
+        <span class="year">2025</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="mar">
+      <img src="import/marww.png" alt="">
+      <div class="image-caption">
+        <span class="title">༄.° au bord du gouffre</span>
+        <span class="year">2025</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="digitalemotions">
+      <img src="import/de4.png" alt="">
+      <div class="image-caption">
+        <span class="title">
+          d̵̨̪̉͝i̸̹̙̟̓̃g̸̥̰̅͂̒i̷̘̬͒͐͘ṱ̵͕͗̈́a̸̬͒͐͗l̵̥͕̊͆ emotions
+        </span>
+        <span class="year">2024</span>
+      </div>
+    </div>
+
+    <div class="image-item" data-project="mad">
+      <img src="import/mad0.png" alt="">
+      <div class="image-caption">
+        <span class="title">𓀤𓀥 madfest 𓀤𓀥</span>
+        <span class="year">2024</span>
+      </div>
+    </div>
+
+</div>
+</div>
+
+</div>
+
+<script src="projects.js"></script>
+<script>
+if (history.scrollRestoration) {
+  history.scrollRestoration = "manual";
+}
+
+// Empêche toute navigation dans l’historique
+window.addEventListener("popstate", function (e) {
+  history.pushState(null, "", location.href);
+});
+
+// Crée un état fixe au chargement
+history.pushState(null, "", location.href);
+</script>
+
+<script>
+const canvas = document.getElementById('mouseTrailCanvas');
+const ctx = canvas.getContext('2d');
+
+let width = window.innerWidth;
+let height = window.innerHeight;
+canvas.width = width;
+canvas.height = height;
+
+window.addEventListener('resize', () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = height;
+});
+
+let lastX = null;
+let lastY = null;
+
+// Fonction qui gère le tracé
+function mouseMoveHandler(e) {
+    const x = e.clientX;
+    const y = e.clientY;
+
+    if (lastX !== null && lastY !== null) {
+        ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
+        ctx.lineWidth = 1.2;
+        ctx.lineCap = 'round';
+
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+    }
+
+    lastX = x;
+    lastY = y;
+}
+
+// Ajout de l'écouteur au départ (homepage)
+document.addEventListener('mousemove', mouseMoveHandler);
+
+// Quand un projet s’ouvre, on supprime le tracé
+function disableMouseTrail() {
+    document.removeEventListener('mousemove', mouseMoveHandler);
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // efface tout
+}
+</script>
+
+
+
+
+  <script>
+  const DESKTOP_WIDTH = 1024;
+
+  function isDesktop() {
+    return window.innerWidth >= DESKTOP_WIDTH;
+  }
+
+ if (isDesktop()) {
+  const desc = document.getElementById("projectDesc");
+  const media = document.getElementById("projectMedia");
+  const track = document.querySelector(".image-track");
+
+  // Fonction pour ouvrir un projet (déjà existante)
+  function openProject(key, clickedImg) {
+    const p = projects[key];
+    if (!p) return;
+
+    // TEXTE
+    desc.innerHTML = `<p>${p.text}</p>`;
+
+    // MEDIA
+    media.innerHTML = "";
+    if (p.video) {
+      media.innerHTML = `<video controls src="${p.video}"></video>`;
+    } else if (clickedImg) {
+      media.innerHTML = `<img src="${clickedImg}" alt="">`;
+    }
+
+    // SCROLL
+    track.innerHTML = "";
+    p.images.forEach(src => {
+      const div = document.createElement("div");
+      div.className = "image-item";
+      div.innerHTML = `<img src="${src}">`;
+      track.appendChild(div);
+    });
+  }
+
+  // Ajout hover sur les titres
+  document.querySelectorAll(".scrolling-text ul li").forEach(el => {
+    el.addEventListener("mouseover", () => {
+      const key = el.dataset.project;
+      const clickedImg = el.querySelector("img")?.src || null;
+      openProject(key, clickedImg);
+    });
+  });
+
+  // Clic normal (déjà existant)
+  document.querySelectorAll("[data-project]").forEach(el => {
+    el.addEventListener("click", e => {
+      if (!isDesktop()) return;
+      e.preventDefault();
+      const key = el.dataset.project;
+      const clickedImg = el.querySelector("img")?.src;
+      openProject(key, clickedImg);
+    });
+  });
+}
+
+  </script>
+</body>
+</html>
