@@ -26,10 +26,13 @@ angelcandles: {
 title: "angel༺☆༻candles",
 year: "2026",
 text: `
-experimental music video for Angel Candles by Notinbed & Clara Kimera.<br><br>
-the visuals extend Notinbed’s graphic universe and take the song’s lyrics as a starting point.
-blending generative imagery and editing, the video seeks a visual translation of the sound,
-letting rhythm and textures guide the narrative.<br><br>
+experimental music video for angel candles by Notinbed 
+& Clara Kimera.<br><br>
+
+the visuals extend Notinbed’s graphic universe and take 
+the song’s lyrics as a starting point. blending generative imagery and editing, the video seeks a visual translation 
+of the sound, letting rhythm and textures guide the narrative.<br><br><br><br>
+
 softwares: After Effects | Touch Designer | Photoshop
 `,
 video: "import/notinb.mp4",
@@ -45,13 +48,15 @@ worldisastercompilation: {
 title: "✶⋆worldisastercompilation.˚",
 year: "2025",
 text: `
-inspired by worldisastercompilation.1 by Notinbed, this interactive visual project translates the music’s raw,
-destructive energy into image.<br><br>
-it begins in a calm, almost meditative landscape before interaction triggers a gradual collapse,
-where real disaster footage, effects, and structures accumulate.<br><br>
-the experience unfolds from stillness to total chaos,
-echoing both human responsibility and uncontrollable forces behind global catastrophes.<br><br>
-software: Visual Studio Code<br>
+inspired by the music worldisastercompilation.1 by Notinbed, 
+this interactive project turns the music’s raw, destructive energy 
+into visuals.<br><br>
+
+interaction triggers a gradual collapse, layering disaster footage, effects, and structures, moving from calm to chaos. I designed it 
+to emulate a VJ workflow using the numpad, manual, real-time control without traditional VJ software.<br><br><br><br>
+
+
+Software: Visual Studio Code (html/css/p5.js)<br><br>
 <a href="https://ghettoprincesss.github.io/worldisastercompilation/" target="_blank">[see project]</a>
 `,
 video: "import/w.mp4",
@@ -66,10 +71,15 @@ chambrenoire: {
 title: "♖ CHAMBRE NOIRE",
 year: "2025",
 text: `
-<p>creation of a video centered around the theme of the cathedral, later projected onto a setup of three columns. The project follows a narrative that explores the cathedral from multiple perspectives and viewpoints.<br><br>
+video mapping centered on the theme of the cathedral, projected 
+on a three-column setup.<br><br>
 
-our approach focused on highlighting its intricate details and symmetrical characteristics.<br><br><br><br>
-`,
+our approach highlighted architectural details and symmetrical forms. I was responsible for art direction and the narrative structure.<br><br><br><br>
+
+
+softwares :  After Effects | Resolume Arena<br>
+collaboration :  Serena Taleb | Nathan Sonzogni<br>
+music : the dreamer in her - Thomas Azier`,
 video: "import/chamb.mp4",
 images: [
 "import/chamb.png",
@@ -84,9 +94,9 @@ title: "BERLIN",
 year: "2025",
 text: `
 experimental music video built around amne’s sonic world, mixing audio-driven generative visuals created in TouchDesigner with photo and video editing.
-the visuals evolve with the music, creating a shifting exploration of identity where sound and image merge to express the track’s energy.<br><br>
-software: After Effects | Touch Designer | Photoshop
-`,
+the visuals evolve with the music, creating a shifting exploration of identity where sound and image merge to express the track’s energy.<br><br><br><br>
+
+software: After Effect | Touch Designer | Photoshop <br>`,
 video: "import/amneberll.mp4",
 images: [
 "import/berlin1.png",
@@ -100,8 +110,14 @@ datasynesthesia: {
 title: "▌│█║▌║▌║ data synesthesia",
 year: "2025",
 text: `
-a VR environment created in Blender, this project mediates ryoji ikeda’s Datamatics, which explores the relationship between data, sound, and image.<br><br>
-software: Blender | After Effects<br>
+VR environment created in Blender, interpreting Ryoji Ikeda’s datamatics, which explores the relationship between data, sound, and image. His work uses raw data to generate geometric visuals and sounds, encouraging reflection on the data that surrounds 
+us and how it might transform.<br><br>
+
+I chose to situate the project in a familiar, data-filled environment : the subway. Elements gradually transform in rhythm with the song datamatics. Presenting it in VR immerses the audience 
+in a direct and intense audiovisual experience.<br><br><br><br>
+
+Softwares : Blender | After Effects<br>
+
 <a href="https://www.youtube.com/watch?v=lffc7b8xnLo" target="_blank">[see project]</a>
 `,
 video: null,
@@ -142,7 +158,14 @@ howitsounded: {
 title: "HOW IT SOUNDED WHEN IT DRIED",
 year: "2025",
 text: `
-this project reimagines the spray, a quick, unpredictable street art gesture, in digital and augmented reality.<br><br>
+this project reimagines the spray, a quick, unpredictable street 
+art gesture, in digital and augmented reality.particles move 
+and transform, creating an interactive space where sound 
+and motion collide.<br><br>
+
+I also created a poster and fanzine : the poster features scannable images that trigger the AR experience, while the fanzine transforms 
+the eight sounds used into eight sentences that together form 
+a short story<br><br><br><br>
 softwares: InDesign | Touch Designer | Artivive | Photoshop<br>
 <a href="https://claralny.github.io/spray/" target="_blank">[see project]</a>
 `,
@@ -158,14 +181,10 @@ vs: {
 title: "VISIONS SONORES",
 year: "2025",
 text: `
-in my thesis research, I explore the relationship between 
-the electronic music scene and graphic design, studying 
-the role of visuals, particularly in audiovisual performances 
-that oscillate between dialogue and transcription.<br><br>
+through my thesis, I examine the connection between the electronic music scene and graphic design.<br>
+i study the role of visuals in electronic music, particularly through audiovisual performances, which oscillate between dialogue and transcription.<br><br>
 
-my thesis proposes hypotheses to answer the question :<br>
-how can the visual embodiment of electronic music influence 
-the audience’s experience ?
+how does the embodiment of electronic music through graphic design influence the audience’s experience?
 `,
 video: null,
 images: [
@@ -181,8 +200,14 @@ ultrav: {
 title: "ULTRA VIOLENTE ROMANCE",
 year: "2025",
 text: `
-an edition reflecting my experience and vision of romance, explored through typographic play and graphic compositions.
-`,
+<br>"Because sometimes, words break before they reach the heart’s pain, and because on some days, we keep breathing without knowing why.
+
+Because modern sorrows are no longer told through writing, and because the wounds of the soul deserve to be seen."<br><br>
+an edition reflecting my experience and vision of romance, explored through typographic play and graphic compositions.<br>
+The project follows a poetic text, moving 
+from tenderness to emotional collapse.<br><br>
+Using only tracing paper gives an editorial form to my fragile vision 
+of love, evoking the confusion and blending that this love can create.`,
 video: "import/ultraultracool.mp4",
 images: ["import/ultrav.png"]
 },
@@ -191,7 +216,15 @@ mar: {
 title: "AU BORD DU GOUFFRE",
 year: "2025",
 text: `
-interactive website and posters for the exhibition “Au bord du gouffre”.<br><br>
+ainteractive digital installation combining a website and posters for the fictional exhibition Au bord du gouffre, blending Romantic paintings with real-time video textures, with water as a central motif of softness and tension.<br><br>
+
+created as part of a workshop led by Stéphane Buellet from 
+the visual design studio Cheval Vert.<br><br><br><br>
+
+
+softwares : Cables.gl | Sublime Text | Illustrator<br>
+collaboration : Serena Taleb
+
 <a href="https://cables.gl/p/gn3rHC" target="_blank">[see project]</a>
 `,
 video: "import/mar.mp4",
@@ -210,13 +243,11 @@ digitalemotions: {
 title: "DIGITAL EMOTIONS",
 year: "2024",
 text: `
-a project blending code and publishing, centered around the theme of glitch.<br><br>
+Project combining code and editing, centered on the theme 
+of glitch.The edit explores the human silhouette and clothing, gradually focusing on the face and emotions.<br><br>
 
-the edition traces my graphic experiments, starting with the general theme of clothing and the human silhouette,
-gradually narrowing down to the face, and ultimately, emotions.<br><br>
-
-the final pages visually depict an emotional trajectory,
-moving from sadness to fear, passing through anger, and finally culminating in freedom.
+The final pages visually convey an emotional journey : from sadness to fear, through anger, and ultimately to freedom.<br><br><br><br>
+Software: Processing 4 | InDesign
 `,
 video: null,
 images: [
@@ -237,8 +268,12 @@ mad: {
 title: "MADFEST",
 year: "2024",
 text: `
-typographic poster experimentation for a fictional music festival.
-`,
+typographic layout experiments on posters for the 2nd edition of the fictional music festival Madfest.<br><br>
+
+created and displayed as part of a workshop organized by graphic designer Robin Abreu.<br><br><br><br>
+
+print : risography<br>
+artists : Lana del Rey, Mac Miller`,
 video: null,
 images: [
 "import/mad0.png",
