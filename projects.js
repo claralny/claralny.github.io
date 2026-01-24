@@ -209,7 +209,7 @@ ultrav: {
 title: "ULTRA VIOLENTE ROMANCE",
 year: "2025",
 text: `
-<br>"Because sometimes, words break before they reach the heart’s pain, and because on some days, we keep breathing without knowing why.
+"Because sometimes, words break before they reach the heart’s pain, and because on some days, we keep breathing without knowing why.
 
 Because modern sorrows are no longer told through writing, and because the wounds of the soul deserve to be seen."<br><br>
 an edition reflecting my experience and vision of romance, explored through typographic play and graphic compositions.<br>
@@ -232,7 +232,7 @@ the visual design studio Cheval Vert.<br><br><br><br>
 
 
 softwares : Cables.gl | Sublime Text | Illustrator<br>
-collaboration : Serena Taleb
+collaboration : Serena Taleb<br>
 
 <a href="https://cables.gl/p/gn3rHC" target="_blank">[see project]</a>
 `,
