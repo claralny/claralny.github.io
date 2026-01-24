@@ -4,18 +4,23 @@ const projects = {
     title: "un⟳repeated",
     year: "2026",
     text: `
-      unrepeated is a mini edition of eight objects—ranging from leather heels
-      to glass plates, a dagger, and even skin—each engraved with the same motif.
+      unrepeated is a mini edition of eight objects, ranging from leather heels
+      to glass plates, a dagger, and even skin, each engraved with the same motif.
       <br><br>
       I explore how different materials distort the pattern, giving rise to new forms.
       The edition brings together eight unique works, each revealing a version of the motif
       that drifts further or closer to the original, highlighting the dialogue between motif,
       material, and transformation.
       <br><br>
-      software & other: InDesign | Tattoo printer | Engraving pen
+      softwares & other: InDesign | Tattoo printer | Engraving pen
     `,
     images: [
-      "import/unrepeated2.png"
+      "import/un3.png",
+      "import/un7.png",
+      "import/un6.png",
+      "import/un4.png",
+      "import/un5.png",      
+      "import/un8.png"
     ],
     video: null
   },
@@ -56,7 +61,7 @@ interaction triggers a gradual collapse, layering disaster footage, effects, and
 to emulate a VJ workflow using the numpad, manual, real-time control without traditional VJ software.<br><br><br><br>
 
 
-Software: Visual Studio Code (html/css/p5.js)<br><br>
+software: Visual Studio Code (html/css/p5.js)<br><br>
 <a href="https://ghettoprincesss.github.io/worldisastercompilation/" target="_blank">[see project]</a>
 `,
 video: "import/w.mp4",
@@ -96,7 +101,7 @@ text: `
 experimental music video built around amne’s sonic world, mixing audio-driven generative visuals created in TouchDesigner with photo and video editing.
 the visuals evolve with the music, creating a shifting exploration of identity where sound and image merge to express the track’s energy.<br><br><br><br>
 
-software: After Effect | Touch Designer | Photoshop <br>`,
+softwares: After Effect | Touch Designer | Photoshop <br>`,
 video: "import/amneberll.mp4",
 images: [
 "import/berlin1.png",
@@ -116,7 +121,7 @@ us and how it might transform.<br><br>
 I chose to situate the project in a familiar, data-filled environment : the subway. Elements gradually transform in rhythm with the song datamatics. Presenting it in VR immerses the audience 
 in a direct and intense audiovisual experience.<br><br><br><br>
 
-Softwares : Blender | After Effects<br>
+softwares : Blender | After Effects<br>
 
 <a href="https://www.youtube.com/watch?v=lffc7b8xnLo" target="_blank">[see project]</a>
 `,
@@ -173,7 +178,10 @@ video: "import/claraspray_projection.mp4",
 images: [
 "import/clara_17.png",
 "import/clara_19.png",
-"import/clara_25.png"
+"import/clara_25.png",
+"import/hw.png",
+"import/hw1.png",
+"import/hw2.png"
 ]
 },
 
@@ -192,7 +200,8 @@ images: [
 "import/vs3.png",
 "import/vs4.png",
 "import/vs5.png",
-"import/vs6.png"
+"import/vs6.png",
+"import/vsposssss.png"
 ]
 },
 
@@ -247,7 +256,7 @@ Project combining code and editing, centered on the theme
 of glitch.The edit explores the human silhouette and clothing, gradually focusing on the face and emotions.<br><br>
 
 The final pages visually convey an emotional journey : from sadness to fear, through anger, and ultimately to freedom.<br><br><br><br>
-Software: Processing 4 | InDesign
+softwares: Processing 4 | InDesign
 `,
 video: null,
 images: [

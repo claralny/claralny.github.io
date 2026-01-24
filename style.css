@@ -40,6 +40,12 @@ body {
   overflow-x: hidden;
 }
 
+
+.b .year {
+  font-family: sans-serif;
+}
+
+
 a {
   text-decoration: none;
   color: black;
@@ -110,19 +116,18 @@ a {
 
 .contact-panel {
   position: fixed;
-  top: 115px;       /* ajuste selon ta navbar */
-  right: 20px;      /* ferré à droite */
-  width: 460px;     /* largeur du bloc */
+  top: 115px;
+  right: 20px;
+  width: 460px;
   max-width: 90vw;
   color: black;
   font-family: 'Arial', sans-serif;
   line-height: 1.5;
-  display: none;    /* caché par défaut */
+  display: none;
   z-index: 1000;
   font-size: 0.8em;
-  background-color: white ;
+  background-color: white;
 }
-
 
 /* =========================
    PROJECT MEDIA (RIGHT)
@@ -137,29 +142,31 @@ a {
   justify-content: flex-end;
 }
 
-
-
-.image-scroller {
-position: absolute;
-bottom: 20px;
-left: 50%;
-transform: translateX(-50%);
-width: 100%;
-overflow-x: auto;
-white-space: nowrap;
+.media-stage{
+  height: 240px;          /* ✅ hauteur max */
+  width: fit-content;     /* ✅ largeur = celle du média affiché */
+  display: inline-block;
 }
 
-.image-track {
-display: flex;
-gap: 20px;
-padding-left: 20px;
+/* vidéo et image ont la même règle */
+.media-video,
+.media-preview{
+  height: 240px;
+  width: auto;
+  max-height: 240px;
+  object-fit: contain;    /* ✅ pas de crop pour les verticales */
+  display: block;
 }
 
-.image-item img {
-height: 220px;
-object-fit: cover;
+/* par défaut, pas d'image */
+.media-preview{
+  display: none;
 }
 
+
+
+
+/* ❌ IMPORTANT : on enlève l'ancien bloc générique
 .project-media img,
 .project-media video {
   max-width: 60%;
@@ -169,46 +176,71 @@ object-fit: cover;
   object-fit: contain;
   display: block;
 }
+*/
 
+/* =========================
+   IMAGE SCROLLER
+========================= */
 
 .image-scroller {
-    scrollbar-width: none;        /* Firefox */
-    -ms-overflow-style: none;     /* IE / Edge */
+
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
-.image-scroller::-webkit-scrollbar {
-    display: none;                /* Chrome / Safari */
+.image-track {
+  display: flex;
+  gap: 20px;
+  padding-left: 20px;
 }
 
-.image-item {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+.image-item img {
+  height: 220px;
+  object-fit: cover;
 }
 
-.image-caption {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    color: black;
+.image-scroller {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Bandeau du bas : hauteur fixe pour éviter tout shift */
+.image-scroller{
+  height: 260px;          /* 220 (image) + ~20 caption + gap */
+  display: flex;
+  align-items: flex-start; /* garde la ligne stable */
+}
+
+/* Chaque item garde la même hauteur totale */
+.image-item{
+  min-height: 250px;
+}
+
+/* Caption a toujours la même hauteur (même si vide) */
+.image-caption{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: black;
 }
 
 .image-caption .year {
-    font-style: italic;
-    color: gray;
+  font-style: italic;
+  color: gray;
 }
 
 #mouseTrailCanvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
 }
-
-
-
-
 
 /* =========================
    MOBILE
@@ -258,4 +290,9 @@ object-fit: cover;
     width: 450px;
     max-width: 92.5vw;
   }
+}
+
+
+.image-item[data-project="berlin"] .title {
+  font-family: "Tattegrain3", Arial, sans-serif;
 }

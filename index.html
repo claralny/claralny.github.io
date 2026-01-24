@@ -80,7 +80,7 @@ d̵̨̪̉͝i̸̹̙̟̓̃g̸̥̰̅͂̒i̷̘̬͒͐͘ṱ̵͕͗̈́a̸̬͒͐͗l̵̊͆�
 <div class="image-track">
 
  <div class="image-item" data-project="unrepeated">
-      <img src="import/unrepeated2.png" alt="">
+      <img src="import/un3.png" alt="">
       <div class="image-caption">
         <span class="title">un⟳repeated</span>
         <span class="year">2026</span>
@@ -114,7 +114,7 @@ d̵̨̪̉͝i̸̹̙̟̓̃g̸̥̰̅͂̒i̷̘̬͒͐͘ṱ̵͕͗̈́a̸̬͒͐͗l̵̊͆�
     <div class="image-item" data-project="howitsounded">
       <img src="import/hwis.png" alt="">
       <div class="image-caption">
-        <span class="title">how it sound℮d wh℮n it dri℮d</span>
+        <span class="title">how it sound℮d wh℮n it dri℮d ゛ ˎˊ˗</span>
         <span class="year">2025</span>
       </div>
     </div>
@@ -357,7 +357,6 @@ document.querySelectorAll(".image-item[data-project]").forEach(item => {
   });
 });
 
-// 🖥 DESKTOP ONLY
 function openProject(key, clickedImg) {
   if (!isDesktop()) return;
 
@@ -368,32 +367,59 @@ function openProject(key, clickedImg) {
 
   desc.innerHTML = `<p>${p.text}</p>`;
 
- media.innerHTML = "";
+  // ✅ on crée toujours la stage + preview
+  if (p.video) {
+    media.innerHTML = `
+      <div class="media-stage">
+        <video class="media-video" controls src="${p.video}"></video>
+        <img class="media-preview" alt="">
+      </div>
+    `;
+  } else {
+    media.innerHTML = `
+      <div class="media-stage no-video">
+        <img class="media-preview" alt="">
+      </div>
+    `;
+  }
 
-if (p.video) {
-  media.innerHTML = `<video controls src="${p.video}"></video>`;
-} else if (clickedImg) {
-  const img = document.createElement("img");
-  img.src = clickedImg;
-  img.style.opacity = "0";
-  img.style.transition = "opacity 0.25s ease";
+  const stage = media.querySelector(".media-stage");
+  const previewEl = media.querySelector(".media-preview");
+  const videoEl = media.querySelector(".media-video"); // null si pas de vidéo
 
-  img.onload = () => {
-    img.style.opacity = "1";
-  };
-
-  media.appendChild(img);
-}
-
-
+  // images du bas
   track.innerHTML = "";
+
   p.images.forEach(src => {
     const div = document.createElement("div");
     div.className = "image-item";
-    div.innerHTML = `<img src="${src}">`;
+
+    const img = document.createElement("img");
+    img.src = src;
+img.addEventListener("mouseenter", () => {
+  previewEl.src = src;
+
+  // ✅ l'image remplace la vidéo (même emplacement)
+  previewEl.style.display = "block";
+  if (videoEl) videoEl.style.display = "none";
+});
+
+img.addEventListener("mouseleave", () => {
+  // retour à l'état normal
+  previewEl.style.display = "none";
+  previewEl.removeAttribute("src"); // optionnel
+
+  if (videoEl) videoEl.style.display = "block";
+});
+
+
+
+    div.appendChild(img);
     track.appendChild(div);
   });
 }
+
+
 </script>
 </body>
 </html>
