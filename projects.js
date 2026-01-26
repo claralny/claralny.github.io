@@ -115,10 +115,10 @@ datasynesthesia: {
 title: "▌│█║▌║▌║ data synesthesia",
 year: "2025",
 text: `
-VR environment created in Blender, interpreting Ryoji Ikeda’s datamatics, which explores the relationship between data, sound, and image. His work uses raw data to generate geometric visuals and sounds, encouraging reflection on the data that surrounds 
+VR environment created in Blender, interpreting Ryoji Ikeda’s datamatics, which explores the relationship between data, sound, and image. his work uses raw data to generate geometric visuals and sounds, encouraging reflection on the data that surrounds 
 us and how it might transform.<br><br>
 
-I chose to situate the project in a familiar, data-filled environment : the subway. Elements gradually transform in rhythm with the song datamatics. Presenting it in VR immerses the audience 
+I chose to situate the project in a familiar, data-filled environment : the subway. elements gradually transform in rhythm with the song datamatics. presenting it in VR immerses the audience 
 in a direct and intense audiovisual experience.<br><br><br><br>
 
 softwares : Blender | After Effects<br>
