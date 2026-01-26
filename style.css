@@ -364,3 +364,40 @@ body.is-mobile-project > .container > .navbar {
   color: #fff;
 }
 
+
+/* =========================
+   TABLET LANDSCAPE (>= desktop threshold but not "real desktop")
+========================= */
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+
+  /* On libère la colonne de droite */
+  .project-media {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: auto;
+    bottom: 300px;           /* = au-dessus de ton scroller (260px) + marge */
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  /* La description prend plus de place */
+  .project-desc {
+    left: 300px;             /* ajuste selon ta liste à gauche */
+    right: 20px;
+    width: auto;
+  }
+
+  /* Optionnel : un peu plus compact */
+  .media-stage,
+  .media-video,
+  .media-preview {
+    height: 220px;
+    max-height: 220px;
+  }
+
+  /* Scroller reste en bas */
+  .image-scroller {
+    height: 260px;
+  }
+}
