@@ -392,9 +392,6 @@ body.is-mobile-project > .container > .navbar {
     display: block;
   }
 }
-
-body {
-  touch-action: none;
-}
-body { touch-action: none; }
+body { touch-action: pan-y; }
 .image-scroller, .image-scroller2 { touch-action: pan-x; }
+#mouseTrailCanvas { pointer-events: none; }
