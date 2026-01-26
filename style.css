@@ -392,6 +392,39 @@ body.is-mobile-project > .container > .navbar {
     display: block;
   }
 }
-body { touch-action: pan-y; }
+body { touch-action: auto; }
+
 .image-scroller, .image-scroller2 { touch-action: pan-x; }
 #mouseTrailCanvas { pointer-events: none; }
+
+/* Bloquer le scroll uniquement quand on dessine */
+body.is-drawing {
+  touch-action: none;      /* empêche le scroll/pinch pendant le draw */
+  overscroll-behavior: none;
+}
+/* PROJETS MOBILE (portrait) : galerie verticale */
+@media (max-width: 1023px) {
+  .image-scroller2 {
+    overflow: visible;          /* pas de scroll container horizontal */
+    width: 100%;
+    height: auto;
+    touch-action: pan-y;        /* scroll vertical normal */
+  }
+
+  .image-track2 {
+    display: flex;
+    flex-direction: column;     /* ✅ colonne */
+    gap: 32px;
+  }
+
+  .image-item2 {
+    width: 100%;
+  }
+
+  .image-item2 img,
+  .image-item2 video {
+    width: 100%;
+    display: block;
+    height: auto;
+  }
+}

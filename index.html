@@ -182,15 +182,21 @@ let lastX = 0, lastY = 0;
 
 function startTrail(e) {
   if (!trailEnabled) return;
+
   drawing = true;
   lastX = e.clientX;
   lastY = e.clientY;
+
+  // ✅ empêche le scroll pendant le trait
+  document.body.classList.add("is-drawing");
 }
 
 function moveTrail(e) {
   if (!trailEnabled || !drawing) return;
 
-  // pas de preventDefault ici -> scroll mobile OK
+  // ✅ stoppe le scroll qui casse le dessin
+  e.preventDefault();
+
   ctx.strokeStyle = "rgba(0,0,0,1)";
   ctx.lineWidth = 1.4;
   ctx.lineCap = "round";
@@ -207,12 +213,17 @@ function moveTrail(e) {
 
 function endTrail() {
   drawing = false;
+
+  // ✅ re-autorise le scroll normal
+  document.body.classList.remove("is-drawing");
 }
 
+// ✅ IMPORTANT: passive:false pour que preventDefault marche
 document.addEventListener("pointerdown", startTrail, { passive: true });
-document.addEventListener("pointermove", moveTrail, { passive: true });
-document.addEventListener("pointerup", endTrail);
-document.addEventListener("pointercancel", endTrail);
+document.addEventListener("pointermove", moveTrail, { passive: false });
+document.addEventListener("pointerup", endTrail, { passive: true });
+document.addEventListener("pointercancel", endTrail, { passive: true });
+
 
 function disableMouseTrail() {
   trailEnabled = false;
