@@ -209,13 +209,13 @@ ultrav: {
 title: "ULTRA VIOLENTE ROMANCE",
 year: "2025",
 text: `
-"Because sometimes, words break before they reach the heart’s pain, and because on some days, we keep breathing without knowing why.
+"because sometimes, words break before they reach the heart’s pain, and because on some days, we keep breathing without knowing why.
 
-Because modern sorrows are no longer told through writing, and because the wounds of the soul deserve to be seen."<br><br>
+because modern sorrows are no longer told through writing, and because the wounds of the soul deserve to be seen."<br><br>
 an edition reflecting my experience and vision of romance, explored through typographic play and graphic compositions.<br>
-The project follows a poetic text, moving 
+the project follows a poetic text, moving 
 from tenderness to emotional collapse.<br><br>
-Using only tracing paper gives an editorial form to my fragile vision 
+using only tracing paper gives an editorial form to my fragile vision 
 of love, evoking the confusion and blending that this love can create.`,
 video: "import/ultraultracool.mp4",
 images: ["import/ultrav.png"]
@@ -252,10 +252,10 @@ digitalemotions: {
 title: "DIGITAL EMOTIONS",
 year: "2024",
 text: `
-Project combining code and editing, centered on the theme 
+project combining code and editing, centered on the theme 
 of glitch.The edit explores the human silhouette and clothing, gradually focusing on the face and emotions.<br><br>
 
-The final pages visually convey an emotional journey : from sadness to fear, through anger, and ultimately to freedom.<br><br><br><br>
+the final pages visually convey an emotional journey : from sadness to fear, through anger, and ultimately to freedom.<br><br><br><br>
 softwares: Processing 4 | InDesign
 `,
 video: null,
