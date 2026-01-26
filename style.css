@@ -9,25 +9,11 @@
   font-display: swap;
 }
 
-:root {
-  --font-main: sans-serif;
-  --color-menu-overlay: white;
-  --color-menu-text: #000;
-  --color-divider: #000000;
-}
+:root { --font-main: sans-serif; }
 
 /* =========================
    BASE
 ========================= */
-
-.b.font-loaded {
-  font-family: 'Tattegrain', Arial, sans-serif;
-}
-
-.b { 
-  font-family: "Tattegrain3";
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -40,21 +26,19 @@ body {
   overflow-x: hidden;
 }
 
-
-.b .year {
-  font-family: sans-serif;
-}
-
-
 a {
   text-decoration: none;
   color: black;
+  font-weight: 400;
 }
+
+/* berlin en Tattegrain (mais pas son année) */
+.b { font-family: "Tattegrain3", Arial, sans-serif; }
+.b .year { font-family: sans-serif; }
 
 /* =========================
    NAVBAR
 ========================= */
-
 .navbar {
   position: absolute;
   top: 20px;
@@ -64,10 +48,17 @@ a {
   font-size: 0.8em;
 }
 
+/* ✅ jamais gras */
+.navbar a,
+.navbar a *,
+.navbar strong,
+.navbar b {
+  font-weight: 400 !important;
+}
+
 /* =========================
    PROJECT LIST (LEFT)
 ========================= */
-
 .scrolling-text {
   position: absolute;
   top: 120px;
@@ -75,24 +66,18 @@ a {
   width: 220px;
 }
 
-.scrolling-text ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+.scrolling-text ul { list-style: none; }
 
 .scrolling-text li {
   font-size: 0.8rem;
   line-height: 1.2rem;
   position: relative;
-  list-style: none;
   cursor: pointer;
   transition: color 0.3s;
 }
 
-.scrolling-text li:hover {
-  color: #666666;
-}
+.scrolling-text li:hover { color: #666666; }
+#scrollingTextList li.is-active { color: #666666; }
 
 .scrolling-text .year {
   font-style: italic;
@@ -104,7 +89,6 @@ a {
 /* =========================
    PROJECT DESCRIPTION
 ========================= */
-
 .project-desc {
   position: absolute;
   top: 120px;
@@ -114,6 +98,9 @@ a {
   line-height: 1.5;
 }
 
+/* =========================
+   CONTACT PANEL
+========================= */
 .contact-panel {
   position: fixed;
   top: 115px;
@@ -121,7 +108,7 @@ a {
   width: 460px;
   max-width: 90vw;
   color: black;
-  font-family: 'Arial', sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.5;
   display: none;
   z-index: 1000;
@@ -132,7 +119,6 @@ a {
 /* =========================
    PROJECT MEDIA (RIGHT)
 ========================= */
-
 .project-media {
   position: absolute;
   top: 120px;
@@ -142,48 +128,27 @@ a {
   justify-content: flex-end;
 }
 
-.media-stage{
-  height: 240px;          /* ✅ hauteur max */
-  width: fit-content;     /* ✅ largeur = celle du média affiché */
+.media-stage {
+  height: 240px;
+  width: fit-content;
   display: inline-block;
 }
 
-/* vidéo et image ont la même règle */
 .media-video,
-.media-preview{
+.media-preview {
   height: 240px;
   width: auto;
   max-height: 240px;
-  object-fit: contain;    /* ✅ pas de crop pour les verticales */
-  display: block;
-}
-
-/* par défaut, pas d'image */
-.media-preview{
-  display: none;
-}
-
-
-
-
-/* ❌ IMPORTANT : on enlève l'ancien bloc générique
-.project-media img,
-.project-media video {
-  max-width: 60%;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
   object-fit: contain;
   display: block;
 }
-*/
+
+.media-preview { display: none; }
 
 /* =========================
    IMAGE SCROLLER
 ========================= */
-
 .image-scroller {
-
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -191,6 +156,12 @@ a {
   width: 100%;
   overflow-x: auto;
   white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  height: 260px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .image-track {
@@ -199,30 +170,14 @@ a {
   padding-left: 20px;
 }
 
+.image-item { min-height: 250px; }
+
 .image-item img {
   height: 220px;
   object-fit: cover;
 }
 
-.image-scroller {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-/* Bandeau du bas : hauteur fixe pour éviter tout shift */
-.image-scroller{
-  height: 260px;          /* 220 (image) + ~20 caption + gap */
-  display: flex;
-  align-items: flex-start; /* garde la ligne stable */
-}
-
-/* Chaque item garde la même hauteur totale */
-.image-item{
-  min-height: 250px;
-}
-
-/* Caption a toujours la même hauteur (même si vide) */
-.image-caption{
+.image-caption {
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
@@ -234,6 +189,13 @@ a {
   color: gray;
 }
 
+.image-item[data-project="berlin"] .title {
+  font-family: "Tattegrain3", Arial, sans-serif;
+}
+
+/* =========================
+   MOUSE TRAIL
+========================= */
 #mouseTrailCanvas {
   position: fixed;
   top: 0;
@@ -245,37 +207,8 @@ a {
 /* =========================
    MOBILE
 ========================= */
-
 @media (max-width: 1023px) {
-
-  .container {
-    padding: 100px 16px 40px;
-  }
-
-  .title {
-    font-size: 0.8rem;
-    margin-top: -5px;
-    margin-bottom: 24px;
-    margin-left: 2px;
-  }
-
-  .desc {
-    max-width: 95%;
-    font-size: 0.8rem;
-    margin-bottom: 40px;
-    margin-left: 2px;
-  }
-
-  .image-track2 {
-    gap: 32px;
-  }
-
-  .image-item2 img,
-  .image-item2 video {
-    width: 100%;
-    max-width: 100%;
-    max-height: none;
-  }
+  .container { padding: 100px 16px 40px; }
 
   .navbar {
     position: fixed;
@@ -290,19 +223,29 @@ a {
     width: 450px;
     max-width: 92.5vw;
   }
+
+  .desc {
+    max-width: 95%;
+    font-size: 0.8rem;
+    margin-bottom: 40px;
+    margin-left: 2px;
+  }
+
+  .image-track2 { gap: 32px; }
+
+  .image-item2 img,
+  .image-item2 video {
+    width: 100%;
+    max-width: 100%;
+    max-height: none;
+  }
 }
 
+/* =========================
+   MOBILE PROJECT VIEW
+========================= */
+.mobile-project-view { width: 100%; }
 
-.image-item[data-project="berlin"] .title {
-  font-family: "Tattegrain3", Arial, sans-serif;
-}
-
-/* ✅ Vue projet mobile générée dans index */
-.mobile-project-view {
-  width: 100%;
-}
-
-/* on cache la vue desktop sur mobile quand un projet est ouvert */
 body.is-mobile-project .scrolling-text,
 body.is-mobile-project .project-desc,
 body.is-mobile-project .project-media,
@@ -310,7 +253,105 @@ body.is-mobile-project .image-scroller {
   display: none !important;
 }
 
-/* et on affiche la vue mobile */
 body.is-mobile-project #mobileProjectView {
   display: block !important;
+}
+
+/* =========================
+   MOBILE TITLE ROW (projet)
+========================= */
+@media (max-width: 1023px) {
+  body.is-mobile-project .mobile-title-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 12px;
+    margin-top: -5px;
+    margin-bottom: 24px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  /* ✅ TITRE gras (sans strong) */
+  body.is-mobile-project .mobile-title {
+    font-size: 0.8rem;
+    line-height: 1.1;
+    font-weight: 700 !important;
+  }
+
+  /* ✅ ANNÉE gris clair italique à droite */
+  body.is-mobile-project .mobile-year {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #b5b5b5;
+    text-align: right;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-weight: 400 !important;
+  }
+
+  /* ✅ berlin uniquement (pas l’année) */
+  body.is-mobile-project .mobile-title-row.is-berlin .mobile-title {
+    font-family: "Tattegrain3", Arial, sans-serif;
+  }
+
+  /* ✅ navbar JAMAIS gras (encore plus spécifique) */
+  body.is-mobile-project #mobileProjectView .navbar a,
+  body.is-mobile-project #mobileProjectView .navbar a *,
+  body.is-mobile-project #mobileProjectView .navbar strong,
+  body.is-mobile-project #mobileProjectView .navbar b {
+    font-weight: 400 !important;
+  }
+}
+
+/* NAVBAR jamais gras, desktop + mobile */
+.navbar a,
+.navbar a *,
+.navbar strong,
+.navbar b {
+  font-weight: 400 !important;
+}
+
+/* Mobile project: titre gras */
+@media (max-width: 1023px) {
+  body.is-mobile-project .mobile-title {
+    font-weight: 700 !important;
+  }
+
+  body.is-mobile-project .mobile-year {
+    font-weight: 400 !important;
+    font-style: italic;
+    color: #b5b5b5;
+    text-align: right;
+    white-space: nowrap;
+    font-family: sans-serif;
+  }
+
+  body.is-mobile-project .mobile-title-row.is-berlin .mobile-title {
+    font-family: "Tattegrain3", Arial, sans-serif;
+  }
+}
+
+/* Fix mobile: empêcher le gras auto sur tap/focus */
+.navbar a,
+.navbar a:visited,
+.navbar a:hover,
+.navbar a:active,
+.navbar a:focus,
+.navbar a:focus-visible {
+  font-weight: 400 !important;
+  outline: none;
+}
+
+/* Bonus iOS: éviter les styles "tap" chelous */
+.navbar a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+}
+
+
+/* Quand on est dans un projet mobile, on cache la navbar originale */
+body.is-mobile-project > .container > .navbar {
+  display: none !important;
 }
