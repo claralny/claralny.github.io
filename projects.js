@@ -123,7 +123,7 @@ us and how it might transform.<br><br>
 I chose to situate the project in a familiar, data-filled environment : the subway. elements gradually transform in rhythm with the song datamatics. presenting it in VR immerses the audience 
 in a direct and intense audiovisual experience.<br><br><br><br>
 
-softwares : Blender | After Effects<br>
+softwares : Blender | After Effects<br><br>
 
 <a href="https://www.youtube.com/watch?v=lffc7b8xnLo" target="_blank">[see project]</a>
 `,
@@ -173,7 +173,7 @@ and motion collide.<br><br>
 I also created a poster and fanzine : the poster features scannable images that trigger the AR experience, while the fanzine transforms 
 the eight sounds used into eight sentences that together form 
 a short story<br><br><br><br>
-softwares: InDesign | Touch Designer | Artivive | Photoshop<br>
+softwares: InDesign | Touch Designer | Artivive | Photoshop<br><br>
 <a href="https://claralny.github.io/spray/" target="_blank">[see project]</a>
 `,
 video: "import/claraspray_projection.mp4",
@@ -227,14 +227,14 @@ mar: {
 title: "AU BORD DU GOUFFRE",
 year: "2025",
 text: `
-ainteractive digital installation combining a website and posters for the fictional exhibition Au bord du gouffre, blending Romantic paintings with real-time video textures, with water as a central motif of softness and tension.<br><br>
+an interactive digital installation combining a website and posters for the fictional exhibition Au bord du gouffre, blending Romantic paintings with real-time video textures, with water as a central motif of softness and tension.<br><br>
 
 created as part of a workshop led by Stéphane Buellet from 
 the visual design studio Cheval Vert.<br><br><br><br>
 
 
 softwares : Cables.gl | Sublime Text | Illustrator<br>
-collaboration : Serena Taleb<br>
+collaboration : Serena Taleb<br><br>
 
 <a href="https://cables.gl/p/gn3rHC" target="_blank">[see project]</a>
 `,

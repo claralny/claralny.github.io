@@ -355,3 +355,13 @@ body.is-mobile-project #mobileProjectView {
 body.is-mobile-project > .container > .navbar {
   display: none !important;
 }
+
+.navbar a {
+  color: #000;
+  transition: color 0.2s ease;
+}
+
+.navbar.is-light a {
+  color: #fff;
+}
+

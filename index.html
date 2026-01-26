@@ -439,7 +439,46 @@ function routeFromHash() {
 window.addEventListener("DOMContentLoaded", routeFromHash);
 window.addEventListener("hashchange", routeFromHash);
 window.addEventListener("popstate", routeFromHash);
+function getActiveNavbar() {
+  // si on est dans un projet mobile -> navbar injectée
+  if (document.body.classList.contains("is-mobile-project")) {
+    return document.querySelector("#mobileProjectView .navbar");
+  }
+  // sinon -> navbar de base
+  return document.querySelector(".container > .navbar");
+}
+
+function updateNavbarContrast() {
+  const navbar = getActiveNavbar();
+  if (!navbar) return;
+
+  // IMPORTANT: laisser elementFromPoint "voir" sous la navbar
+  const prevPE = navbar.style.pointerEvents;
+  navbar.style.pointerEvents = "none";
+
+  const r = navbar.getBoundingClientRect();
+  const x = r.left + r.width / 2;
+  const y = r.top + r.height / 2;
+
+  const under = document.elementFromPoint(x, y);
+
+  navbar.style.pointerEvents = prevPE || "";
+
+  if (!under) return;
+
+  // Si on est au-dessus d'une image/vidéo (ou à l'intérieur), on passe en blanc
+  const onMedia = under.closest && (under.closest("img") || under.closest("video"));
+  navbar.classList.toggle("is-light", !!onMedia);
+}
+
+window.addEventListener("scroll", updateNavbarContrast, { passive: true });
+window.addEventListener("resize", updateNavbarContrast);
+window.addEventListener("hashchange", () => setTimeout(updateNavbarContrast, 0));
+window.addEventListener("DOMContentLoaded", () => setTimeout(updateNavbarContrast, 0));
+
+
 </script>
+
 
 </body>
 </html>
