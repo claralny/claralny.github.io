@@ -366,38 +366,35 @@ body.is-mobile-project > .container > .navbar {
 
 
 /* =========================
-   TABLET LANDSCAPE (>= desktop threshold but not "real desktop")
+   TABLET LANDSCAPE (desktop layout but video in bottom scroller)
 ========================= */
 @media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
 
-  /* On libère la colonne de droite */
+  /* on enlève la colonne média à droite */
   .project-media {
-    position: absolute;
-    left: 20px;
-    right: 20px;
-    top: auto;
-    bottom: 300px;           /* = au-dessus de ton scroller (260px) + marge */
-    width: auto;
-    justify-content: flex-start;
+    display: none !important;
   }
 
-  /* La description prend plus de place */
+  /* le texte garde EXACTEMENT sa largeur normale */
   .project-desc {
-    left: 300px;             /* ajuste selon ta liste à gauche */
-    right: 20px;
-    width: auto;
+    width: 450px !important;  /* comme ton CSS desktop */
   }
 
-  /* Optionnel : un peu plus compact */
-  .media-stage,
-  .media-video,
-  .media-preview {
+  /* optionnel: si tu veux éviter tout stretch */
+  .project-desc p {
+    max-width: 450px;
+  }
+
+  /* item vidéo dans le scroller : même hauteur que tes images */
+  .image-item video {
     height: 220px;
-    max-height: 220px;
-  }
-
-  /* Scroller reste en bas */
-  .image-scroller {
-    height: 260px;
+    width: auto;
+    display: block;
   }
 }
+
+body {
+  touch-action: none;
+}
+body { touch-action: none; }
+.image-scroller, .image-scroller2 { touch-action: pan-x; }

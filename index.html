@@ -185,20 +185,29 @@ function getPoint(e) {
 function startDraw(e) {
   if (!trailEnabled) return;
 
-  // Sur touch: éviter le scroll pendant qu’on dessine
   if (e.pointerType === "touch") e.preventDefault();
+
+  // ✅ garde le pointer même si tu glisses
+  if (e.target && e.target.setPointerCapture) {
+    e.target.setPointerCapture(e.pointerId);
+  }
 
   isDrawing = true;
   const { x, y } = getPoint(e);
   lastX = x; lastY = y;
 }
 
-function moveDraw(e) {
-  if (!trailEnabled || !isDrawing) return;
 
-  if (e.pointerType === "touch") e.preventDefault();
+let pendingPoint = null;
+let rafId = null;
 
-  const { x, y } = getPoint(e);
+function drawStep() {
+  if (!trailEnabled || !isDrawing || !pendingPoint) {
+    rafId = null;
+    return;
+  }
+
+  const { x, y } = pendingPoint;
 
   ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
   ctx.lineWidth = 1.2;
@@ -209,7 +218,18 @@ function moveDraw(e) {
   ctx.stroke();
 
   lastX = x; lastY = y;
+  pendingPoint = null;
+  rafId = null;
 }
+
+function moveDraw(e) {
+  if (!trailEnabled || !isDrawing) return;
+  if (e.pointerType === "touch") e.preventDefault();
+
+  pendingPoint = getPoint(e);
+  if (!rafId) rafId = requestAnimationFrame(drawStep);
+}
+
 
 function endDraw() {
   isDrawing = false;
@@ -376,8 +396,46 @@ function openDesktopProject(key) {
   disableMouseTrail();
   setActiveProject(key);
 
+  // texte (inchangé)
   desc.innerHTML = `<p>${p.text}</p>`;
 
+  // TABLET LANDSCAPE: vidéo dans le scroller du bas
+  if (isTabletLandscape()) {
+    // plus de media à droite (CSS le cache déjà, mais on vide au cas où)
+    media.innerHTML = "";
+
+    track.innerHTML = "";
+
+    // ✅ si vidéo : on la met comme un item du scroller
+    if (p.video) {
+      const vItem = document.createElement("div");
+      vItem.className = "image-item";
+
+      vItem.innerHTML = `
+        <video controls playsinline preload="metadata">
+          <source src="${p.video}" type="video/mp4">
+        </video>
+      `;
+
+      track.appendChild(vItem);
+    }
+
+    // puis les images comme d’hab
+    p.images.forEach((src) => {
+      const div = document.createElement("div");
+      div.className = "image-item";
+
+      const img = document.createElement("img");
+      img.src = src;
+
+      div.appendChild(img);
+      track.appendChild(div);
+    });
+
+    return; // ✅ on sort, pas besoin du mode preview/hover desktop
+  }
+
+  // DESKTOP NORMAL (ton comportement actuel)
   if (p.video) {
     media.innerHTML = `
       <div class="media-stage">
@@ -445,6 +503,7 @@ function openDesktopProject(key) {
   });
 }
 
+
 /* =========================
    LIST CLICK
 ========================= */
@@ -502,6 +561,11 @@ function updateNavbarContrast() {
   const onMedia = under.closest && (under.closest("img") || under.closest("video"));
   navbar.classList.toggle("is-light", !!onMedia);
 }
+
+function isTabletLandscape() {
+  return window.matchMedia("(min-width: 1024px) and (max-width: 1366px) and (orientation: landscape)").matches;
+}
+
 
 window.addEventListener("scroll", updateNavbarContrast, { passive: true });
 window.addEventListener("resize", updateNavbarContrast);
