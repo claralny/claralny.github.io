@@ -199,7 +199,7 @@ how does the embodiment of electronic music through graphic design influence the
 video: null,
 images: [
 "import/vs.png",
-"import/vs3.png",
+
 "import/vs4.png",
 "import/vs5.png",
 "import/vs6.png",
