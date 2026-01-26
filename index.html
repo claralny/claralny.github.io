@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css?v=999">
+<link rel="shortcut icon" href="import/sword.png">
+<title>portfolio2clara</title>
+</head>
+
+<body>
+
+<canvas id="mouseTrailCanvas"></canvas>
+
+<div class="container">
+
+  <div class="navbar">
+    <a href="#" id="contactToggleDesktop" style="font-weight:400;">[contact]</a>
+    <a href="#" id="workToggleDesktop" style="font-weight:400;">[work]</a>
+  </div>
+
+  <div class="scrolling-text">
+    <ul id="scrollingTextList">
+      <li data-project="unrepeated">un⟳repeated <span class="year">2026</span></li>
+      <li data-project="angelcandles">angel༺☆༻candles <span class="year">2026</span></li>
+      <li data-project="worldisastercompilation">✶⋆worldisastercompilation.˚ <span class="year">2025</span></li>
+      <li data-project="berlin" class="b">berlin <span class="year">2025</span></li>
+      <li data-project="howitsounded">how it sound℮d wh℮n it dri℮d ゛ ˎˊ˗ <span class="year">2025</span></li>
+      <li data-project="datasynesthesia">▌│█║▌║▌║ data synesthesia <span class="year">2025</span></li>
+      <li data-project="griefseed">grief۶ৎseed <span class="year">2025</span></li>
+      <li data-project="chambrenoire">ılıılıılı darkroom ılıılıılı <span class="year">2025</span></li>
+      <li data-project="vs">ᯓsonic visions♪ <span class="year">2025</span></li>
+      <li data-project="ultrav">ultra︻芫═───violente romance <span class="year">2025</span></li>
+      <li data-project="mar">༄.° au bord du gouffre <span class="year">2025</span></li>
+
+      <li data-project="digitalemotions">
+        d̵̨̪̉͝i̸̹̙̟̓̃g̸̥̰̅͂̒i̷̘̬͒͐͘ṱ̵͕͗̈́a̸̬͒͐͗l̵̥͕̊͆ emotions
+        <span class="year">2024</span>
+      </li>
+
+      <li data-project="mad">𓀤𓀥 madfest 𓀤𓀥 <span class="year">2024</span></li>
+    </ul>
+
+    <!-- CONTACT (desktop only panel source) -->
+    <div id="contactPanel" class="contact-panel">
+      <p>
+        french graphic designer based in Paris, currently studying in a master’s degree in digital design (4th year), after completing a DNMADE (National Diploma of Art and Design) in graphic design and digital studies.<br><br>
+        i’m into electronic music [✴︎], swords [🗡], adventures [.ೃ࿔ ✈︎ *], badly drawn illustrations [ᝰ], and mixed aesthetics somewhere between ‎⋆. 𐙚 ˚ coquette ‎⋆. 𐙚 ˚ and ⌐╦ᡁ᠊╾━ghetto.<br><br><br><br><br>
+        <strong><a href="mailto:clara.launay@ensaama.net">clara.launay[at]ensaama[dot]net</a><br></strong>
+        <strong>+33 6 27 87 67 55</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- DESKTOP -->
+  <div class="project-desc" id="projectDesc"></div>
+  <div class="project-media" id="projectMedia"></div>
+
+  <!-- MOBILE -->
+  <div id="mobileProjectView" class="mobile-project-view" style="display:none;"></div>
+
+  <!-- DESKTOP SCROLLER -->
+  <div class="image-scroller" id="imageScroller">
+    <div class="image-track">
+      <div class="image-item" data-project="unrepeated">
+        <img src="import/un3.png" alt="">
+        <div class="image-caption"><span class="title">un⟳repeated</span><span class="year">2026</span></div>
+      </div>
+      <div class="image-item" data-project="angelcandles">
+        <img src="import/nb.png" alt="">
+        <div class="image-caption"><span class="title">angel༺☆༻candles</span><span class="year">2026</span></div>
+      </div>
+      <div class="image-item" data-project="worldisastercompilation">
+        <img src="import/w.png" alt="">
+        <div class="image-caption"><span class="title">✶⋆worldisastercompilation.˚</span><span class="year">2025</span></div>
+      </div>
+      <div class="image-item" data-project="berlin">
+        <img src="import/berlin.png" alt="">
+        <div class="image-caption"><span class="title">berlin</span><span class="year">2025</span></div>
+      </div>
+      <div class="image-item" data-project="howitsounded">
+        <img src="import/hwis.png" alt="">
+        <div class="image-caption"><span class="title">how it sound℮d wh℮n it dri℮d ゛ ˎˊ˗</span><span class="year">2025</span></div>
+      </div>
+      <div class="image-item" data-project="datasynesthesia">
+        <img src="import/data2.jpeg" alt="">
+        <div class="image-caption"><span class="title">▌│█║▌║▌║ data synesthesia</span><span class="year">2025</span></div>
+      </div>
+      <div class="image-item" data-project="griefseed">
+        <img src="import/gs1.png" alt="">
+        <div class="image-caption"><span class="title">grief۶ৎseed</span><span class="year">2025</span></div>
+      </div>
+      <div class="image-item" data-project="chambrenoire">
+        <img src="import/chamb.png" alt="">
+        <div class="image-caption"><span class="title">ılıılıılı darkroom ılıılıılı</span><span class="year">2025</span></div>
+      </div>
+      <div class="image-item" data-project="vs">
+        <img src="import/vs1.png" alt="">
+        <div class="image-caption"><span class="title">ᯓsonic visions♪</span><span class="year">2025</span></div>
+      </div>
+      <div class="image-item" data-project="ultrav">
+        <img src="import/ultrav.png" alt="">
+        <div class="image-caption"><span class="title">ultra︻芫═───violente romance</span><span class="year">2025</span></div>
+      </div>
+      <div class="image-item" data-project="mar">
+        <img src="import/marww.png" alt="">
+        <div class="image-caption"><span class="title">༄.° au bord du gouffre</span><span class="year">2025</span></div>
+      </div>
+      <div class="image-item" data-project="digitalemotions">
+        <img src="import/de4.png" alt="">
+        <div class="image-caption"><span class="title">d̵̨̪̉͝i̸̹̙̟̓̃g̸̥̰̅͂̒i̷̘̬͒͐͘ṱ̵͕͗̈́a̸̬͒͐͗l̵̥͕̊͆ emotions</span><span class="year">2024</span></div>
+      </div>
+      <div class="image-item" data-project="mad">
+        <img src="import/mad0.png" alt="">
+        <div class="image-caption"><span class="title">𓀤𓀥 madfest 𓀤𓀥</span><span class="year">2024</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="projects.js"></script>
+
+<script>
+/* =========================
+   HORIZONTAL SCROLL (desktop scroller)
+========================= */
+const imageScroller = document.getElementById("imageScroller");
+imageScroller.addEventListener("wheel", (e) => {
+  e.preventDefault();
+  imageScroller.scrollLeft += e.deltaY;
+}, { passive: false });
+
+/* =========================
+   DESKTOP / MOBILE
+========================= */
+const DESKTOP_WIDTH = 1024;
+function isDesktop() { return window.innerWidth >= DESKTOP_WIDTH; }
+
+/* =========================
+   CONTACT DESKTOP
+========================= */
+const contactPanel = document.getElementById("contactPanel");
+document.getElementById("contactToggleDesktop").addEventListener("click", (e) => {
+  e.preventDefault();
+  contactPanel.style.display = (contactPanel.style.display === "block") ? "none" : "block";
+});
+document.getElementById("workToggleDesktop").addEventListener("click", (e) => {
+  e.preventDefault();
+  location.hash = "";
+});
+
+/* =========================
+   ACTIVE PROJECT COLOR (left list)
+========================= */
+function setActiveProject(key) {
+  document.querySelectorAll('#scrollingTextList li[data-project]').forEach(li => {
+    li.classList.toggle("is-active", li.dataset.project === key);
+  });
+}
+
+/* =========================
+   POINTER TRAIL (mouse + touch)
+========================= */
+const canvas = document.getElementById('mouseTrailCanvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+let lastX = null;
+let lastY = null;
+let isDrawing = false;
+let trailEnabled = true;
+
+function getPoint(e) {
+  // PointerEvents: e.clientX / e.clientY OK (mouse + touch + pen)
+  return { x: e.clientX, y: e.clientY };
+}
+
+function startDraw(e) {
+  if (!trailEnabled) return;
+
+  if (e.pointerType === "touch") e.preventDefault();
+
+  // ✅ garde le pointer même si tu glisses
+  if (e.target && e.target.setPointerCapture) {
+    e.target.setPointerCapture(e.pointerId);
+  }
+
+  isDrawing = true;
+  const { x, y } = getPoint(e);
+  lastX = x; lastY = y;
+}
+
+
+let pendingPoint = null;
+let rafId = null;
+
+function drawStep() {
+  if (!trailEnabled || !isDrawing || !pendingPoint) {
+    rafId = null;
+    return;
+  }
+
+  const { x, y } = pendingPoint;
+
+  ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
+  ctx.lineWidth = 1.2;
+  ctx.lineCap = 'round';
+  ctx.beginPath();
+  ctx.moveTo(lastX, lastY);
+  ctx.lineTo(x, y);
+  ctx.stroke();
+
+  lastX = x; lastY = y;
+  pendingPoint = null;
+  rafId = null;
+}
+
+function moveDraw(e) {
+  if (!trailEnabled || !isDrawing) return;
+  if (e.pointerType === "touch") e.preventDefault();
+
+  pendingPoint = getPoint(e);
+  if (!rafId) rafId = requestAnimationFrame(drawStep);
+}
+
+
+function endDraw() {
+  isDrawing = false;
+  lastX = null;
+  lastY = null;
+}
+
+// Pointer events (support mouse + touch + pen)
+document.addEventListener("pointerdown", startDraw, { passive: false });
+document.addEventListener("pointermove", moveDraw, { passive: false });
+document.addEventListener("pointerup", endDraw);
+document.addEventListener("pointercancel", endDraw);
+
+function disableMouseTrail() {
+  trailEnabled = false;
+  isDrawing = false;
+  lastX = null; lastY = null;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+function enableMouseTrail() {
+  trailEnabled = true;
+  isDrawing = false;
+  lastX = null; lastY = null;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+
+/* =========================
+   DESKTOP ELEMENTS
+========================= */
+const desc = document.getElementById("projectDesc");
+const media = document.getElementById("projectMedia");
+const track = document.querySelector(".image-track");
+const initialTrackHTML = track.innerHTML;
+
+/* =========================
+   MOBILE VIEW
+========================= */
+const mobileView = document.getElementById("mobileProjectView");
+
+/* on prend le contact HTML mais on le "safe" (on enlève les strong) */
+function getContactSafeHTML() {
+  const tmp = document.createElement("div");
+  tmp.innerHTML = contactPanel.innerHTML;
+  tmp.querySelectorAll("strong").forEach(s => {
+    const span = document.createElement("span");
+    span.className = "contact-strong";
+    span.innerHTML = s.innerHTML;
+    s.replaceWith(span);
+  });
+  return tmp.innerHTML;
+}
+
+function renderMobileProject(key) {
+  const p = projects[key];
+  if (!p) return;
+
+  disableMouseTrail();
+  document.body.classList.add("is-mobile-project");
+
+  // titre/année EXACT depuis la liste de gauche
+  const li = document.querySelector(`li[data-project="${key}"]`);
+  const clone = li ? li.cloneNode(true) : null;
+
+  let yearText = "";
+  let titleHTML = p.title;
+
+  if (clone) {
+    const yearSpan = clone.querySelector(".year");
+    if (yearSpan) {
+      yearText = yearSpan.textContent.trim();
+      yearSpan.remove();
+    }
+    titleHTML = clone.innerHTML.trim();
+  }
+
+  const isBerlin = (key === "berlin");
+
+  mobileView.innerHTML = `
+    <div class="navbar">
+      <a href="#" id="contactToggleMobile" style="font-weight:400;">[contact]</a>
+      <a href="#" id="backToWorkMobile" style="font-weight:400;">[work]</a>
+    </div>
+
+    <div class="mobile-title-row ${isBerlin ? "is-berlin" : ""}">
+      <div class="mobile-title">${titleHTML}</div>
+      <div class="mobile-year">${yearText}</div>
+    </div>
+
+    <div id="contactPanelMobile" class="contact-panel" style="display:none;">
+      ${getContactSafeHTML()}
+    </div>
+
+    <div class="desc">
+      <p>${p.text}</p>
+    </div>
+
+    ${p.video ? `
+      <div class="image-item2" style="margin-bottom:32px;">
+        <video controls playsinline preload="metadata" style="width:100%; display:block;">
+          <source src="${p.video}" type="video/mp4">
+        </video>
+      </div>
+    ` : ""}
+
+    <div class="image-scroller2" id="imageScrollerMobile">
+      <div class="image-track2">
+        ${p.images.map(src => `<div class="image-item2"><img src="${src}" alt=""></div>`).join("")}
+      </div>
+    </div>
+  `;
+
+  // bind navbar mobile
+  const contactToggle = document.getElementById("contactToggleMobile");
+  const contactPanelMobile = document.getElementById("contactPanelMobile");
+  contactToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    contactPanelMobile.style.display =
+      contactPanelMobile.style.display === "block" ? "none" : "block";
+  });
+
+  document.getElementById("backToWorkMobile").addEventListener("click", (e) => {
+    e.preventDefault();
+    location.hash = "";
+  });
+}
+
+/* =========================
+   RESET HOME
+========================= */
+function resetHome() {
+  document.body.classList.remove("is-mobile-project");
+  mobileView.innerHTML = "";
+
+  desc.innerHTML = "";
+  media.innerHTML = "";
+  track.innerHTML = initialTrackHTML;
+
+  setActiveProject("");
+  bindDesktopImageClicks();
+  enableMouseTrail();
+}
+
+/* =========================
+   DESKTOP BIND (home track images clickable)
+========================= */
+function bindDesktopImageClicks() {
+  document.querySelectorAll(".image-item[data-project]").forEach(item => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      location.hash = item.dataset.project;
+    });
+  });
+}
+bindDesktopImageClicks();
+
+/* =========================
+   OPEN PROJECT (desktop)
+========================= */
+function openDesktopProject(key) {
+  const p = projects[key];
+  if (!p) return;
+
+  disableMouseTrail();
+  setActiveProject(key);
+
+  // texte (inchangé)
+  desc.innerHTML = `<p>${p.text}</p>`;
+
+  // TABLET LANDSCAPE: vidéo dans le scroller du bas
+  if (isTabletLandscape()) {
+    // plus de media à droite (CSS le cache déjà, mais on vide au cas où)
+    media.innerHTML = "";
+
+    track.innerHTML = "";
+
+    // ✅ si vidéo : on la met comme un item du scroller
+    if (p.video) {
+      const vItem = document.createElement("div");
+      vItem.className = "image-item";
+
+      vItem.innerHTML = `
+        <video controls playsinline preload="metadata">
+          <source src="${p.video}" type="video/mp4">
+        </video>
+      `;
+
+      track.appendChild(vItem);
+    }
+
+    // puis les images comme d’hab
+    p.images.forEach((src) => {
+      const div = document.createElement("div");
+      div.className = "image-item";
+
+      const img = document.createElement("img");
+      img.src = src;
+
+      div.appendChild(img);
+      track.appendChild(div);
+    });
+
+    return; // ✅ on sort, pas besoin du mode preview/hover desktop
+  }
+
+  // DESKTOP NORMAL (ton comportement actuel)
+  if (p.video) {
+    media.innerHTML = `
+      <div class="media-stage">
+        <video class="media-video" controls playsinline preload="metadata">
+          <source src="${p.video}" type="video/mp4">
+        </video>
+        <img class="media-preview" alt="">
+      </div>
+    `;
+  } else {
+    media.innerHTML = `
+      <div class="media-stage no-video">
+        <img class="media-preview" alt="">
+      </div>
+    `;
+  }
+
+  const previewEl = media.querySelector(".media-preview");
+  const videoEl = media.querySelector(".media-video");
+
+  track.innerHTML = "";
+
+  let pinnedSrc = null;
+
+  function showPreview(src) {
+    if (!previewEl) return;
+    previewEl.src = src;
+    previewEl.style.display = "block";
+    if (videoEl) videoEl.style.display = "none";
+  }
+  function showVideoOrClear() {
+    if (previewEl) {
+      previewEl.style.display = "none";
+      previewEl.removeAttribute("src");
+    }
+    if (videoEl) videoEl.style.display = "block";
+  }
+  function showPinnedOrVideo() {
+    if (pinnedSrc) showPreview(pinnedSrc);
+    else showVideoOrClear();
+  }
+
+  imageScroller.onmouseleave = () => {
+    pinnedSrc = null;
+    showVideoOrClear();
+  };
+
+  p.images.forEach((src) => {
+    const div = document.createElement("div");
+    div.className = "image-item";
+
+    const img = document.createElement("img");
+    img.src = src;
+
+    img.addEventListener("mouseenter", () => showPreview(src));
+    img.addEventListener("mouseleave", () => showPinnedOrVideo());
+    img.addEventListener("click", (e) => {
+      e.preventDefault();
+      pinnedSrc = src;
+      showPreview(src);
+    });
+
+    div.appendChild(img);
+    track.appendChild(div);
+  });
+}
+
+
+/* =========================
+   LIST CLICK
+========================= */
+document.querySelectorAll("li[data-project]").forEach(li => {
+  li.addEventListener("click", (e) => {
+    e.preventDefault();
+    location.hash = li.dataset.project;
+  });
+});
+
+/* =========================
+   ROUTER
+========================= */
+function routeFromHash() {
+  const key = location.hash.replace("#", "");
+  if (!key || !projects[key]) {
+    resetHome();
+    return;
+  }
+  if (isDesktop()) openDesktopProject(key);
+  else renderMobileProject(key);
+}
+
+window.addEventListener("DOMContentLoaded", routeFromHash);
+window.addEventListener("hashchange", routeFromHash);
+window.addEventListener("popstate", routeFromHash);
+function getActiveNavbar() {
+  // si on est dans un projet mobile -> navbar injectée
+  if (document.body.classList.contains("is-mobile-project")) {
+    return document.querySelector("#mobileProjectView .navbar");
+  }
+  // sinon -> navbar de base
+  return document.querySelector(".container > .navbar");
+}
+
+function updateNavbarContrast() {
+  const navbar = getActiveNavbar();
+  if (!navbar) return;
+
+  // IMPORTANT: laisser elementFromPoint "voir" sous la navbar
+  const prevPE = navbar.style.pointerEvents;
+  navbar.style.pointerEvents = "none";
+
+  const r = navbar.getBoundingClientRect();
+  const x = r.left + r.width / 2;
+  const y = r.top + r.height / 2;
+
+  const under = document.elementFromPoint(x, y);
+
+  navbar.style.pointerEvents = prevPE || "";
+
+  if (!under) return;
+
+  // Si on est au-dessus d'une image/vidéo (ou à l'intérieur), on passe en blanc
+  const onMedia = under.closest && (under.closest("img") || under.closest("video"));
+  navbar.classList.toggle("is-light", !!onMedia);
+}
+
+function isTabletLandscape() {
+  return window.matchMedia("(min-width: 1024px) and (max-width: 1366px) and (orientation: landscape)").matches;
+}
+
+
+window.addEventListener("scroll", updateNavbarContrast, { passive: true });
+window.addEventListener("resize", updateNavbarContrast);
+window.addEventListener("hashchange", () => setTimeout(updateNavbarContrast, 0));
+window.addEventListener("DOMContentLoaded", () => setTimeout(updateNavbarContrast, 0));
+
+
+</script>
+
+</body>
+</html>
