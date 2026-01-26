@@ -296,3 +296,21 @@ a {
 .image-item[data-project="berlin"] .title {
   font-family: "Tattegrain3", Arial, sans-serif;
 }
+
+/* ✅ Vue projet mobile générée dans index */
+.mobile-project-view {
+  width: 100%;
+}
+
+/* on cache la vue desktop sur mobile quand un projet est ouvert */
+body.is-mobile-project .scrolling-text,
+body.is-mobile-project .project-desc,
+body.is-mobile-project .project-media,
+body.is-mobile-project .image-scroller {
+  display: none !important;
+}
+
+/* et on affiche la vue mobile */
+body.is-mobile-project #mobileProjectView {
+  display: block !important;
+}
