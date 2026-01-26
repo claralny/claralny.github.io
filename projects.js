@@ -284,7 +284,7 @@ typographic layout experiments on posters for the 2nd edition of the fictional m
 created and displayed as part of a workshop organized by graphic designer Robin Abreu.<br><br><br><br>
 
 print : risography<br>
-artists : Lana del Rey, Mac Miller`,
+artist : Lana del Rey`,
 video: null,
 images: [
 "import/mad0.png",
