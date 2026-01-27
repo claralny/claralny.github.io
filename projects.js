@@ -14,15 +14,16 @@ const projects = {
       <br><br><br>
       softwares & other : InDesign | Tattoo printer | Engraving pen
     `,
+    video: "import/gravureedition.mp4",
     images: [
-      "import/un3.png",
-      "import/un7.png",
-      "import/un6.png",
-      "import/un4.png",
-      "import/un5.png",      
-      "import/un8.png"
+      "import/couverture.png",
+      "import/page1.png",
+      "import/page2.png",
+      "import/talon.png",
+      "import/tatouageee.png",      
+      "import/verre.png"
     ],
-    video: null
+
   },
 
 
