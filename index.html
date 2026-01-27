@@ -15,9 +15,13 @@
 <div class="container">
 
   <div class="navbar">
-    <a href="#" id="contactToggleDesktop" style="font-weight:400;">[contact]</a>
-    <a href="#" id="workToggleDesktop" style="font-weight:400;">[work]</a>
-  </div>
+  <a href="import/claralaunay_portfolio_2026.pdf" target="_blank" rel="noopener" style="font-weight:400;">[portfolio pdf]</a>
+  <a href="import/claralaunay_resume.pdf" target="_blank" rel="noopener" style="font-weight:400;">[cv]</a>
+
+  <a href="#" id="contactToggleDesktop" style="font-weight:400;">[contact]</a>
+  <a href="#" id="workToggleDesktop" style="font-weight:400;">[work]</a>
+</div>
+
 
   <div class="scrolling-text">
     <ul id="scrollingTextList">
@@ -311,10 +315,14 @@ function renderMobileProject(key) {
   const isBerlin = (key === "berlin");
 
   mobileView.innerHTML = `
-    <div class="navbar">
-      <a href="#" id="contactToggleMobile" style="font-weight:400;">[contact]</a>
-      <a href="#" id="backToWorkMobile" style="font-weight:400;">[work]</a>
-    </div>
+   <div class="navbar">
+  <a href="import/claralaunay_portfolio_2026.pdf" target="_blank" rel="noopener" style="font-weight:400;">[portfolio pdf]</a>
+  <a href="import/claralaunay_resume.pdf" target="_blank" rel="noopener" style="font-weight:400;">[cv]</a>
+
+  <a href="#" id="contactToggleMobile" style="font-weight:400;">[contact]</a>
+  <a href="#" id="backToWorkMobile" style="font-weight:400;">[work]</a>
+</div>
+
 
     <div class="mobile-title-row ${isBerlin ? "is-berlin" : ""}">
       <div class="mobile-title">${titleHTML}</div>
