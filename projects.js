@@ -1,5 +1,30 @@
 const projects = {
 
+ghettoprincess: {
+    title: "｡ ₊°༺ghetto princess༻°₊ ｡",
+    year: "2026",
+    text: `
+      animation on the theme of the “ghetto princess”, oscillating between her love for romance, lace, and reflections on her appearance, and the harsher aspects of her life, including verbal and physical violence. <br><br>it balances drama and celebration, with misadventures hidden beneath romance and appearance. the animation is accompanied by a poetic text blending fairy tale codes with a more raw and contemporary language.<br><br><br>
+      softwares : After Effects | Procreate
+    `,
+    video: "import/ghettoprincessstoryclara.mp4",
+    images: [
+      "import/gp.png",
+      "import/g5.png", 
+      "import/gp1.png",
+
+      "import/gp2.png",
+      "import/g6.png",
+      "import/gp3.png",
+      "import/g4.png",
+           
+      
+      "import/g7.png"
+    ],
+
+  },
+
+
   unrepeated: {
     title: "un⟳repeated",
     year: "2026",
