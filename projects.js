@@ -1,5 +1,146 @@
 const projects = {
 
+
+rokit: {
+    title: "🏙rokittttttttttttt [wip]",
+    year: "2026",
+    text: `
+      [wip] music video experiment for the track rokit by wasting shit.<br><br>
+
+an ongoing project exploring the combination of 2D illustration, 3D imagery, and typography. mainly created as a training to experiment with new visual techniques and develop my typographic compositions through music video.<br><br><br>
+
+softwares : Blender | After Effects | Procreate | Illustrator | Photoshop
+
+
+
+
+    `,
+    video: "import/rokit.mp4",
+    images: [
+      "import/rokitblend.png",
+      "import/rokit2.mp4",
+      "import/rokitmetroo.png",
+      "import/rokitt.png",
+      "import/rokitcityy.png" 
+      
+    ],
+
+  },
+
+
+  sorryuhmwhat: {
+    title: "sorryuhmwhat",
+    year: "2026",
+    text: `
+      collaborative exhibition created in Zagreb with a German friend artist, exploring the theme of language barriers and cross-cultural communication.<br><br>
+
+each work approaches this subject through a different medium, bringing together video, engraving, drawing, installation, and a website. the exhibition reflects on misunderstanding, translation, and the ways visual language can bridge linguistic differences.<br><br><br>
+
+mediums : Video | Engraving | Website | Drawing | Installation
+
+
+
+    `,
+    video: "import/suw.mp4",
+    images: [
+      "import/suw1.jpeg",
+      "import/suwinteraction.mp4",
+      "import/suw2.jpeg", 
+      "import/suw3.jpeg",
+      "import/suwvideo.mp4",
+      "import/suwpillss.mp4",
+
+      "import/suw4.jpeg",
+      "import/suw5.jpeg",
+      "import/suwvideoooo.mp4",
+      "import/suw6.jpeg",
+      "import/suwphoto.jpg",
+           
+      
+      "import/suwsuw.jpg"
+    ],
+
+  },
+
+
+
+  vjing: {
+    title: "♬⋆.˚vjing",
+    year: "2026",
+    text: `
+      visuals created for the VJing of a concert organized by Krushh and 10form, featuring performances by Odden, Luso, Baton, MP404, and Err Walou.<br><br>
+
+I produced both modular and fixed visuals for each artist. during the event, a collaborator and I controlled the TouchDesigner setup in real time using a MIDI controller, adapting the visuals to each performance.<br><br><br>
+
+softwares : TouchDesigner | After Effects | Photoshop
+
+
+    `,
+    video: "import/vjing.mp4",
+    images: [
+      "import/vjingerrwalou.mp4",
+      "import/vjingbaton.mp4",
+      "import/vjingluso.mp4", 
+      "import/vjingmp404.mp4",
+
+      "import/vjingodden.mp4",
+      
+    ],
+
+  },
+
+  badboy: {
+    title: "bad!!!!!!⚠⚠⚠⚠⚠boy!!!!!!⚠⚠⚠⚠⚠",
+    year: "2026",
+    text: `
+      frame-by-frame animation based on a voice message recounting the theft of a Gucci cap.<br><br><br>
+softwares : Procreate
+
+    `,
+    video: "import/badboy.mp4",
+    images: [
+      // "import/gp.png",
+      // "import/g5.png", 
+      // "import/gp1.png",
+
+      // "import/gp2.png",
+      // "import/g6.png",
+      // "import/gp3.png",
+      // "import/g4.png",
+           
+      
+      // "import/g7.png"
+    ],
+
+  },
+
+  octetgarden: {
+    title: "🗁>_octet garden˚˖𓍢ִ໋❀",
+    year: "2026",
+    text: `
+      live coding performance combining coded music, generative visuals, and an interactive installation.<br><br>
+
+i composed a ten-minute soundtrack in Strudel while developing an audio-reactive website that generates visuals in real time. the installation features both artificial and real flowers connected to a playtronica interface, allowing the audience to alter the visuals by touching the conductive plants.<br><br><br>
+
+softwares : Strudel | Visual Studio Code (html/css/p5.js) | Playtronica
+
+    `,
+    video: "import/octetgarden.mp4",
+    images: [
+      "import/octetgarden1.png",
+      "import/octetgardenn.mp4",
+      "import/octetgarrden.png", 
+      "import/octetgardenclaraa.mov",
+      "import/octetgarden2.png",
+
+      "import/octetgarden3.png",
+    
+      
+    ],
+
+  },
+
+
 ghettoprincess: {
     title: "｡ ₊°༺ghetto princess༻°₊ ｡",
     year: "2026",
@@ -9,17 +150,17 @@ ghettoprincess: {
     `,
     video: "import/ghettoprincessstoryclara.mp4",
     images: [
-      "import/gp.png",
-      "import/g5.png", 
-      "import/gp1.png",
+      // "import/gp.png",
+      // "import/g5.png", 
+      // "import/gp1.png",
 
-      "import/gp2.png",
-      "import/g6.png",
-      "import/gp3.png",
-      "import/g4.png",
+      // "import/gp2.png",
+      // "import/g6.png",
+      // "import/gp3.png",
+      // "import/g4.png",
            
       
-      "import/g7.png"
+      // "import/g7.png"
     ],
 
   },

@@ -14,6 +14,11 @@
 
 <div class="container">
 
+
+  <a href="index.html" class="home-link">
+  *ੈ✩‧₊˚༺ clara portfolio ༻*ੈ✩‧₊˚
+</a>
+
   <div class="navbar">
   <a href="import/claralaunay_portfolio_2026.pdf" target="_blank" rel="noopener" style="font-weight:400;">[portfolio pdf]</a>
   <a href="import/claralaunay_resume.pdf" target="_blank" rel="noopener" style="font-weight:400;">[cv]</a>
@@ -25,6 +30,11 @@
 
   <div class="scrolling-text">
     <ul id="scrollingTextList">
+      <li data-project="rokit">🏙rokittttttttttttt [wip] <span class="year">2026</span></li>
+      <li data-project="sorryuhmwhat" id="titleMixed"></li>
+      <li data-project="vjing">♬⋆.˚vjing <span class="year">2026</span></li>
+      <li data-project="badboy">bad!!!!!!⚠⚠⚠⚠⚠boy!!!!!!⚠⚠⚠⚠⚠ <span class="year">2026</span></li>
+      <li data-project="octetgarden">🗁>_octet garden˚˖𓍢ִ໋❀ <span class="year">2026</span></li>
       <li data-project="ghettoprincess">｡ ₊°༺ghetto princess༻°₊ ｡ <span class="year">2026</span></li>
       <li data-project="unrepeated">un⟳repeated <span class="year">2026</span></li>
       <li data-project="angelcandles">angel༺☆༻candles <span class="year">2026</span></li>
@@ -36,7 +46,6 @@
       <li data-project="chambrenoire">ılıılıılı darkroom ılıılıılı <span class="year">2025</span></li>
       <li data-project="vs">ᯓsonic visions♪ <span class="year">2025</span></li>
       <li data-project="ultrav">ultra︻芫═───violente romance <span class="year">2025</span></li>
-      <li data-project="mar">༄.° au bord du gouffre <span class="year">2025</span></li>
 
       <li data-project="digitalemotions">
         d̵̨̪̉͝i̸̹̙̟̓̃g̸̥̰̅͂̒i̷̘̬͒͐͘ṱ̵͕͗̈́a̸̬͒͐͗l̵̥͕̊͆ emotions
@@ -45,21 +54,53 @@
 
       <li data-project="mad">𓀤𓀥 madfest 𓀤𓀥 <span class="year">2024</span></li>
     </ul>
+  </div>
 
-    <!-- CONTACT (desktop only panel source) -->
-    <div id="contactPanel" class="contact-panel">
-      <p>
-        french graphic designer based in Paris, currently studying in a master’s degree in digital design (4th year), after completing a DNMADE (National Diploma of Art and Design) in graphic design and digital studies.<br><br>
-        i’m into electronic music [✴︎], swords [🗡], adventures [.ೃ࿔ ✈︎ *], badly drawn illustrations [ᝰ], and mixed aesthetics somewhere between ‎⋆. 𐙚 ˚ coquette ‎⋆. 𐙚 ˚ and ⌐╦ᡁ᠊╾━ghetto.<br><br><br><br><br>
-        <strong><a href="mailto:clara.launay@ensaama.net">clara.launay[at]ensaama[dot]net</a><br></strong>
-        <strong>+33 6 27 87 67 55</strong>
-      </p>
-    </div>
+  <!-- CONTACT (desktop only panel source) -->
+  <div id="contactPanel" class="contact-panel">
+    <p>
+      french graphic designer based in Paris, currently studying in a master’s degree in digital design (4th year), after completing a DNMADE (National Diploma of Art and Design) in graphic design and digital studies.<br><br>
+      i’m into electronic music [✴︎], swords [🗡], adventures [.ೃ࿔ ✈︎ *], badly drawn illustrations [ᝰ], and mixed aesthetics somewhere between ‎⋆. 𐙚 ˚ coquette ‎⋆. 𐙚 ˚ and ⌐╦ᡁ᠊╾━ghetto.<br><br><br><br><br>
+      <strong><a href="mailto:clara.launay@ensaama.net">clara.launay[at]ensaama[dot]net</a><br></strong>
+      <strong>+33 6 27 87 67 55</strong>
+    </p>
   </div>
 
   <!-- DESKTOP -->
   <div class="project-desc" id="projectDesc"></div>
   <div class="project-media" id="projectMedia"></div>
+
+  <!-- TIRAGE : dé déclencheur, posé à droite -->
+  <div class="tirage-trigger" id="tirageTrigger">
+    <img id="tirageDice" src="tirage/dice.png" alt="tirer les cartes">
+    <span class="tirage-hint">draw your tattoo cards 🃜🃚🃖🃁🂭🂺</span>
+  </div>
+
+  <!-- TIRAGE : lancer + cartes -->
+  <div class="tirage-view" id="tirageView">
+    <div class="tirage-roll-screen" id="tirageRollScreen">
+      <div class="roll-pair">
+        <img id="tirageRollDie1" class="roll-die" src="tirage/dice_frames/face_1.png">
+        <img id="tirageRollDie2" class="roll-die" src="tirage/dice_frames/face_1.png">
+      </div>
+    </div>
+
+    <div class="tirage-deck-screen" id="tirageDeckScreen">
+      <div class="deck" id="tirageDeck"></div>
+      <img id="tirageDiceBack" class="tirage-dice-back" src="tirage/dice.png" alt="recommencer">
+      
+    </div>
+  </div>
+
+  <div class="tirage-lightbox" id="tirageLightbox">
+    <div class="lb-stage" id="tirageLbStage"></div>
+  </div>
+
+  <!-- PROJECT MEDIA LIGHTBOX (grand format + navigation clavier) -->
+  <div class="project-lightbox" id="projectLightbox">
+    <span class="pl-close" id="projectLightboxClose">×</span>
+    <div class="pl-stage" id="projectLightboxStage"></div>
+  </div>
 
   <!-- MOBILE -->
   <div id="mobileProjectView" class="mobile-project-view" style="display:none;"></div>
@@ -67,9 +108,34 @@
   <!-- DESKTOP SCROLLER -->
   <div class="image-scroller" id="imageScroller">
     <div class="image-track">
+      <div class="image-item" data-project="rokit">
+        <img src="import/rokit.png" alt="">
+        <div class="image-caption"><span class="title">🏙rokittttttttttttt [wip]</span><span class="year">2026</span></div>
+      </div>
+    <div class="image-track">
+      <div class="image-item" data-project="sorryuhmwhat">
+        <img src="import/suwwwwww.png" alt="">
+        <div class="image-caption"><span class="title">sorry uhm what</span><span class="year">2026</span></div>
+      </div>
+    <div class="image-track">
+      <div class="image-item" data-project="vjing">
+        <img src="import/vjingggg.png" alt="">
+        <div class="image-caption"><span class="title">♬⋆.˚vjing</span><span class="year">2026</span></div>
+      </div>
+    <div class="image-track">
+      <div class="image-item" data-project="badboy">
+        <img src="import/badboyy.png" alt="">
+        <div class="image-caption"><span class="title">bad!!!!!!⚠⚠⚠⚠⚠boy!!!!!!⚠⚠⚠⚠⚠</span><span class="year">2026</span></div>
+      </div>
+    <div class="image-track">
+      <div class="image-item" data-project="octetgarden">
+        <img src="import/octetgarden.png" alt="">
+        <div class="image-caption"><span class="title">🗁>_octet garden˚˖𓍢ִ໋❀</span><span class="year">2026</span></div>
+      </div>
+    <div class="image-track">
       <div class="image-item" data-project="ghettoprincess">
         <img src="import/gp.png" alt="">
-        <div class="image-caption"><span class="title">ghettoprincess</span><span class="year">2026</span></div>
+        <div class="image-caption"><span class="title">｡ ₊°༺ghetto princess༻°₊ ｡</span><span class="year">2026</span></div>
       </div>
     <div class="image-track">
       <div class="image-item" data-project="unrepeated">
@@ -111,10 +177,6 @@
       <div class="image-item" data-project="ultrav">
         <img src="import/ultrav.png" alt="">
         <div class="image-caption"><span class="title">ultra︻芫═───violente romance</span><span class="year">2025</span></div>
-      </div>
-      <div class="image-item" data-project="mar">
-        <img src="import/marww.png" alt="">
-        <div class="image-caption"><span class="title">༄.° au bord du gouffre</span><span class="year">2025</span></div>
       </div>
       <div class="image-item" data-project="digitalemotions">
         <img src="import/de4.png" alt="">
@@ -300,6 +362,9 @@ function renderMobileProject(key) {
   if (!p) return;
 
   disableMouseTrail();
+  document.body.classList.remove("is-project");
+  document.body.classList.remove("is-tirage");
+  closeTirageScreens();
   document.body.classList.add("is-mobile-project");
 
   // titre/année EXACT depuis la liste de gauche
@@ -353,7 +418,10 @@ function renderMobileProject(key) {
 
     <div class="image-scroller2" id="imageScrollerMobile">
       <div class="image-track2">
-        ${p.images.map(src => `<div class="image-item2"><img src="${src}" alt=""></div>`).join("")}
+        ${p.images.map(src => isVideoSrc(src)
+          ? `<div class="image-item2"><video src="${src}" controls playsinline preload="metadata"></video></div>`
+          : `<div class="image-item2"><img src="${src}" alt=""></div>`
+        ).join("")}
       </div>
     </div>
   `;
@@ -378,6 +446,10 @@ function renderMobileProject(key) {
 ========================= */
 function resetHome() {
   document.body.classList.remove("is-mobile-project");
+  document.body.classList.remove("is-project");
+  document.body.classList.remove("is-tirage");
+  closeTirageScreens();
+  closeProjectLightbox();
   mobileView.innerHTML = "";
 
   desc.innerHTML = "";
@@ -403,14 +475,114 @@ function bindDesktopImageClicks() {
 bindDesktopImageClicks();
 
 /* =========================
+   MEDIA HELPERS (images ET vidéos, même format)
+========================= */
+function isVideoSrc(src) {
+  return /\.(mp4|webm|mov|m4v)(\?.*)?$/i.test(src);
+}
+
+// vignette pour le scroller du bas : <img> ou <video> selon l'extension
+function createMediaThumb(src) {
+  if (isVideoSrc(src)) {
+    const v = document.createElement("video");
+    v.src = src;
+    v.muted = true;
+    v.loop = true;
+    v.autoplay = true;
+    v.playsInline = true;
+    v.setAttribute("muted", "");
+    v.setAttribute("playsinline", "");
+    v.preload = "auto";
+    v.disablePictureInPicture = true;
+    v.addEventListener("loadedmetadata", () => {
+      v.play().catch(() => {});
+    });
+    return v;
+  }
+  const img = document.createElement("img");
+  img.src = src;
+  img.alt = "";
+  return img;
+}
+
+/* =========================
+   PROJECT LIGHTBOX (grand format + flèches clavier)
+========================= */
+const projectLightbox = document.getElementById("projectLightbox");
+const projectLightboxStage = document.getElementById("projectLightboxStage");
+const projectLightboxClose = document.getElementById("projectLightboxClose");
+
+let plList = [];
+let plIndex = 0;
+
+function renderProjectLightbox() {
+  if (!plList.length) return;
+  const src = plList[plIndex];
+  projectLightboxStage.innerHTML = "";
+
+  let el;
+  if (isVideoSrc(src)) {
+    el = document.createElement("video");
+    el.src = src;
+    el.controls = true;
+    el.playsInline = true;
+    el.autoplay = true;
+  } else {
+    el = document.createElement("img");
+    el.src = src;
+    el.alt = "";
+  }
+  projectLightboxStage.appendChild(el);
+}
+
+function openProjectLightbox(list, index) {
+  plList = list;
+  plIndex = index;
+  renderProjectLightbox();
+  projectLightbox.classList.add("show");
+}
+
+function closeProjectLightbox() {
+  projectLightbox.classList.remove("show");
+  projectLightboxStage.innerHTML = "";
+  plList = [];
+}
+
+function nextProjectLightbox() {
+  if (!plList.length) return;
+  plIndex = (plIndex + 1) % plList.length;
+  renderProjectLightbox();
+}
+
+function prevProjectLightbox() {
+  if (!plList.length) return;
+  plIndex = (plIndex - 1 + plList.length) % plList.length;
+  renderProjectLightbox();
+}
+
+projectLightbox.addEventListener("click", (e) => {
+  if (e.target === projectLightbox) closeProjectLightbox();
+});
+projectLightboxClose.addEventListener("click", closeProjectLightbox);
+
+document.addEventListener("keydown", (e) => {
+  if (!projectLightbox.classList.contains("show")) return;
+  if (e.key === "ArrowRight") nextProjectLightbox();
+  else if (e.key === "ArrowLeft") prevProjectLightbox();
+  else if (e.key === "Escape") closeProjectLightbox();
+});
+
+/* =========================
    OPEN PROJECT (desktop)
 ========================= */
 function openDesktopProject(key) {
   const p = projects[key];
   if (!p) return;
 
+  document.body.classList.add("is-project");
   disableMouseTrail();
   setActiveProject(key);
+  closeProjectLightbox();
 
   // texte (inchangé)
   desc.innerHTML = `<p>${p.text}</p>`;
@@ -436,15 +608,16 @@ function openDesktopProject(key) {
       track.appendChild(vItem);
     }
 
-    // puis les images comme d’hab
-    p.images.forEach((src) => {
+    // puis les images (et vidéos) comme d'hab, cliquables en grand
+    p.images.forEach((src, idx) => {
       const div = document.createElement("div");
       div.className = "image-item";
-
-      const img = document.createElement("img");
-      img.src = src;
-
-      div.appendChild(img);
+      const el = createMediaThumb(src);
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        openProjectLightbox(p.images, idx);
+      });
+      div.appendChild(el);
       track.appendChild(div);
     });
 
@@ -469,52 +642,21 @@ function openDesktopProject(key) {
     `;
   }
 
-  const previewEl = media.querySelector(".media-preview");
-  const videoEl = media.querySelector(".media-video");
-
   track.innerHTML = "";
 
-  let pinnedSrc = null;
-
-  function showPreview(src) {
-    if (!previewEl) return;
-    previewEl.src = src;
-    previewEl.style.display = "block";
-    if (videoEl) videoEl.style.display = "none";
-  }
-  function showVideoOrClear() {
-    if (previewEl) {
-      previewEl.style.display = "none";
-      previewEl.removeAttribute("src");
-    }
-    if (videoEl) videoEl.style.display = "block";
-  }
-  function showPinnedOrVideo() {
-    if (pinnedSrc) showPreview(pinnedSrc);
-    else showVideoOrClear();
-  }
-
-  imageScroller.onmouseleave = () => {
-    pinnedSrc = null;
-    showVideoOrClear();
-  };
-
-  p.images.forEach((src) => {
+  // le hover ne fait plus rien : on clique dessus pour l'ouvrir en grand,
+  // avec navigation au clavier (flèches gauche/droite) dans la lightbox
+  p.images.forEach((src, idx) => {
     const div = document.createElement("div");
     div.className = "image-item";
 
-    const img = document.createElement("img");
-    img.src = src;
-
-    img.addEventListener("mouseenter", () => showPreview(src));
-    img.addEventListener("mouseleave", () => showPinnedOrVideo());
-    img.addEventListener("click", (e) => {
+    const el = createMediaThumb(src);
+    el.addEventListener("click", (e) => {
       e.preventDefault();
-      pinnedSrc = src;
-      showPreview(src);
+      openProjectLightbox(p.images, idx);
     });
 
-    div.appendChild(img);
+    div.appendChild(el);
     track.appendChild(div);
   });
 }
@@ -535,6 +677,12 @@ document.querySelectorAll("li[data-project]").forEach(li => {
 ========================= */
 function routeFromHash() {
   const key = location.hash.replace("#", "");
+
+  if (key === "tirage") {
+    openTirage();
+    return;
+  }
+
   if (!key || !projects[key]) {
     resetHome();
     return;
@@ -588,6 +736,315 @@ window.addEventListener("resize", updateNavbarContrast);
 window.addEventListener("hashchange", () => setTimeout(updateNavbarContrast, 0));
 window.addEventListener("DOMContentLoaded", () => setTimeout(updateNavbarContrast, 0));
 
+
+(function() {
+  const fonts = ["BillaMount", "HelveticaBlack", "CandyDarling", "ReadyClouded"];
+  const text = "sorry......uhm.......what......?";
+  const el = document.getElementById("titleMixed");
+
+  function pickFont(prev) {
+    let f;
+    do { f = fonts[Math.floor(Math.random() * fonts.length)]; }
+    while (f === prev);
+    return f;
+  }
+
+  let prevFont = null;
+  for (const char of text) {
+    const span = document.createElement("span");
+    span.textContent = char;
+    if (char !== " ") {
+      const font = pickFont(prevFont);
+      span.style.fontFamily = `"${font}", sans-serif`;
+      prevFont = font;
+    }
+    el.appendChild(span);
+  }
+
+  // on rajoute le span year à la fin
+  const year = document.createElement("span");
+  year.className = "year";
+  year.textContent = "2026";
+  el.appendChild(year);
+})();
+
+/* =========================
+   TIRAGE (dés / cartes)
+========================= */
+(function() {
+
+  const frameFiles = [
+    'tirage/cadres/carte1.png',
+    'tirage/cadres/carte2.png',
+    'tirage/cadres/carte3.png',
+    'tirage/cadres/carte4.png',
+    'tirage/cadres/carte5.png'
+  ];
+
+  const dosFiles = [
+    'tirage/dos/cartedos1.png',
+    'tirage/dos/cartedos2.png',
+    'tirage/dos/cartedos3.png',
+    'tirage/dos/cartedos4.png',
+    'tirage/dos/cartedos5.png'
+  ];
+
+  const drawingFiles = [
+  'tirage/illustrations/ah iui.png',
+  'tirage/illustrations/ailes2.jpg',
+  'tirage/illustrations/ailess!!!!.png',
+  'tirage/illustrations/battle.png',
+  'tirage/illustrations/belladonna.png',
+  'tirage/illustrations/bfgnf.png',
+  'tirage/illustrations/biggy sword.png',
+  'tirage/illustrations/bozoblasonn.png',
+  'tirage/illustrations/carfrfeau.png',
+  'tirage/illustrations/cathedralclara.png',
+  'tirage/illustrations/caxsdgvhn.png',
+  'tirage/illustrations/coutaeauuuu.jpeg',
+  'tirage/illustrations/crosssssssss.png',
+  'tirage/illustrations/cycbcbcc.png',
+  'tirage/illustrations/dancefloooorrrr.png',
+  'tirage/illustrations/eofizuehzj.png',
+  'tirage/illustrations/etheral hate.png',
+  'tirage/illustrations/guguguguugns.png',
+  'tirage/illustrations/IHAVETOOMANYOPPS.png',
+  'tirage/illustrations/IMG_1181.JPG',
+  'tirage/illustrations/IMG_1307.JPG',
+  'tirage/illustrations/IMG_1356.JPG',
+  'tirage/illustrations/IMG_1444.JPG',
+  'tirage/illustrations/IMG_1445.JPG',
+  'tirage/illustrations/IMG_1581.JPG',
+  'tirage/illustrations/IMG_2738.JPG',
+  'tirage/illustrations/IMG_3950.JPG',
+  'tirage/illustrations/IMG_4173.JPG',
+  'tirage/illustrations/IMG_4535.JPG',
+  'tirage/illustrations/IMG_4785.JPG',
+  'tirage/illustrations/IMG_4813.JPG',
+  'tirage/illustrations/IMG_5283.JPG',
+  'tirage/illustrations/IMG_5318.JPG',
+  'tirage/illustrations/IMG_5375.JPG',
+  'tirage/illustrations/IMG_5452.JPG',
+  'tirage/illustrations/IMG_5454.JPG',
+  'tirage/illustrations/IMG_6061.JPG',
+  'tirage/illustrations/IMG_6522.JPG',
+  'tirage/illustrations/IMG_6524.JPG',
+  'tirage/illustrations/IMG_6543.JPG',
+  'tirage/illustrations/IMG_6546.JPG',
+  'tirage/illustrations/IMG_7189.JPG',
+  'tirage/illustrations/IMG_7318.JPG',
+  'tirage/illustrations/innoooo.png',
+  'tirage/illustrations/joke.png',
+  'tirage/illustrations/kiki.png',
+  'tirage/illustrations/liliposter (1)_page-0001.jpg',
+  'tirage/illustrations/mirori.jpeg',
+  'tirage/illustrations/oki.png',
+  'tirage/illustrations/opheliatragedy.png',
+  'tirage/illustrations/ouai.png',
+  'tirage/illustrations/pochoirrrrrrrrrrrr.png',
+  'tirage/illustrations/portail.png',
+  'tirage/illustrations/raw1.png',
+  'tirage/illustrations/raw2.png',
+  'tirage/illustrations/rechercheplanthuneurgent.png',
+  'tirage/illustrations/retststs.png',
+  'tirage/illustrations/sworddddddddddd.png',
+  'tirage/illustrations/SWORDSSSswwords.png',
+  'tirage/illustrations/tatatatatatttsss.png',
+  'tirage/illustrations/tatouagecyber.png',
+  'tirage/illustrations/tatouu.png',
+  'tirage/illustrations/tattoo2.jpeg',
+  'tirage/illustrations/ultratatt.png',
+  'tirage/illustrations/whysoserious.png',
+  'tirage/illustrations/wwwwinggg.png'
+];
+
+  const diceFaces = [];
+  for (let i = 1; i <= 12; i++) diceFaces.push('tirage/dice_frames/face_' + i + '.png');
+
+  const tirageTrigger = document.getElementById('tirageTrigger');
+  const tirageDice = document.getElementById('tirageDice');
+  const tirageView = document.getElementById('tirageView');
+  const tirageRollScreen = document.getElementById('tirageRollScreen');
+  const tirageRollDie1 = document.getElementById('tirageRollDie1');
+  const tirageRollDie2 = document.getElementById('tirageRollDie2');
+  const tirageDeckScreen = document.getElementById('tirageDeckScreen');
+  const tirageDeck = document.getElementById('tirageDeck');
+  const tirageDiceBack = document.getElementById('tirageDiceBack');
+  const tirageLightbox = document.getElementById('tirageLightbox');
+  const tirageLbStage = document.getElementById('tirageLbStage');
+
+  function randomFace() {
+    return diceFaces[Math.floor(Math.random() * diceFaces.length)];
+  }
+
+  function playTirageRoll(callback) {
+    tirageRollScreen.classList.add('show');
+    tirageDeckScreen.classList.remove('show');
+    tirageRollDie1.classList.add('tossing');
+    tirageRollDie2.classList.add('tossing');
+
+    let elapsed = 0;
+    const total = 375;
+    let delay = 20;
+
+    function tick() {
+      tirageRollDie1.src = randomFace();
+      tirageRollDie2.src = randomFace();
+      elapsed += delay;
+      delay += 2;
+      if (elapsed < total) {
+        setTimeout(tick, delay);
+      } else {
+        tirageRollDie1.classList.remove('tossing');
+        tirageRollDie2.classList.remove('tossing');
+        tirageRollDie1.classList.add('settle');
+        tirageRollDie2.classList.add('settle');
+        tirageRollDie1.src = randomFace();
+        tirageRollDie2.src = randomFace();
+        setTimeout(() => {
+          tirageRollScreen.classList.remove('show');
+          tirageRollDie1.classList.remove('settle');
+          tirageRollDie2.classList.remove('settle');
+          callback();
+        }, 160);
+      }
+    }
+    tick();
+  }
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function buildTirageDeck() {
+    tirageDeck.innerHTML = '';
+    tirageDeckScreen.classList.remove('done');
+    const chosenDrawings = shuffle(drawingFiles).slice(0, frameFiles.length);
+    const stages = [];
+
+    frameFiles.forEach((frame, i) => {
+      const drawing = chosenDrawings[i] || null;
+      const dos = dosFiles[i];
+      const stage = document.createElement('div');
+      stage.className = 'stage';
+      stage.innerHTML =
+        '<div class="card-inner">' +
+          '<div class="card-face back">' +
+            '<img class="dos" src="' + dos + '">' +
+          '</div>' +
+          '<div class="card-face front">' +
+            '<img class="frame" src="' + frame + '">' +
+            (drawing ? '<img class="drawing" src="' + drawing + '">' : '') +
+          '</div>' +
+        '</div>';
+      stage.querySelector('.card-face.front').addEventListener('click', () => {
+        if (!isDesktop()) return; // sur mobile, c'est le tap sur la carte qui fait avancer
+        openTirageLightbox(frame, drawing);
+      });
+      tirageDeck.appendChild(stage);
+      stages.push(stage);
+    });
+
+    if (!isDesktop()) {
+      // MOBILE : une carte à la fois, on tape dessus pour passer à la suivante
+      let current = 0;
+
+      function showMobileCard(index) {
+        stages.forEach((s, i) => s.classList.toggle('mobile-active', i === index));
+        const inner = stages[index].querySelector('.card-inner');
+        inner.classList.remove('flip');
+        requestAnimationFrame(() => {
+          setTimeout(() => inner.classList.add('flip'), 60);
+        });
+      }
+
+      function advanceMobile() {
+        current++;
+        if (current >= stages.length) {
+          tirageDeckScreen.classList.add('done');
+          return;
+        }
+        showMobileCard(current);
+      }
+
+      stages.forEach((stage) => stage.addEventListener('click', advanceMobile));
+      showMobileCard(0);
+      return;
+    }
+
+    // DESKTOP : toutes les cartes visibles, flip en cascade
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        tirageDeck.querySelectorAll('.card-inner').forEach((inner, i) => {
+          setTimeout(() => inner.classList.add('flip'), i * 150);
+        });
+      }, 50);
+    });
+  }
+
+  function openTirageLightbox(frame, drawing) {
+    tirageLbStage.innerHTML =
+      '<img class="frame" src="' + frame + '">' +
+      (drawing ? '<img class="drawing" src="' + drawing + '">' : '');
+    tirageLightbox.classList.add('show');
+  }
+
+  tirageLightbox.addEventListener('click', () => {
+    tirageLightbox.classList.remove('show');
+  });
+
+  window.closeTirageScreens = function() {
+    tirageRollScreen.classList.remove('show');
+    tirageDeckScreen.classList.remove('show');
+    tirageLightbox.classList.remove('show');
+    tirageDeck.innerHTML = '';
+  };
+
+  window.openTirage = function() {
+    document.body.classList.remove('is-mobile-project');
+    document.body.classList.remove('is-project');
+    mobileView.innerHTML = '';
+    desc.innerHTML = '';
+    media.innerHTML = '';
+    setActiveProject('');
+    disableMouseTrail();
+    document.body.classList.add('is-tirage');
+    playTirageRoll(() => {
+      tirageDeckScreen.classList.add('show');
+      buildTirageDeck();
+    });
+  };
+
+  tirageDice.addEventListener('click', () => {
+    location.hash = 'tirage';
+  });
+
+  const tirageHint = tirageTrigger.querySelector('.tirage-hint');
+  tirageTrigger.addEventListener('mouseenter', () => {
+    tirageHint.classList.add('show');
+  });
+  tirageTrigger.addEventListener('mousemove', (e) => {
+    tirageHint.style.left = (e.clientX + 16) + 'px';
+    tirageHint.style.top = (e.clientY + 16) + 'px';
+  });
+  tirageTrigger.addEventListener('mouseleave', () => {
+    tirageHint.classList.remove('show');
+  });
+
+  tirageDiceBack.addEventListener('click', () => {
+    tirageDeckScreen.classList.remove('show');
+    playTirageRoll(() => {
+      tirageDeckScreen.classList.add('show');
+      buildTirageDeck();
+    });
+  });
+
+})();
 
 </script>
 
