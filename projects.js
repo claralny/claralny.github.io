@@ -16,7 +16,7 @@ softwares : Blender | After Effects | Procreate | Illustrator | Photoshop
 
     `,
     textFr: `
-début timide de visuel pour le son rokit de wasting shit prcq c trop dommage que y'ai pas de clip g expérimenté la 3D la typo globalement:ppppp ceci dit jsp si ce clip se finira<br><br><br>
+[wip] début timide de visuel pour le son rokit de wasting shit prcq c trop dommage que y'ai pas de clip g expérimenté la 3D la typo globalement:ppppp ceci dit jsp si ce clip se finira<br><br><br>
 
 softwares : Blender | After Effects | Procreate | Illustrator | Photoshop
 `,
