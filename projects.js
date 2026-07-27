@@ -39,11 +39,14 @@ softwares : Blender | After Effects | Procreate | Illustrator | Photoshop
     title: "sorryuhmwhat",
     year: "2026",
     text: `
-      collaborative exhibition created in Zagreb with a German friend artist, exploring the theme of language barriers and cross-cultural communication.<br><br>
+  collaborative exhibition created in Zagreb with a German friend artist, exploring the theme of language barriers and cross-cultural communication.<br><br>
 
-each work approaches this subject through a different medium, bringing together video, engraving, drawing, installation, and a website. the exhibition reflects on misunderstanding, translation, and the ways visual language can bridge linguistic differences.<br><br><br>
+each work approaches this subject through a different medium, bringing together video, engraving, drawing, installation, and a website [<a href="https://ghettoprincesss.github.io/sorryuhmwhat/" target="_blank">try to speak and see what happens</a>]. the exhibition reflects on misunderstanding, translation, and the ways visual language can bridge linguistic differences.<br><br><br>
 
 mediums : Video | Engraving | Website | Drawing | Installation
+
+
+
 
 
 
