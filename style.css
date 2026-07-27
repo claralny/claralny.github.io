@@ -719,6 +719,12 @@ body.is-tirage .lang-toggle {
   max-height: 52%;
   object-fit: contain;
   pointer-events: none;
+  
+}
+
+.card-face.front .drawing,
+.lb-stage .drawing {
+  mix-blend-mode: multiply;
 }
 
 .tirage-dice-back {
