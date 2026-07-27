@@ -172,6 +172,43 @@ a {
 }
 
 /* =========================
+   LANG TOGGLE (FR/EN)
+========================= */
+.lang-toggle {
+  position: absolute;
+  top: 120px;
+  left: 930px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: black;
+  user-select: none;
+  z-index: 10;
+}
+
+.lang-toggle:hover {
+  color: #666666;
+  text-decoration: underline;
+}
+
+.lang-toggle[style*="display:none"],
+.lang-toggle[style*="display: none"] {
+  pointer-events: none;
+}
+
+.mobile-lang-toggle {
+  font-size: 0.75rem;
+  cursor: pointer;
+  color: black;
+  user-select: none;
+  margin-top: 6px;
+}
+
+.mobile-lang-toggle:hover {
+  color: #666666;
+  text-decoration: underline;
+}
+
+/* =========================
    PROJECT MEDIA (RIGHT)
 ========================= */
 .project-media {
@@ -281,7 +318,7 @@ a {
   }
 
   .home-link {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 
   .navbar {
@@ -324,7 +361,8 @@ a {
 body.is-mobile-project .scrolling-text,
 body.is-mobile-project .project-desc,
 body.is-mobile-project .project-media,
-body.is-mobile-project .image-scroller {
+body.is-mobile-project .image-scroller,
+body.is-mobile-project .lang-toggle {
   display: none !important;
 }
 
@@ -543,7 +581,8 @@ body.is-tirage .tirage-view { display: flex !important; }
 body.is-tirage .scrolling-text,
 body.is-tirage .project-desc,
 body.is-tirage .project-media,
-body.is-tirage .image-scroller {
+body.is-tirage .image-scroller,
+body.is-tirage .lang-toggle {
   display: none !important;
 }
 

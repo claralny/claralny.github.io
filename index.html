@@ -68,6 +68,7 @@
 
   <!-- DESKTOP -->
   <div class="project-desc" id="projectDesc"></div>
+  <div class="lang-toggle" id="langToggleDesktop" style="display:none;">FR</div>
   <div class="project-media" id="projectMedia"></div>
 
   <!-- TIRAGE : dé déclencheur, posé à droite -->
@@ -115,7 +116,7 @@
     <div class="image-track">
       <div class="image-item" data-project="sorryuhmwhat">
         <img src="import/suwwwwww.png" alt="">
-        <div class="image-caption"><span class="title">sorry uhm what</span><span class="year">2026</span></div>
+        <div class="image-caption"><span class="title">sorry uhm what?</span><span class="year">2026</span></div>
       </div>
     <div class="image-track">
       <div class="image-item" data-project="vjing">
@@ -191,7 +192,7 @@
 
 </div>
 
-<script src="projects.js"></script>
+<script src="projects.js?v=2"></script>
 
 <script>
 /* =========================
@@ -340,6 +341,27 @@ const track = document.querySelector(".image-track");
 const initialTrackHTML = track.innerHTML;
 
 /* =========================
+   LANG TOGGLE (DESKTOP)
+========================= */
+const langToggleDesktop = document.getElementById("langToggleDesktop");
+let currentLang = "en";
+let currentDescKey = null;
+
+function renderDesktopDesc() {
+  if (!currentDescKey) return;
+  const p = projects[currentDescKey];
+  if (!p) return;
+  const useFr = currentLang === "fr" && p.textFr;
+  desc.innerHTML = `<p>${useFr ? p.textFr : p.text}</p>`;
+}
+
+langToggleDesktop.addEventListener("click", () => {
+  currentLang = currentLang === "en" ? "fr" : "en";
+  langToggleDesktop.textContent = currentLang === "en" ? "FR" : "EN";
+  renderDesktopDesc();
+});
+
+/* =========================
    MOBILE VIEW
 ========================= */
 const mobileView = document.getElementById("mobileProjectView");
@@ -404,8 +426,10 @@ function renderMobileProject(key) {
       ${getContactSafeHTML()}
     </div>
 
+    ${p.textFr ? `<div class="mobile-lang-toggle" id="langToggleMobile">FR</div>` : ""}
+
     <div class="desc">
-      <p>${p.text}</p>
+      <p id="mobileDescText">${p.text}</p>
     </div>
 
     ${p.video ? `
@@ -425,6 +449,18 @@ function renderMobileProject(key) {
       </div>
     </div>
   `;
+
+  // bind lang toggle mobile
+  let mobileLang = "en";
+  const langToggleMobile = document.getElementById("langToggleMobile");
+  if (langToggleMobile) {
+    langToggleMobile.addEventListener("click", () => {
+      mobileLang = mobileLang === "en" ? "fr" : "en";
+      langToggleMobile.textContent = mobileLang === "en" ? "FR" : "EN";
+      document.getElementById("mobileDescText").innerHTML =
+        mobileLang === "fr" && p.textFr ? p.textFr : p.text;
+    });
+  }
 
   // bind navbar mobile
   const contactToggle = document.getElementById("contactToggleMobile");
@@ -455,6 +491,11 @@ function resetHome() {
   desc.innerHTML = "";
   media.innerHTML = "";
   track.innerHTML = initialTrackHTML;
+
+  currentDescKey = null;
+  currentLang = "en";
+  langToggleDesktop.style.display = "none";
+  langToggleDesktop.textContent = "FR";
 
   setActiveProject("");
   bindDesktopImageClicks();
@@ -584,8 +625,12 @@ function openDesktopProject(key) {
   setActiveProject(key);
   closeProjectLightbox();
 
-  // texte (inchangé)
-  desc.innerHTML = `<p>${p.text}</p>`;
+  // texte + toggle FR/EN
+  currentDescKey = key;
+  currentLang = "en";
+  langToggleDesktop.textContent = "FR";
+  langToggleDesktop.style.display = p.textFr ? "block" : "none";
+  renderDesktopDesc();
 
   // TABLET LANDSCAPE: vidéo dans le scroller du bas
   if (isTabletLandscape()) {
@@ -1011,6 +1056,10 @@ window.addEventListener("DOMContentLoaded", () => setTimeout(updateNavbarContras
     mobileView.innerHTML = '';
     desc.innerHTML = '';
     media.innerHTML = '';
+    currentDescKey = null;
+    currentLang = 'en';
+    langToggleDesktop.style.display = 'none';
+    langToggleDesktop.textContent = 'FR';
     setActiveProject('');
     disableMouseTrail();
     document.body.classList.add('is-tirage');
